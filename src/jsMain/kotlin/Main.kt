@@ -8,6 +8,5 @@ fun main() {
    globalStyles()
     val container = document.getElementById("root")
         ?: error("Couldn't find container with id 'root'")
-
     createRoot(container).render(App.create())
 }
