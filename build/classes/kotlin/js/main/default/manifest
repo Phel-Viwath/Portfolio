@@ -1,0 +1,11 @@
+abi_version=1.201.0
+builtins_platform=JS
+compiler_version=2.1.20
+depends=org.jetbrains.kotlin\:kotlin-dom-api-compat org.jetbrains.kotlin-wrappers\:kotlin-styled org.jetbrains.kotlin-wrappers\:kotlin-react-dom-legacy org.jetbrains.kotlinx\:kotlinx-html org.jetbrains.kotlin-wrappers\:kotlin-react org.jetbrains.kotlin-wrappers\:kotlin-react-router-dom org.jetbrains.kotlin-wrappers\:kotlin-emotion org.jetbrains.kotlin-wrappers\:kotlin-react-dom org.jetbrains.kotlin-wrappers\:kotlin-react-legacy org.jetbrains.kotlin-wrappers\:kotlin-react-core org.jetbrains.kotlin-wrappers\:kotlin-csstype org.jetbrains.kotlin-wrappers\:kotlin-browser org.jetbrains.kotlin-wrappers\:kotlin-web org.jetbrains.kotlinx\:kotlinx-coroutines-core org.jetbrains.kotlin-wrappers\:kotlin-history org.jetbrains.kotlinx\:atomicfu org.jetbrains.kotlinx\:kotlinx-serialization-json org.jetbrains.kotlin-wrappers\:kotlin-extensions org.jetbrains.kotlin-wrappers\:kotlin-js org.jetbrains.kotlin-wrappers\:kotlin-css org.jetbrains.kotlinx\:kotlinx-serialization-core kotlin org.jetbrains.kotlin\:kotlinx-atomicfu-runtime
+ir_signature_versions=1,2
+jsOutputName=Portfolio
+metadata_version=1.4.1
+serializedIrFileFingerprints=1j5lo3k7bx77r.p2m90czbn9di 49u2v8q8einl.1t53fyd18nxge 3gsmhaamcc75o.g08k40nkwj6z 2p8ubfefvdxz2.3fyyfn4kav6p4 lqlyw6bddekk.19zik4z9q615e 125rvypaplpt.1v7x9fz6t7i2w 1ql6bg4r2zig3.1mj7lamexowsh 2k1x29rjhhtqr.zw259zjgye9y sjksmwcf19w0.ac27d8m27ya y5n9rvd913ri.17vytqesjn3ww 2wnqn64xv3u64.2593hhvcu1bsl 1tza5x1q06jl5.3m011ubom4ima 1dp43xuoin4b1.16j89mel88icl 1hid8qxgh6wjo.1m1s6o5vx8aib 120qshohj7ny9.23dvwcrii8iuq
+serializedKlibFingerprint=3qftrqo8u13bz.37frvde8307r2
+unique_name=Portfolio
+wasm_targets=wasm-js
