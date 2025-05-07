@@ -35,15 +35,15 @@
   var createGlobalStyle = $module$styled_components_hletz0.createGlobalStyle;
   var Unit_getInstance = kotlin_kotlin.$_$.v3;
   var HTML_getInstance = kotlin_org_jetbrains_kotlin_wrappers_kotlin_browser.$_$.a;
-  var THROW_CCE = kotlin_kotlin.$_$.w9;
+  var THROW_CCE = kotlin_kotlin.$_$.t9;
   var fc = kotlin_org_jetbrains_kotlin_wrappers_kotlin_react_legacy.$_$.a;
-  var lazy = kotlin_kotlin.$_$.na;
+  var lazy = kotlin_kotlin.$_$.ja;
   var ArrayList_init_$Create$ = kotlin_kotlin.$_$.h;
-  var protoOf = kotlin_kotlin.$_$.d8;
-  var initMetadataForObject = kotlin_kotlin.$_$.m7;
+  var protoOf = kotlin_kotlin.$_$.b8;
+  var initMetadataForObject = kotlin_kotlin.$_$.k7;
   var Error_init_$Create$ = kotlin_kotlin.$_$.a1;
-  var KProperty1 = kotlin_kotlin.$_$.t8;
-  var getPropertyCallableRef = kotlin_kotlin.$_$.f7;
+  var KProperty1 = kotlin_kotlin.$_$.q8;
+  var getPropertyCallableRef = kotlin_kotlin.$_$.d7;
   //endregion
   //region block: pre-declaration
   initMetadataForObject(GlobalStyles, 'GlobalStyles');

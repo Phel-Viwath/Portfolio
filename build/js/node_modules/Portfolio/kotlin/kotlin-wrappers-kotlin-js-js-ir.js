@@ -12,12 +12,12 @@
 }(function (_, kotlin_kotlin) {
   'use strict';
   //region block: imports
-  var protoOf = kotlin_kotlin.$_$.d8;
-  var initMetadataForInterface = kotlin_kotlin.$_$.k7;
+  var protoOf = kotlin_kotlin.$_$.b8;
+  var initMetadataForInterface = kotlin_kotlin.$_$.i7;
   var VOID = kotlin_kotlin.$_$.d;
-  var THROW_CCE = kotlin_kotlin.$_$.w9;
-  var Annotation = kotlin_kotlin.$_$.n9;
-  var initMetadataForClass = kotlin_kotlin.$_$.i7;
+  var THROW_CCE = kotlin_kotlin.$_$.t9;
+  var Annotation = kotlin_kotlin.$_$.k9;
+  var initMetadataForClass = kotlin_kotlin.$_$.g7;
   //endregion
   //region block: pre-declaration
   function component1() {

@@ -12,12 +12,12 @@
 }(function (_, kotlin_kotlin) {
   'use strict';
   //region block: imports
-  var toString = kotlin_kotlin.$_$.g8;
+  var toString = kotlin_kotlin.$_$.e8;
   var Unit_getInstance = kotlin_kotlin.$_$.v3;
-  var protoOf = kotlin_kotlin.$_$.d8;
-  var initMetadataForInterface = kotlin_kotlin.$_$.k7;
+  var protoOf = kotlin_kotlin.$_$.b8;
+  var initMetadataForInterface = kotlin_kotlin.$_$.i7;
   var VOID = kotlin_kotlin.$_$.d;
-  var initMetadataForClass = kotlin_kotlin.$_$.i7;
+  var initMetadataForClass = kotlin_kotlin.$_$.g7;
   //endregion
   //region block: pre-declaration
   function fontFace(block) {
@@ -1608,25 +1608,40 @@
     // Inline function 'kotlin.js.asDynamic' call
     return toString(offsetX) + ' ' + toString(offsetY) + ' ' + toString(blurRadius) + ' ' + toString(color);
   }
-  function rgba(red, green, blue, alpha) {
+  function BoxShadow_0(offsetX, offsetY, color) {
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    return 'rgba(' + red + ',' + green + ',' + blue + ',' + alpha + ')';
+    return toString(offsetX) + ' ' + toString(offsetY) + ' ' + toString(color);
   }
   function Color(value) {
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
     return value;
   }
+  function rgba(red, green, blue, alpha) {
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'rgba(' + red + ',' + green + ',' + blue + ',' + alpha + ')';
+  }
   function get_px(_this__u8e3s4) {
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
     return toString(_this__u8e3s4) + 'px';
   }
-  function get_vh(_this__u8e3s4) {
+  function get_em(_this__u8e3s4) {
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    return toString(_this__u8e3s4) + 'vh';
+    return toString(_this__u8e3s4) + 'em';
+  }
+  function Margin(top, right, bottom, left) {
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return toString(top) + ' ' + toString(right) + ' ' + toString(bottom) + ' ' + toString(left);
+  }
+  function Margin_0(vertical, horizontal) {
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return toString(vertical) + ' ' + toString(horizontal);
   }
   function Padding(vertical, horizontal) {
     // Inline function 'kotlin.js.unsafeCast' call
@@ -1639,11 +1654,6 @@
     return toString(_this__u8e3s4) + '%';
   }
   function PseudosRuleBuilder() {
-  }
-  function url(value) {
-    // Inline function 'kotlin.js.unsafeCast' call
-    // Inline function 'kotlin.js.asDynamic' call
-    return 'url(' + value + ')';
   }
   function RuleBuilder() {
   }
