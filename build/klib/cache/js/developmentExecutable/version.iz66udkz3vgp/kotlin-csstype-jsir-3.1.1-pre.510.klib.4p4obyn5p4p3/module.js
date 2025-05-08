@@ -12,9 +12,9 @@
 }(function (_, kotlin_kotlin) {
   'use strict';
   //region block: imports
-  var toString = kotlin_kotlin.$_$.e8;
+  var toString = kotlin_kotlin.$_$.f8;
   var Unit_getInstance = kotlin_kotlin.$_$.v3;
-  var protoOf = kotlin_kotlin.$_$.b8;
+  var protoOf = kotlin_kotlin.$_$.c8;
   var initMetadataForInterface = kotlin_kotlin.$_$.i7;
   var VOID = kotlin_kotlin.$_$.d;
   var initMetadataForClass = kotlin_kotlin.$_$.g7;
@@ -1633,15 +1633,15 @@
     // Inline function 'kotlin.js.asDynamic' call
     return toString(_this__u8e3s4) + 'em';
   }
-  function Margin(top, right, bottom, left) {
-    // Inline function 'kotlin.js.unsafeCast' call
-    // Inline function 'kotlin.js.asDynamic' call
-    return toString(top) + ' ' + toString(right) + ' ' + toString(bottom) + ' ' + toString(left);
-  }
-  function Margin_0(vertical, horizontal) {
+  function Margin(vertical, horizontal) {
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
     return toString(vertical) + ' ' + toString(horizontal);
+  }
+  function Margin_0(top, right, bottom, left) {
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return toString(top) + ' ' + toString(right) + ' ' + toString(bottom) + ' ' + toString(left);
   }
   function Padding(vertical, horizontal) {
     // Inline function 'kotlin.js.unsafeCast' call

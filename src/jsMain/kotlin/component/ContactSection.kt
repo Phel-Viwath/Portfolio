@@ -21,7 +21,8 @@ import web.html.InputType
 fun ChildrenBuilder.contactSection(
     email: String,
     phone: String,
-    address: String
+    address: String,
+    contactPlatform: Map<SocialUrl, PathD>
 ){
     section {
         id = "contact"
@@ -94,6 +95,8 @@ fun ChildrenBuilder.contactSection(
                     }
                     +address
                 }
+                // contact LinkedIn, GitHub, Telegram ...
+                socialMediaIcons(contactPlatform)
             }
 
             // Contact form
@@ -188,6 +191,7 @@ fun ChildrenBuilder.contactSection(
                     button {
                         type = ButtonType.submit
                         css {
+                            width = 100.pct
                             backgroundColor = Color("#4169e1")
                             color = Color("white")
                             padding = Padding(12.px, 30.px)

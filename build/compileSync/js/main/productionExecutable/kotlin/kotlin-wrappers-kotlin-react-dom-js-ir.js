@@ -12,11 +12,12 @@
 }(function (_, kotlin_kotlin) {
   'use strict';
   //region block: imports
-  var protoOf = kotlin_kotlin.$_$.n;
-  var initMetadataForObject = kotlin_kotlin.$_$.m;
+  var protoOf = kotlin_kotlin.$_$.p;
+  var initMetadataForObject = kotlin_kotlin.$_$.n;
   //endregion
   //region block: pre-declaration
   initMetadataForObject(ReactHTML, 'ReactHTML');
+  initMetadataForObject(ReactSVG, 'ReactSVG');
   //endregion
   function ReactHTML() {
   }
@@ -24,12 +25,20 @@
   function ReactHTML_getInstance() {
     return ReactHTML_instance;
   }
+  function ReactSVG() {
+  }
+  var ReactSVG_instance;
+  function ReactSVG_getInstance() {
+    return ReactSVG_instance;
+  }
   //region block: init
   ReactHTML_instance = new ReactHTML();
+  ReactSVG_instance = new ReactSVG();
   //endregion
   //region block: exports
   _.$_$ = _.$_$ || {};
   _.$_$.a = ReactHTML_instance;
+  _.$_$.b = ReactSVG_instance;
   //endregion
   return _;
 }));

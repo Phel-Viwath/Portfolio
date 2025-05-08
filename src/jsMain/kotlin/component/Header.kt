@@ -2,6 +2,7 @@ package component
 
 import csstype.*
 import emotion.react.css
+import js.core.jso
 import kotlinx.browser.document
 import react.ChildrenBuilder
 import react.dom.html.ReactHTML.a
@@ -63,13 +64,10 @@ fun ChildrenBuilder.header(
                     onClick = { event ->
                         event.preventDefault()
                         val targetElement = document.getElementById(sectionId)
-//                        targetElement?.asDynamic().scrollIntoView(jso {
-//                            behavior = ScrollBehavior.smooth
-//                            block = ScrollLogicalPosition.start
-//                        })
-                        targetElement?.asDynamic().scrollIntoView(
-                            js("{ behavior: 'smooth', block: 'start' }")
-                        )
+                        targetElement?.asDynamic().scrollIntoView(jso {
+                            behavior = "smooth"
+                            block = "start"
+                        })
                     }
 
                     if (activeSection == sectionId) {

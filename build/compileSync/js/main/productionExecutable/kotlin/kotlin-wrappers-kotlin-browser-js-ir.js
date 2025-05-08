@@ -12,8 +12,8 @@
 }(function (_, kotlin_kotlin) {
   'use strict';
   //region block: imports
-  var protoOf = kotlin_kotlin.$_$.n;
-  var initMetadataForObject = kotlin_kotlin.$_$.m;
+  var protoOf = kotlin_kotlin.$_$.p;
+  var initMetadataForObject = kotlin_kotlin.$_$.n;
   //endregion
   //region block: pre-declaration
   initMetadataForObject(HTML, 'HTML');

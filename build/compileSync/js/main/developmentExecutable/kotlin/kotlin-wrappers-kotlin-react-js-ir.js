@@ -19,7 +19,7 @@
   var isValidElement = $module$react.isValidElement;
   var Fragment = $module$react.Fragment;
   var Unit_getInstance = kotlin_kotlin.$_$.v3;
-  var protoOf = kotlin_kotlin.$_$.b8;
+  var protoOf = kotlin_kotlin.$_$.c8;
   var initMetadataForInterface = kotlin_kotlin.$_$.i7;
   var initMetadataForClass = kotlin_kotlin.$_$.g7;
   var VOID = kotlin_kotlin.$_$.d;
@@ -63,7 +63,7 @@
     this.unaryPlus_wis8bm_k$(createElement(_this__u8e3s4));
   }
   function invoke_0(_this__u8e3s4, block) {
-    this.unaryPlus_wis8bm_k$(create(_this__u8e3s4, block));
+    this.unaryPlus_wis8bm_k$(create_0(_this__u8e3s4, block));
   }
   function invoke_1(_this__u8e3s4, value, block) {
     var tmp = _this__u8e3s4.Provider;
@@ -139,7 +139,10 @@
       return createElementOrNull(FC$lambda$lambda($block, props));
     };
   }
-  function create(_this__u8e3s4, block) {
+  function create(_this__u8e3s4) {
+    return createElement(_this__u8e3s4);
+  }
+  function create_0(_this__u8e3s4, block) {
     var builder = createChildrenBuilder();
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call

@@ -12,22 +12,22 @@
 }(function (_, kotlin_kotlin) {
   'use strict';
   //region block: imports
-  var protoOf = kotlin_kotlin.$_$.b8;
+  var protoOf = kotlin_kotlin.$_$.c8;
   var initMetadataForInterface = kotlin_kotlin.$_$.i7;
-  var toString = kotlin_kotlin.$_$.e8;
-  var THROW_CCE = kotlin_kotlin.$_$.t9;
-  var Annotation = kotlin_kotlin.$_$.k9;
+  var toString = kotlin_kotlin.$_$.f8;
+  var THROW_CCE = kotlin_kotlin.$_$.u9;
+  var Annotation = kotlin_kotlin.$_$.l9;
   var initMetadataForClass = kotlin_kotlin.$_$.g7;
   var VOID = kotlin_kotlin.$_$.d;
   var emptyMap = kotlin_kotlin.$_$.d5;
-  var initMetadataForObject = kotlin_kotlin.$_$.k7;
   var IllegalStateException_init_$Create$ = kotlin_kotlin.$_$.h1;
-  var IllegalArgumentException_init_$Create$ = kotlin_kotlin.$_$.f1;
-  var isInterface = kotlin_kotlin.$_$.s7;
+  var initMetadataForObject = kotlin_kotlin.$_$.k7;
   var joinToString = kotlin_kotlin.$_$.j5;
   var KtSet = kotlin_kotlin.$_$.m4;
-  var ensureNotNull = kotlin_kotlin.$_$.ha;
+  var isInterface = kotlin_kotlin.$_$.s7;
+  var ensureNotNull = kotlin_kotlin.$_$.ia;
   var emptySet = kotlin_kotlin.$_$.e5;
+  var IllegalArgumentException_init_$Create$ = kotlin_kotlin.$_$.f1;
   var Regex_init_$Create$ = kotlin_kotlin.$_$.x;
   var ArrayList_init_$Create$ = kotlin_kotlin.$_$.h;
   var charSequenceLength = kotlin_kotlin.$_$.z6;
@@ -37,27 +37,24 @@
   var Unit_getInstance = kotlin_kotlin.$_$.v3;
   var asJsMapView = kotlin_kotlin.$_$.j4;
   var asJsReadonlyMapView = kotlin_kotlin.$_$.g4;
-  var THROW_IAE = kotlin_kotlin.$_$.u9;
-  var Enum = kotlin_kotlin.$_$.m9;
+  var THROW_IAE = kotlin_kotlin.$_$.v9;
+  var Enum = kotlin_kotlin.$_$.n9;
   var mapCapacity = kotlin_kotlin.$_$.m5;
-  var coerceAtLeast = kotlin_kotlin.$_$.h8;
+  var coerceAtLeast = kotlin_kotlin.$_$.i8;
   var LinkedHashMap_init_$Create$_0 = kotlin_kotlin.$_$.p;
   var _Char___init__impl__6a9atx = kotlin_kotlin.$_$.p1;
-  var Char = kotlin_kotlin.$_$.l9;
-  var to = kotlin_kotlin.$_$.ma;
+  var Char = kotlin_kotlin.$_$.m9;
+  var to = kotlin_kotlin.$_$.na;
   var mapOf = kotlin_kotlin.$_$.n5;
   var collectionSizeOrDefault = kotlin_kotlin.$_$.q4;
   var ArrayList_init_$Create$_0 = kotlin_kotlin.$_$.g;
   var Char__toInt_impl_vasixd = kotlin_kotlin.$_$.r1;
   var maxOrNull = kotlin_kotlin.$_$.o5;
-  var numberToChar = kotlin_kotlin.$_$.y7;
+  var numberToChar = kotlin_kotlin.$_$.z7;
   var Char__rangeTo_impl_tkncvp = kotlin_kotlin.$_$.q1;
   //endregion
   //region block: pre-declaration
-  function onTagError(tag, exception) {
-    throw exception;
-  }
-  initMetadataForInterface(TagConsumer, 'TagConsumer');
+  initMetadataForInterface(AttributeEnum, 'AttributeEnum');
   function unaryPlus(_this__u8e3s4) {
     this.entity_bflo73_k$(_this__u8e3s4);
   }
@@ -77,7 +74,11 @@
     this.get_consumer_tu5133_k$().onTagComment_4f0g7r_k$(s);
   }
   initMetadataForInterface(Tag, 'Tag');
-  initMetadataForInterface(AttributeEnum, 'AttributeEnum');
+  function onTagError(tag, exception) {
+    throw exception;
+  }
+  initMetadataForInterface(TagConsumer, 'TagConsumer');
+  initMetadataForClass(HtmlTagMarker, 'HtmlTagMarker', VOID, VOID, [Annotation]);
   function unaryPlus_1(_this__u8e3s4) {
     return this.unaryPlus_76unot_k$(_this__u8e3s4.get_text_wouvsm_k$());
   }
@@ -91,22 +92,21 @@
     this.unaryPlus_76unot_k$(toString(n));
   }
   initMetadataForInterface(Unsafe, 'Unsafe');
-  initMetadataForClass(HtmlTagMarker, 'HtmlTagMarker', VOID, VOID, [Annotation]);
   initMetadataForClass(Attribute, 'Attribute');
-  initMetadataForClass(TickerAttribute, 'TickerAttribute', TickerAttribute, Attribute);
-  initMetadataForClass(BooleanAttribute, 'BooleanAttribute', BooleanAttribute, Attribute);
-  initMetadataForClass(EnumAttribute, 'EnumAttribute', VOID, Attribute);
-  initMetadataForClass(StringSetAttribute, 'StringSetAttribute', StringSetAttribute, Attribute);
   initMetadataForClass(StringAttribute, 'StringAttribute', StringAttribute, Attribute);
+  initMetadataForClass(StringSetAttribute, 'StringSetAttribute', StringSetAttribute, Attribute);
+  initMetadataForClass(BooleanAttribute, 'BooleanAttribute', BooleanAttribute, Attribute);
+  initMetadataForClass(TickerAttribute, 'TickerAttribute', TickerAttribute, Attribute);
+  initMetadataForClass(EnumAttribute, 'EnumAttribute', VOID, Attribute);
   function empty(attributeName, tag) {
     throw IllegalStateException_init_$Create$('Attribute ' + attributeName + ' is not yet defined for tag ' + tag.get_tagName_ocsgis_k$());
   }
   initMetadataForInterface(AttributeEncoder, 'AttributeEncoder');
-  initMetadataForObject(TickerEncoder, 'TickerEncoder', VOID, VOID, [AttributeEncoder]);
-  initMetadataForClass(BooleanEncoder, 'BooleanEncoder', BooleanEncoder, VOID, [AttributeEncoder]);
-  initMetadataForClass(EnumEncoder, 'EnumEncoder', VOID, VOID, [AttributeEncoder]);
-  initMetadataForObject(StringSetEncoder, 'StringSetEncoder', VOID, VOID, [AttributeEncoder]);
   initMetadataForObject(StringEncoder, 'StringEncoder', VOID, VOID, [AttributeEncoder]);
+  initMetadataForObject(StringSetEncoder, 'StringSetEncoder', VOID, VOID, [AttributeEncoder]);
+  initMetadataForClass(BooleanEncoder, 'BooleanEncoder', BooleanEncoder, VOID, [AttributeEncoder]);
+  initMetadataForObject(TickerEncoder, 'TickerEncoder', VOID, VOID, [AttributeEncoder]);
+  initMetadataForClass(EnumEncoder, 'EnumEncoder', VOID, VOID, [AttributeEncoder]);
   initMetadataForClass(DelegatingMap, 'DelegatingMap', VOID, VOID, [KtMutableMap]);
   initMetadataForInterface(CommonAttributeGroupFacade, 'CommonAttributeGroupFacade', VOID, VOID, [Tag]);
   initMetadataForClass(Entities, 'Entities', VOID, Enum);
@@ -154,13 +154,11 @@
     return emptyMap_0;
   }
   var emptyMap_0;
-  function TagConsumer() {
+  function AttributeEnum() {
   }
   function Tag() {
   }
-  function AttributeEnum() {
-  }
-  function Unsafe() {
+  function TagConsumer() {
   }
   function HtmlTagMarker() {
   }
@@ -176,6 +174,8 @@
   protoOf(HtmlTagMarker).toString = function () {
     return '@kotlinx.html.HtmlTagMarker(' + ')';
   };
+  function Unsafe() {
+  }
   var properties_initialized_api_kt_zfwuc6;
   function _init_properties_api_kt__c2p01k() {
     if (!properties_initialized_api_kt_zfwuc6) {
@@ -183,19 +183,6 @@
       emptyMap_0 = emptyMap();
     }
   }
-  function TickerAttribute() {
-    Attribute.call(this, TickerEncoder_getInstance());
-  }
-  protoOf(TickerAttribute).set_esnq7n_k$ = function (thisRef, attributeName, value) {
-    if (value) {
-      thisRef.get_attributes_dgqof4_k$().put_4fpzoq_k$(attributeName, attributeName);
-    } else {
-      thisRef.get_attributes_dgqof4_k$().remove_gppy8k_k$(attributeName);
-    }
-  };
-  protoOf(TickerAttribute).set_3wsa4d_k$ = function (thisRef, attributeName, value) {
-    return this.set_esnq7n_k$(thisRef, attributeName, (!(value == null) ? typeof value === 'boolean' : false) ? value : THROW_CCE());
-  };
   function Attribute(encoder) {
     this.encoder_1 = encoder;
   }
@@ -217,11 +204,30 @@
   protoOf(Attribute).set_3wsa4d_k$ = function (thisRef, attributeName, value) {
     thisRef.get_attributes_dgqof4_k$().put_4fpzoq_k$(attributeName, this.encoder_1.encode_ppeyad_k$(attributeName, value));
   };
+  function StringAttribute() {
+    Attribute.call(this, StringEncoder_getInstance());
+  }
+  function StringSetAttribute() {
+    Attribute.call(this, StringSetEncoder_getInstance());
+  }
   function BooleanAttribute(trueValue, falseValue) {
     trueValue = trueValue === VOID ? 'true' : trueValue;
     falseValue = falseValue === VOID ? 'false' : falseValue;
     Attribute.call(this, new BooleanEncoder(trueValue, falseValue));
   }
+  function TickerAttribute() {
+    Attribute.call(this, TickerEncoder_getInstance());
+  }
+  protoOf(TickerAttribute).set_esnq7n_k$ = function (thisRef, attributeName, value) {
+    if (value) {
+      thisRef.get_attributes_dgqof4_k$().put_4fpzoq_k$(attributeName, attributeName);
+    } else {
+      thisRef.get_attributes_dgqof4_k$().remove_gppy8k_k$(attributeName);
+    }
+  };
+  protoOf(TickerAttribute).set_3wsa4d_k$ = function (thisRef, attributeName, value) {
+    return this.set_esnq7n_k$(thisRef, attributeName, (!(value == null) ? typeof value === 'boolean' : false) ? value : THROW_CCE());
+  };
   function EnumAttribute(values) {
     Attribute.call(this, new EnumEncoder(values));
     this.values_1 = values;
@@ -229,31 +235,46 @@
   protoOf(EnumAttribute).get_values_ksazhn_k$ = function () {
     return this.values_1;
   };
-  function StringSetAttribute() {
-    Attribute.call(this, StringSetEncoder_getInstance());
-  }
-  function StringAttribute() {
-    Attribute.call(this, StringEncoder_getInstance());
-  }
-  function TickerEncoder() {
-    TickerEncoder_instance = this;
-  }
-  protoOf(TickerEncoder).encode_cp31j3_k$ = function (attributeName, value) {
-    return tickerEncode(value, attributeName);
-  };
-  protoOf(TickerEncoder).encode_ppeyad_k$ = function (attributeName, value) {
-    return this.encode_cp31j3_k$(attributeName, (!(value == null) ? typeof value === 'boolean' : false) ? value : THROW_CCE());
-  };
-  protoOf(TickerEncoder).decode_jqvzu6_k$ = function (attributeName, value) {
-    return value === attributeName;
-  };
-  var TickerEncoder_instance;
-  function TickerEncoder_getInstance() {
-    if (TickerEncoder_instance == null)
-      new TickerEncoder();
-    return TickerEncoder_instance;
-  }
   function AttributeEncoder() {
+  }
+  function StringEncoder() {
+    StringEncoder_instance = this;
+  }
+  protoOf(StringEncoder).encode_3d8o16_k$ = function (attributeName, value) {
+    return value;
+  };
+  protoOf(StringEncoder).encode_ppeyad_k$ = function (attributeName, value) {
+    return this.encode_3d8o16_k$(attributeName, (!(value == null) ? typeof value === 'string' : false) ? value : THROW_CCE());
+  };
+  protoOf(StringEncoder).decode_jqvzu6_k$ = function (attributeName, value) {
+    return value;
+  };
+  var StringEncoder_instance;
+  function StringEncoder_getInstance() {
+    if (StringEncoder_instance == null)
+      new StringEncoder();
+    return StringEncoder_instance;
+  }
+  function StringSetEncoder() {
+    StringSetEncoder_instance = this;
+  }
+  protoOf(StringSetEncoder).encode_te1sbw_k$ = function (attributeName, value) {
+    return joinToString(value, ' ');
+  };
+  protoOf(StringSetEncoder).encode_ppeyad_k$ = function (attributeName, value) {
+    return this.encode_te1sbw_k$(attributeName, (!(value == null) ? isInterface(value, KtSet) : false) ? value : THROW_CCE());
+  };
+  protoOf(StringSetEncoder).decode_jqvzu6_k$ = function (attributeName, value) {
+    return ensureNotNull(stringSetDecode(value));
+  };
+  protoOf(StringSetEncoder).empty_x7etxf_k$ = function (attributeName, tag) {
+    return emptySet();
+  };
+  var StringSetEncoder_instance;
+  function StringSetEncoder_getInstance() {
+    if (StringSetEncoder_instance == null)
+      new StringSetEncoder();
+    return StringSetEncoder_instance;
   }
   function BooleanEncoder(trueValue, falseValue) {
     trueValue = trueValue === VOID ? 'true' : trueValue;
@@ -284,6 +305,24 @@
     }
     return tmp;
   };
+  function TickerEncoder() {
+    TickerEncoder_instance = this;
+  }
+  protoOf(TickerEncoder).encode_cp31j3_k$ = function (attributeName, value) {
+    return tickerEncode(value, attributeName);
+  };
+  protoOf(TickerEncoder).encode_ppeyad_k$ = function (attributeName, value) {
+    return this.encode_cp31j3_k$(attributeName, (!(value == null) ? typeof value === 'boolean' : false) ? value : THROW_CCE());
+  };
+  protoOf(TickerEncoder).decode_jqvzu6_k$ = function (attributeName, value) {
+    return value === attributeName;
+  };
+  var TickerEncoder_instance;
+  function TickerEncoder_getInstance() {
+    if (TickerEncoder_instance == null)
+      new TickerEncoder();
+    return TickerEncoder_instance;
+  }
   function EnumEncoder(valuesMap) {
     this.valuesMap_1 = valuesMap;
   }
@@ -306,48 +345,6 @@
     }
     return tmp;
   };
-  function StringSetEncoder() {
-    StringSetEncoder_instance = this;
-  }
-  protoOf(StringSetEncoder).encode_te1sbw_k$ = function (attributeName, value) {
-    return joinToString(value, ' ');
-  };
-  protoOf(StringSetEncoder).encode_ppeyad_k$ = function (attributeName, value) {
-    return this.encode_te1sbw_k$(attributeName, (!(value == null) ? isInterface(value, KtSet) : false) ? value : THROW_CCE());
-  };
-  protoOf(StringSetEncoder).decode_jqvzu6_k$ = function (attributeName, value) {
-    return ensureNotNull(stringSetDecode(value));
-  };
-  protoOf(StringSetEncoder).empty_x7etxf_k$ = function (attributeName, tag) {
-    return emptySet();
-  };
-  var StringSetEncoder_instance;
-  function StringSetEncoder_getInstance() {
-    if (StringSetEncoder_instance == null)
-      new StringSetEncoder();
-    return StringSetEncoder_instance;
-  }
-  function StringEncoder() {
-    StringEncoder_instance = this;
-  }
-  protoOf(StringEncoder).encode_3d8o16_k$ = function (attributeName, value) {
-    return value;
-  };
-  protoOf(StringEncoder).encode_ppeyad_k$ = function (attributeName, value) {
-    return this.encode_3d8o16_k$(attributeName, (!(value == null) ? typeof value === 'string' : false) ? value : THROW_CCE());
-  };
-  protoOf(StringEncoder).decode_jqvzu6_k$ = function (attributeName, value) {
-    return value;
-  };
-  var StringEncoder_instance;
-  function StringEncoder_getInstance() {
-    if (StringEncoder_instance == null)
-      new StringEncoder();
-    return StringEncoder_instance;
-  }
-  function tickerEncode(_this__u8e3s4, attributeName) {
-    return _this__u8e3s4 ? attributeName : '';
-  }
   function stringSetDecode(value) {
     var tmp;
     if (value == null) {
@@ -377,6 +374,9 @@
     }
     var tmp2_safe_receiver = tmp_0;
     return tmp2_safe_receiver == null ? null : toSet(tmp2_safe_receiver);
+  }
+  function tickerEncode(_this__u8e3s4, attributeName) {
+    return _this__u8e3s4 ? attributeName : '';
   }
   function _get_tag__e6h4qf($this) {
     return $this.tag_1;
@@ -2812,23 +2812,23 @@
   }
   function HtmlInlineTag() {
   }
-  function PhrasingContent() {
-  }
   function FlowContent() {
   }
   function InteractiveContent() {
   }
-  function SectioningOrFlowContent() {
-  }
-  function FlowOrPhrasingContent() {
-  }
-  function FlowOrInteractiveContent() {
+  function PhrasingContent() {
   }
   function FlowOrMetaDataOrPhrasingContent() {
   }
+  function FlowOrHeadingContent() {
+  }
   function FlowOrMetaDataContent() {
   }
-  function FlowOrHeadingContent() {
+  function FlowOrInteractiveContent() {
+  }
+  function FlowOrPhrasingContent() {
+  }
+  function SectioningOrFlowContent() {
   }
   function FlowOrInteractiveOrPhrasingContent() {
   }
@@ -3201,10 +3201,10 @@
     }
   }
   //region block: post-declaration
-  protoOf(TickerEncoder).empty_x7etxf_k$ = empty;
-  protoOf(BooleanEncoder).empty_x7etxf_k$ = empty;
-  protoOf(EnumEncoder).empty_x7etxf_k$ = empty;
   protoOf(StringEncoder).empty_x7etxf_k$ = empty;
+  protoOf(BooleanEncoder).empty_x7etxf_k$ = empty;
+  protoOf(TickerEncoder).empty_x7etxf_k$ = empty;
+  protoOf(EnumEncoder).empty_x7etxf_k$ = empty;
   protoOf(DelegatingMap).asJsMapView_ii14sm_k$ = asJsMapView;
   protoOf(DelegatingMap).asJsReadonlyMapView_6h4p3w_k$ = asJsReadonlyMapView;
   protoOf(HTMLTag).unaryPlus_gpth4d_k$ = unaryPlus;

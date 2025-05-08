@@ -19,11 +19,11 @@
   var isValidElement = $module$react.isValidElement;
   var Fragment = $module$react.Fragment;
   var Unit_instance = kotlin_kotlin.$_$.e;
-  var protoOf = kotlin_kotlin.$_$.n;
-  var initMetadataForInterface = kotlin_kotlin.$_$.l;
-  var initMetadataForClass = kotlin_kotlin.$_$.k;
+  var protoOf = kotlin_kotlin.$_$.p;
+  var initMetadataForInterface = kotlin_kotlin.$_$.m;
+  var initMetadataForClass = kotlin_kotlin.$_$.l;
   var VOID = kotlin_kotlin.$_$.a;
-  var single = kotlin_kotlin.$_$.i;
+  var single = kotlin_kotlin.$_$.j;
   //endregion
   //region block: pre-declaration
   function child(element) {
@@ -45,16 +45,16 @@
     }
   }
   function unaryPlus(_this__u8e3s4) {
-    this.p2(_this__u8e3s4);
+    this.i5(_this__u8e3s4);
   }
   function unaryPlus_0(_this__u8e3s4) {
     // Inline function 'react.ReactNode' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    this.q2(_this__u8e3s4);
+    this.j5(_this__u8e3s4);
   }
   function invoke(_this__u8e3s4, block) {
-    this.q2(create(_this__u8e3s4, block));
+    this.j5(create_0(_this__u8e3s4, block));
   }
   initMetadataForInterface(ChildrenBuilder, 'ChildrenBuilder');
   initMetadataForClass(ChildrenBuilderImpl, 'ChildrenBuilderImpl', ChildrenBuilderImpl, VOID, [ChildrenBuilder]);
@@ -99,7 +99,10 @@
       return createElementOrNull(FC$lambda$lambda($block, props));
     };
   }
-  function create(_this__u8e3s4, block) {
+  function create(_this__u8e3s4) {
+    return createElement(_this__u8e3s4);
+  }
+  function create_0(_this__u8e3s4, block) {
     var builder = createChildrenBuilder();
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
@@ -154,10 +157,10 @@
     return createElement.apply(null, [Fragment, VOID].concat([].slice.call(children.slice())));
   }
   //region block: post-declaration
-  protoOf(ChildrenBuilderImpl).q2 = unaryPlus;
-  protoOf(ChildrenBuilderImpl).r2 = unaryPlus_0;
-  protoOf(ChildrenBuilderImpl).p2 = child;
-  protoOf(ChildrenBuilderImpl).s2 = invoke;
+  protoOf(ChildrenBuilderImpl).j5 = unaryPlus;
+  protoOf(ChildrenBuilderImpl).k5 = unaryPlus_0;
+  protoOf(ChildrenBuilderImpl).i5 = child;
+  protoOf(ChildrenBuilderImpl).l5 = invoke;
   //endregion
   //region block: exports
   _.$_$ = _.$_$ || {};

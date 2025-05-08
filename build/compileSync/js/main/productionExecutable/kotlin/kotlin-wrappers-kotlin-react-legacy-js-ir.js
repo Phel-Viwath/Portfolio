@@ -19,30 +19,30 @@
   var Fragment = $module$react.Fragment;
   var isValidElement = $module$react.isValidElement;
   var Unit_instance = kotlin_kotlin.$_$.e;
-  var protoOf = kotlin_kotlin.$_$.n;
+  var protoOf = kotlin_kotlin.$_$.p;
   var copyToArray = kotlin_kotlin.$_$.f;
   var VOID = kotlin_kotlin.$_$.a;
-  var initMetadataForInterface = kotlin_kotlin.$_$.l;
-  var initMetadataForClass = kotlin_kotlin.$_$.k;
+  var initMetadataForInterface = kotlin_kotlin.$_$.m;
+  var initMetadataForClass = kotlin_kotlin.$_$.l;
   var ArrayList_init_$Create$ = kotlin_kotlin.$_$.b;
   var first = kotlin_kotlin.$_$.g;
   //endregion
   //region block: pre-declaration
   function child(element) {
-    this.e2().g1(element);
+    this.x4().h1(element);
   }
   function child_0(type, props, handler) {
     if (handler == null) {
-      this.f2(createElement(type, props));
+      this.y4(createElement(type, props));
       return Unit_instance;
     }
     // Inline function 'kotlin.apply' call
     var this_0 = RElementBuilder(props);
     handler(this_0);
     // Inline function 'kotlin.collections.toTypedArray' call
-    var this_1 = this_0.e2();
+    var this_1 = this_0.x4();
     var children = copyToArray(this_1);
-    this.f2(createElement.apply(null, [type, props].concat([].slice.call(children.slice()))));
+    this.y4(createElement.apply(null, [type, props].concat([].slice.call(children.slice()))));
   }
   function child$default(type, props, handler, $super) {
     var tmp;
@@ -56,7 +56,7 @@
     handler = handler === VOID ? null : handler;
     var tmp_0;
     if ($super === VOID) {
-      this.g2(type, props, handler);
+      this.z4(type, props, handler);
       tmp_0 = Unit_instance;
     } else {
       child_0(type, props, handler);
@@ -92,15 +92,15 @@
   }
   function RElementBuilderImpl(attrs) {
     RBuilderImpl.call(this);
-    this.j2_1 = attrs;
+    this.c5_1 = attrs;
   }
   function RBuilderImpl() {
     var tmp = this;
     // Inline function 'kotlin.collections.mutableListOf' call
-    tmp.k2_1 = ArrayList_init_$Create$();
+    tmp.d5_1 = ArrayList_init_$Create$();
   }
-  protoOf(RBuilderImpl).e2 = function () {
-    return this.k2_1;
+  protoOf(RBuilderImpl).x4 = function () {
+    return this.d5_1;
   };
   function createBuilder() {
     return new RBuilderImpl();
@@ -109,7 +109,7 @@
     // Inline function 'kotlin.apply' call
     var this_0 = createBuilder();
     block(this_0);
-    var nodes = this_0.e2();
+    var nodes = this_0.x4();
     var tmp;
     if (nodes.g() === 0) {
       tmp = null;
@@ -128,9 +128,9 @@
     return tmp;
   }
   //region block: post-declaration
-  protoOf(RBuilderImpl).f2 = child;
-  protoOf(RBuilderImpl).g2 = child_0;
-  protoOf(RBuilderImpl).h2 = child$default;
+  protoOf(RBuilderImpl).y4 = child;
+  protoOf(RBuilderImpl).z4 = child_0;
+  protoOf(RBuilderImpl).a5 = child$default;
   //endregion
   //region block: exports
   _.$_$ = _.$_$ || {};

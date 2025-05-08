@@ -17,7 +17,7 @@
   //region block: imports
   var useEffect = $module$react.useEffect;
   var get_js = kotlin_kotlin.$_$.v7;
-  var protoOf = kotlin_kotlin.$_$.b8;
+  var protoOf = kotlin_kotlin.$_$.c8;
   var initMetadataForClass = kotlin_kotlin.$_$.g7;
   var Unit_getInstance = kotlin_kotlin.$_$.v3;
   //endregion

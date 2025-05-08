@@ -1,6 +1,7 @@
 import kotlinx.browser.document
 import react.create
 import util.createRoot
+import util.initScrollAnimations
 
 // App entry point
 fun main() {
@@ -11,5 +12,8 @@ fun main() {
     val root = createRoot(container)
 
     // Render the App component
-    root.render(App.create {})
+    root.render(app().create())
+
+    // Initialize scroll animations
+    initScrollAnimations()
 }

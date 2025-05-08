@@ -12,11 +12,12 @@
 }(function (_, kotlin_kotlin) {
   'use strict';
   //region block: imports
-  var protoOf = kotlin_kotlin.$_$.b8;
+  var protoOf = kotlin_kotlin.$_$.c8;
   var initMetadataForObject = kotlin_kotlin.$_$.k7;
   //endregion
   //region block: pre-declaration
   initMetadataForObject(ReactHTML, 'ReactHTML');
+  initMetadataForObject(ReactSVG, 'ReactSVG');
   //endregion
   function ReactHTML() {
     ReactHTML_instance = this;
@@ -723,9 +724,367 @@
       new ReactHTML();
     return ReactHTML_instance;
   }
+  function ReactSVG() {
+    ReactSVG_instance = this;
+  }
+  protoOf(ReactSVG).get_svg_18ivwl_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'svg';
+  };
+  protoOf(ReactSVG).get_animate_cwn5s8_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'animate';
+  };
+  protoOf(ReactSVG).get_animateMotion_smokpa_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'animateMotion';
+  };
+  protoOf(ReactSVG).get_animateTransform_6clhec_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'animateTransform';
+  };
+  protoOf(ReactSVG).get_circle_bwxzh5_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'circle';
+  };
+  protoOf(ReactSVG).get_clipPath_gml6ea_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'clipPath';
+  };
+  protoOf(ReactSVG).get_defs_woknkn_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'defs';
+  };
+  protoOf(ReactSVG).get_desc_woknve_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'desc';
+  };
+  protoOf(ReactSVG).get_ellipse_q4o6q3_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'ellipse';
+  };
+  protoOf(ReactSVG).get_feBlend_femxhz_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'feBlend';
+  };
+  protoOf(ReactSVG).get_feColorMatrix_qr0yn8_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'feColorMatrix';
+  };
+  protoOf(ReactSVG).get_feComponentTransfer_s6r34_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'feComponentTransfer';
+  };
+  protoOf(ReactSVG).get_feComposite_2trevz_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'feComposite';
+  };
+  protoOf(ReactSVG).get_feConvolveMatrix_7h63p3_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'feConvolveMatrix';
+  };
+  protoOf(ReactSVG).get_feDiffuseLighting_9sovru_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'feDiffuseLighting';
+  };
+  protoOf(ReactSVG).get_feDisplacementMap_nujqn7_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'feDisplacementMap';
+  };
+  protoOf(ReactSVG).get_feDistantLight_y35mrh_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'feDistantLight';
+  };
+  protoOf(ReactSVG).get_feDropShadow_w41wh5_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'feDropShadow';
+  };
+  protoOf(ReactSVG).get_feFlood_fcfjoq_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'feFlood';
+  };
+  protoOf(ReactSVG).get_feFuncA_fc9tuz_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'feFuncA';
+  };
+  protoOf(ReactSVG).get_feFuncB_fc9tuy_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'feFuncB';
+  };
+  protoOf(ReactSVG).get_feFuncG_fc9tut_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'feFuncG';
+  };
+  protoOf(ReactSVG).get_feFuncR_fc9tui_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'feFuncR';
+  };
+  protoOf(ReactSVG).get_feGaussianBlur_s8yzca_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'feGaussianBlur';
+  };
+  protoOf(ReactSVG).get_feImage_farthp_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'feImage';
+  };
+  protoOf(ReactSVG).get_feMerge_f8peeo_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'feMerge';
+  };
+  protoOf(ReactSVG).get_feMergeNode_i5dslq_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'feMergeNode';
+  };
+  protoOf(ReactSVG).get_feMorphology_h82cqk_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'feMorphology';
+  };
+  protoOf(ReactSVG).get_feOffset_poclq3_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'feOffset';
+  };
+  protoOf(ReactSVG).get_fePointLight_qgsa42_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'fePointLight';
+  };
+  protoOf(ReactSVG).get_feSpecularLighting_xxaml3_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'feSpecularLighting';
+  };
+  protoOf(ReactSVG).get_feSpotLight_a9toss_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'feSpotLight';
+  };
+  protoOf(ReactSVG).get_feTile_d9cn4m_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'feTile';
+  };
+  protoOf(ReactSVG).get_feTurbulence_7h7baz_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'feTurbulence';
+  };
+  protoOf(ReactSVG).get_filter_dbzd6p_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'filter';
+  };
+  protoOf(ReactSVG).get_foreignObject_5n65fa_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'foreignObject';
+  };
+  protoOf(ReactSVG).get_g_1mhr5q_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'g';
+  };
+  protoOf(ReactSVG).get_image_it3i2a_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'image';
+  };
+  protoOf(ReactSVG).get_line_wopum5_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'line';
+  };
+  protoOf(ReactSVG).get_linearGradient_i797jy_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'linearGradient';
+  };
+  protoOf(ReactSVG).get_marker_gj00g3_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'marker';
+  };
+  protoOf(ReactSVG).get_mask_woqbsl_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'mask';
+  };
+  protoOf(ReactSVG).get_metadata_vs95vc_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'metadata';
+  };
+  protoOf(ReactSVG).get_mpath_ivclpl_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'mpath';
+  };
+  protoOf(ReactSVG).get_path_wos8ry_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'path';
+  };
+  protoOf(ReactSVG).get_pattern_btfv4p_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'pattern';
+  };
+  protoOf(ReactSVG).get_polygon_5b4a0f_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'polygon';
+  };
+  protoOf(ReactSVG).get_polyline_midfuf_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'polyline';
+  };
+  protoOf(ReactSVG).get_radialGradient_p1nc08_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'radialGradient';
+  };
+  protoOf(ReactSVG).get_rect_wotlbh_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'rect';
+  };
+  protoOf(ReactSVG).get_stop_woujpn_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'stop';
+  };
+  protoOf(ReactSVG).get_switch_jp7nlp_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'switch';
+  };
+  protoOf(ReactSVG).get_symbol_jqdfoh_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'symbol';
+  };
+  protoOf(ReactSVG).get_text_wouvsm_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'text';
+  };
+  protoOf(ReactSVG).get_textPath_mmk4hn_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'textPath';
+  };
+  protoOf(ReactSVG).get_tspan_iz9dhx_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'tspan';
+  };
+  protoOf(ReactSVG).get_use_18iuhu_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'use';
+  };
+  protoOf(ReactSVG).get_view_wow8a6_k$ = function () {
+    // Inline function 'react.IntrinsicType' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return 'view';
+  };
+  var ReactSVG_instance;
+  function ReactSVG_getInstance() {
+    if (ReactSVG_instance == null)
+      new ReactSVG();
+    return ReactSVG_instance;
+  }
   //region block: exports
   _.$_$ = _.$_$ || {};
   _.$_$.a = ReactHTML_getInstance;
+  _.$_$.b = ReactSVG_getInstance;
   //endregion
   return _;
 }));

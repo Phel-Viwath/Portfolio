@@ -23,9 +23,9 @@
   var Fragment = $module$react.Fragment;
   var isValidElement = $module$react.isValidElement;
   var Unit_getInstance = kotlin_kotlin.$_$.v3;
-  var toString = kotlin_kotlin.$_$.e8;
+  var toString = kotlin_kotlin.$_$.f8;
   var IllegalStateException_init_$Create$ = kotlin_kotlin.$_$.h1;
-  var protoOf = kotlin_kotlin.$_$.b8;
+  var protoOf = kotlin_kotlin.$_$.c8;
   var copyToArray = kotlin_kotlin.$_$.b5;
   var VOID = kotlin_kotlin.$_$.d;
   var get_react = kotlin_org_jetbrains_kotlin_wrappers_kotlin_react_core.$_$.a;

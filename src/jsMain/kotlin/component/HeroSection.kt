@@ -81,13 +81,10 @@ fun ChildrenBuilder.heroSection(name: String){
                 onClick = { event ->
                     event.preventDefault()
                     val contactSection = document.getElementById("contact")
-//                    contactSection?.asDynamic().scrollIntoView(jso {
-//                        behavior = ScrollBehavior.smooth
-//                        block = ScrollLogicalPosition.start
-//                    })
-                    contactSection?.asDynamic().scrollIntoView(
-                        js("{ behavior: 'smooth', block: 'start' }")
-                    )
+                    contactSection?.asDynamic().scrollIntoView(jso {
+                        behavior = "smooth"
+                        block = "start"
+                    })
 
                 }
                 +"Contact"

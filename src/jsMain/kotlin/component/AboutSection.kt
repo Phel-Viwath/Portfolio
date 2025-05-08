@@ -1,14 +1,16 @@
 package component
 
-import csstype.*
+import csstype.Color
+import csstype.Padding
+import csstype.em
+import csstype.px
 import emotion.react.css
-import react.FC
-import react.Props
+import react.ChildrenBuilder
 import react.dom.html.ReactHTML.h2
 import react.dom.html.ReactHTML.p
 import react.dom.html.ReactHTML.section
 
-val AboutSection = FC<Props> {
+fun ChildrenBuilder.aboutSection(){
     section {
         id = "about"
         css {

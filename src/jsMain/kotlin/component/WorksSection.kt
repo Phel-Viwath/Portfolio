@@ -3,8 +3,7 @@ package component
 import csstype.*
 import emotion.react.css
 import org.w3c.dom.HTMLElement
-import react.FC
-import react.Props
+import react.ChildrenBuilder
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.h2
 import react.dom.html.ReactHTML.h3
@@ -12,7 +11,7 @@ import react.dom.html.ReactHTML.img
 import react.dom.html.ReactHTML.p
 import react.dom.html.ReactHTML.section
 
-val WorksSection = FC<Props> {
+fun ChildrenBuilder.workSection(){
     section {
         id = "works"
         css {

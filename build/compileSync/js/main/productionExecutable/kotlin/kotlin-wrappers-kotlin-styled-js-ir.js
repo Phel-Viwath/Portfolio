@@ -35,15 +35,15 @@
   var createGlobalStyle = $module$styled_components_hletz0.createGlobalStyle;
   var Unit_instance = kotlin_kotlin.$_$.e;
   var HTML_instance = kotlin_org_jetbrains_kotlin_wrappers_kotlin_browser.$_$.a;
-  var THROW_CCE = kotlin_kotlin.$_$.q;
+  var THROW_CCE = kotlin_kotlin.$_$.s;
   var fc = kotlin_org_jetbrains_kotlin_wrappers_kotlin_react_legacy.$_$.a;
-  var lazy = kotlin_kotlin.$_$.r;
+  var lazy = kotlin_kotlin.$_$.t;
   var ArrayList_init_$Create$ = kotlin_kotlin.$_$.b;
-  var protoOf = kotlin_kotlin.$_$.n;
-  var initMetadataForObject = kotlin_kotlin.$_$.m;
+  var protoOf = kotlin_kotlin.$_$.p;
+  var initMetadataForObject = kotlin_kotlin.$_$.n;
   var Error_init_$Create$ = kotlin_kotlin.$_$.c;
-  var KProperty1 = kotlin_kotlin.$_$.p;
-  var getPropertyCallableRef = kotlin_kotlin.$_$.j;
+  var KProperty1 = kotlin_kotlin.$_$.r;
+  var getPropertyCallableRef = kotlin_kotlin.$_$.k;
   //endregion
   //region block: pre-declaration
   initMetadataForObject(GlobalStyles, 'GlobalStyles');
@@ -70,17 +70,17 @@
     return tmp;
   }
   function _get_root__dd8asp($this) {
-    var tmp0 = $this.m2_1;
+    var tmp0 = $this.f5_1;
     // Inline function 'kotlin.getValue' call
     root$factory();
-    return tmp0.y1();
+    return tmp0.k();
   }
   function GlobalStyles$component$lambda($this$fc, props) {
     // Inline function 'kotlin.collections.forEach' call
     var _iterator__ex2g4s = props.globalStyles.b();
     while (_iterator__ex2g4s.c()) {
       var element = _iterator__ex2g4s.d();
-      $this$fc.h2(element);
+      $this$fc.a5(element);
     }
     return Unit_instance;
   }
@@ -99,21 +99,21 @@
   function GlobalStyles() {
     GlobalStyles_instance = this;
     var tmp = this;
-    tmp.l2_1 = fc(GlobalStyles$component$lambda);
+    tmp.e5_1 = fc(GlobalStyles$component$lambda);
     var tmp_0 = this;
-    tmp_0.m2_1 = lazy(GlobalStyles$root$delegate$lambda);
+    tmp_0.f5_1 = lazy(GlobalStyles$root$delegate$lambda);
     var tmp_1 = this;
     // Inline function 'kotlin.collections.mutableListOf' call
-    tmp_1.n2_1 = ArrayList_init_$Create$();
+    tmp_1.g5_1 = ArrayList_init_$Create$();
   }
-  protoOf(GlobalStyles).o2 = function (globalStyle) {
-    this.n2_1.g1(globalStyle);
+  protoOf(GlobalStyles).h5 = function (globalStyle) {
+    this.g5_1.h1(globalStyle);
     // Inline function 'js.core.jso' call
     // Inline function 'js.core.jso' call
     // Inline function 'kotlin.apply' call
     var this_0 = {};
-    this_0.globalStyles = GlobalStyles_getInstance().n2_1;
-    var reactElement = createElement(this.l2_1, this_0);
+    this_0.globalStyles = GlobalStyles_getInstance().g5_1;
+    var reactElement = createElement(this.e5_1, this_0);
     render(reactElement, _get_root__dd8asp(this));
   };
   var GlobalStyles_instance;
@@ -129,7 +129,7 @@
   }
   function injectGlobal$lambda_0($globalStyle) {
     return function (it) {
-      GlobalStyles_getInstance().o2($globalStyle);
+      GlobalStyles_getInstance().h5($globalStyle);
       return Unit_instance;
     };
   }

@@ -8,8 +8,8 @@
     "webpack-cli": "5.1.4",
     "kotlin-web-helpers": "2.0.0",
     "source-map-loader": "5.0.0",
-    "webpack-dev-server": "4.15.2",
-    "typescript": "5.5.4"
+    "typescript": "5.5.4",
+    "webpack-dev-server": "4.15.2"
   },
   "dependencies": {
     "react": "^18.2.0",

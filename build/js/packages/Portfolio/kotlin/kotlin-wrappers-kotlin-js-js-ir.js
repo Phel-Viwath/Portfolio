@@ -12,11 +12,11 @@
 }(function (_, kotlin_kotlin) {
   'use strict';
   //region block: imports
-  var protoOf = kotlin_kotlin.$_$.b8;
+  var protoOf = kotlin_kotlin.$_$.c8;
   var initMetadataForInterface = kotlin_kotlin.$_$.i7;
   var VOID = kotlin_kotlin.$_$.d;
-  var THROW_CCE = kotlin_kotlin.$_$.t9;
-  var Annotation = kotlin_kotlin.$_$.k9;
+  var THROW_CCE = kotlin_kotlin.$_$.u9;
+  var Annotation = kotlin_kotlin.$_$.l9;
   var initMetadataForClass = kotlin_kotlin.$_$.g7;
   //endregion
   //region block: pre-declaration
