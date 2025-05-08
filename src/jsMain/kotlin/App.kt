@@ -74,7 +74,7 @@ fun app() = FC<Props> {
             val currentSection = sections.find { sectionId ->
                 val element = document.getElementById(sectionId) ?: return@find false
                 val rect = element.getBoundingClientRect()
-                rect.top <= 100 && rect.bottom >= 100
+                rect.top <= 120 && rect.bottom >= 120
             } ?: "home"
 
             setActiveSection(currentSection)

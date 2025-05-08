@@ -61,7 +61,7 @@ fun ChildrenBuilder.heroSection(name: String){
                     margin = Margin(10.px, 0.px, 20.px, 0.px)
                     color = Color("#1e293b")
                 }
-                +"Web Designer"
+                +"Android Developer"
             }
 
             a {
@@ -83,7 +83,7 @@ fun ChildrenBuilder.heroSection(name: String){
                     val contactSection = document.getElementById("contact")
                     contactSection?.asDynamic().scrollIntoView(jso {
                         behavior = "smooth"
-                        block = "start"
+                        block = "center"
                     })
 
                 }

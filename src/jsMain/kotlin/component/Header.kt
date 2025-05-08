@@ -66,7 +66,7 @@ fun ChildrenBuilder.header(
                         val targetElement = document.getElementById(sectionId)
                         targetElement?.asDynamic().scrollIntoView(jso {
                             behavior = "smooth"
-                            block = "start"
+                            block = "center"
                         })
                     }
 

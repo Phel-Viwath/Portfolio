@@ -15,6 +15,7 @@ import react.dom.html.ReactHTML.p
 import react.dom.html.ReactHTML.section
 import react.dom.html.ReactHTML.strong
 import react.dom.html.ReactHTML.textarea
+import styles.Colors
 import web.html.ButtonType
 import web.html.InputType
 

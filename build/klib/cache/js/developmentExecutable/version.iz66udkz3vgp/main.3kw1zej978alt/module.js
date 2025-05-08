@@ -123,7 +123,7 @@
             }
             var element_0 = tmp;
             var rect = element_0.getBoundingClientRect();
-            tmp$ret$0 = (rect.top <= 100 && rect.bottom >= 100);
+            tmp$ret$0 = (rect.top <= 120 && rect.bottom >= 120);
           }
           if (tmp$ret$0) {
             tmp$ret$1 = element;
@@ -1177,7 +1177,7 @@
       // Inline function 'kotlin.apply' call
       var this_0 = {};
       this_0.behavior = 'smooth';
-      this_0.block = 'start';
+      this_0.block = 'center';
       tmp.scrollIntoView(this_0);
       return Unit_getInstance();
     };
@@ -1336,7 +1336,7 @@
       // Inline function 'kotlin.js.unsafeCast' call
       // Inline function 'kotlin.js.asDynamic' call
       this_0.padding = toString(tmp2) + ' ' + toString(horizontal);
-      this_0.backgroundColor = Colors_getInstance().get_white_j0plog_k$();
+      this_0.backgroundColor = Colors_getInstance().get_transparent_enj387_k$();
       // Inline function 'csstype.px' call
       // Inline function 'kotlin.js.unsafeCast' call
       // Inline function 'kotlin.js.asDynamic' call
@@ -1592,7 +1592,7 @@
     // Inline function 'kotlin.apply' call
     var this_0 = {};
     this_0.behavior = 'smooth';
-    this_0.block = 'start';
+    this_0.block = 'center';
     tmp.scrollIntoView(this_0);
     return Unit_getInstance();
   }
@@ -2669,6 +2669,26 @@
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
     tmp_11.avatarSilhouette_1 = '#1a3c5f';
+    var tmp_12 = this;
+    // Inline function 'csstype.Color' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    tmp_12.blue_1 = '#0000FF';
+    var tmp_13 = this;
+    // Inline function 'csstype.Color' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    tmp_13.red_1 = '#FF0000';
+    var tmp_14 = this;
+    // Inline function 'csstype.Color' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    tmp_14.yellow_1 = '#FFFF00';
+    var tmp_15 = this;
+    // Inline function 'csstype.Color' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    tmp_15.green_1 = '#00FF00';
   }
   protoOf(Colors).get_backgroundGradientStart_dp7o2j_k$ = function () {
     return this.backgroundGradientStart_1;
@@ -2708,6 +2728,18 @@
   };
   protoOf(Colors).get_avatarSilhouette_eebcpm_k$ = function () {
     return this.avatarSilhouette_1;
+  };
+  protoOf(Colors).get_blue_wojj4z_k$ = function () {
+    return this.blue_1;
+  };
+  protoOf(Colors).get_red_18ix20_k$ = function () {
+    return this.red_1;
+  };
+  protoOf(Colors).get_yellow_m9mum5_k$ = function () {
+    return this.yellow_1;
+  };
+  protoOf(Colors).get_green_is36qi_k$ = function () {
+    return this.green_1;
   };
   var Colors_instance;
   function Colors_getInstance() {

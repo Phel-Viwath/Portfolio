@@ -21,4 +21,9 @@ object Colors {
     // Avatar
     val avatarBackground = Color("#ffffffe6")
     val avatarSilhouette = Color("#1a3c5f")
+
+    val blue = Color("#0000FF")    // Blue
+    val red = Color("#FF0000")     // Red
+    val yellow = Color("#FFFF00")  // Yellow
+    val green = Color("#00FF00")   // Green
 }
