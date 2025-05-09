@@ -40,10 +40,10 @@
   var lazy = kotlin_kotlin.$_$.ka;
   var ArrayList_init_$Create$ = kotlin_kotlin.$_$.h;
   var protoOf = kotlin_kotlin.$_$.c8;
-  var initMetadataForObject = kotlin_kotlin.$_$.k7;
+  var initMetadataForObject = kotlin_kotlin.$_$.l7;
   var Error_init_$Create$ = kotlin_kotlin.$_$.a1;
   var KProperty1 = kotlin_kotlin.$_$.r8;
-  var getPropertyCallableRef = kotlin_kotlin.$_$.d7;
+  var getPropertyCallableRef = kotlin_kotlin.$_$.e7;
   //endregion
   //region block: pre-declaration
   initMetadataForObject(GlobalStyles, 'GlobalStyles');

@@ -13,11 +13,11 @@
   'use strict';
   //region block: imports
   var protoOf = kotlin_kotlin.$_$.c8;
-  var initMetadataForInterface = kotlin_kotlin.$_$.i7;
+  var initMetadataForInterface = kotlin_kotlin.$_$.j7;
   var VOID = kotlin_kotlin.$_$.d;
   var THROW_CCE = kotlin_kotlin.$_$.u9;
   var Annotation = kotlin_kotlin.$_$.l9;
-  var initMetadataForClass = kotlin_kotlin.$_$.g7;
+  var initMetadataForClass = kotlin_kotlin.$_$.h7;
   //endregion
   //region block: pre-declaration
   function component1() {

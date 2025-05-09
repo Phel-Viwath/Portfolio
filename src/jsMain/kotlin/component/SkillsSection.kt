@@ -7,6 +7,8 @@ import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.h2
 import react.dom.html.ReactHTML.h3
 import react.dom.html.ReactHTML.section
+import util.fadeInAnimation
+import util.slideUpAnimation
 import kotlin.Float
 
 fun ChildrenBuilder.skillSection(skills: Map<String, Float>){
@@ -21,6 +23,7 @@ fun ChildrenBuilder.skillSection(skills: Map<String, Float>){
                 fontSize = 36.px
                 marginBottom = 30.px
                 color = Color("#1e293b")
+                fadeInAnimation(duration = 0.8.s)
             }
             +"My Skills"
         }
@@ -33,13 +36,14 @@ fun ChildrenBuilder.skillSection(skills: Map<String, Float>){
             }
 
             // Skill items
-            skills.forEach { (skill, percentage) ->
+            skills.entries.forEachIndexed { index, (skill, percentage) ->
                 div {
                     css {
                         backgroundColor = Color("white")
                         padding = 20.px
                         borderRadius = 10.px
                         boxShadow = BoxShadow(0.px, 4.px, 6.px, rgba(0, 0, 0, 0.05))
+                        slideUpAnimation(duration = 0.8.s, delay = (0.2 + index * 0.1).s)
                     }
 
                     h3 {

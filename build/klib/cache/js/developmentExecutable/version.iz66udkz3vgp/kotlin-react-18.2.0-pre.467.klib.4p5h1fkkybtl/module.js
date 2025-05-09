@@ -20,10 +20,10 @@
   var Fragment = $module$react.Fragment;
   var Unit_getInstance = kotlin_kotlin.$_$.v3;
   var protoOf = kotlin_kotlin.$_$.c8;
-  var initMetadataForInterface = kotlin_kotlin.$_$.i7;
-  var initMetadataForClass = kotlin_kotlin.$_$.g7;
+  var initMetadataForInterface = kotlin_kotlin.$_$.j7;
+  var initMetadataForClass = kotlin_kotlin.$_$.h7;
   var VOID = kotlin_kotlin.$_$.d;
-  var single = kotlin_kotlin.$_$.q5;
+  var single = kotlin_kotlin.$_$.r5;
   //endregion
   //region block: pre-declaration
   function unaryPlus(_this__u8e3s4) {

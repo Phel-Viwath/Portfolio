@@ -13,10 +13,10 @@
   'use strict';
   //region block: imports
   var protoOf = kotlin_kotlin.$_$.c8;
-  var defineProp = kotlin_kotlin.$_$.a7;
-  var initMetadataForClass = kotlin_kotlin.$_$.g7;
+  var defineProp = kotlin_kotlin.$_$.b7;
+  var initMetadataForClass = kotlin_kotlin.$_$.h7;
   var Unit_getInstance = kotlin_kotlin.$_$.v3;
-  var initMetadataForObject = kotlin_kotlin.$_$.k7;
+  var initMetadataForObject = kotlin_kotlin.$_$.l7;
   var VOID = kotlin_kotlin.$_$.d;
   var toString = kotlin_kotlin.$_$.f8;
   var toString_0 = kotlin_kotlin.$_$.ma;

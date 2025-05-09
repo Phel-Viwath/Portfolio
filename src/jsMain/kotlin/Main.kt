@@ -13,7 +13,5 @@ fun main() {
 
     // Render the App component
     root.render(app().create())
-
-    // Initialize scroll animations
     initScrollAnimations()
 }

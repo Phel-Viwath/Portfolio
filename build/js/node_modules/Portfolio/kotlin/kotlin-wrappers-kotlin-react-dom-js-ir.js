@@ -13,7 +13,7 @@
   'use strict';
   //region block: imports
   var protoOf = kotlin_kotlin.$_$.c8;
-  var initMetadataForObject = kotlin_kotlin.$_$.k7;
+  var initMetadataForObject = kotlin_kotlin.$_$.l7;
   //endregion
   //region block: pre-declaration
   initMetadataForObject(ReactHTML, 'ReactHTML');

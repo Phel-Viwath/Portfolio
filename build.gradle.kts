@@ -28,6 +28,7 @@ kotlin {
         jsMain{
             dependencies {
                 implementation("org.jetbrains.kotlinx:kotlinx-html-js:0.8.0")
+                implementation("org.jetbrains.kotlin-wrappers:kotlin-browser:0.0.1-pre.620")
                 implementation(kotlin("stdlib-js"))
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-react:18.2.0-pre.467")
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom:18.2.0-pre.467")

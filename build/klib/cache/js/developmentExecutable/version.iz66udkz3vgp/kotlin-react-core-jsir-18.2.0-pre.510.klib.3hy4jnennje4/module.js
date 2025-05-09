@@ -16,9 +16,9 @@
   'use strict';
   //region block: imports
   var useEffect = $module$react.useEffect;
-  var get_js = kotlin_kotlin.$_$.v7;
+  var get_js = kotlin_kotlin.$_$.w7;
   var protoOf = kotlin_kotlin.$_$.c8;
-  var initMetadataForClass = kotlin_kotlin.$_$.g7;
+  var initMetadataForClass = kotlin_kotlin.$_$.h7;
   var Unit_getInstance = kotlin_kotlin.$_$.v3;
   //endregion
   //region block: pre-declaration

@@ -15,7 +15,10 @@ import react.dom.html.ReactHTML.p
 import react.dom.html.ReactHTML.section
 import react.dom.html.ReactHTML.strong
 import react.dom.html.ReactHTML.textarea
-import styles.Colors
+import util.fadeInAnimation
+import util.slideInLeftAnimation
+import util.slideInRightAnimation
+import util.slideUpAnimation
 import web.html.ButtonType
 import web.html.InputType
 
@@ -36,6 +39,7 @@ fun ChildrenBuilder.contactSection(
                 fontSize = 36.px
                 marginBottom = 30.px
                 color = Color("#1e293b")
+                fadeInAnimation(duration = 0.8.s)
             }
             +"Contact Me"
         }
@@ -49,6 +53,9 @@ fun ChildrenBuilder.contactSection(
 
             // Contact info
             div {
+                css {
+                    slideInLeftAnimation(duration = 0.8.s, delay = 0.2.s)
+                }
                 h3 {
                     css {
                         fontSize = 20.px
@@ -107,6 +114,7 @@ fun ChildrenBuilder.contactSection(
                     padding = 30.px
                     borderRadius = 12.px
                     boxShadow = BoxShadow(0.px, 4.px, 6.px, rgba(0, 0, 0, 0.05))
+                    slideInRightAnimation(duration = 0.8.s, delay = 0.2.s)
                 }
 
                 form {

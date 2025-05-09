@@ -20,10 +20,10 @@
   var Fragment = $module$react.Fragment;
   var Unit_instance = kotlin_kotlin.$_$.e;
   var protoOf = kotlin_kotlin.$_$.p;
-  var initMetadataForInterface = kotlin_kotlin.$_$.m;
-  var initMetadataForClass = kotlin_kotlin.$_$.l;
+  var initMetadataForInterface = kotlin_kotlin.$_$.n;
+  var initMetadataForClass = kotlin_kotlin.$_$.m;
   var VOID = kotlin_kotlin.$_$.a;
-  var single = kotlin_kotlin.$_$.j;
+  var single = kotlin_kotlin.$_$.k;
   //endregion
   //region block: pre-declaration
   function child(element) {
@@ -45,16 +45,16 @@
     }
   }
   function unaryPlus(_this__u8e3s4) {
-    this.i5(_this__u8e3s4);
+    this.h5(_this__u8e3s4);
   }
   function unaryPlus_0(_this__u8e3s4) {
     // Inline function 'react.ReactNode' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    this.j5(_this__u8e3s4);
+    this.i5(_this__u8e3s4);
   }
   function invoke(_this__u8e3s4, block) {
-    this.j5(create_0(_this__u8e3s4, block));
+    this.i5(create_0(_this__u8e3s4, block));
   }
   initMetadataForInterface(ChildrenBuilder, 'ChildrenBuilder');
   initMetadataForClass(ChildrenBuilderImpl, 'ChildrenBuilderImpl', ChildrenBuilderImpl, VOID, [ChildrenBuilder]);
@@ -157,10 +157,10 @@
     return createElement.apply(null, [Fragment, VOID].concat([].slice.call(children.slice())));
   }
   //region block: post-declaration
-  protoOf(ChildrenBuilderImpl).j5 = unaryPlus;
-  protoOf(ChildrenBuilderImpl).k5 = unaryPlus_0;
-  protoOf(ChildrenBuilderImpl).i5 = child;
-  protoOf(ChildrenBuilderImpl).l5 = invoke;
+  protoOf(ChildrenBuilderImpl).i5 = unaryPlus;
+  protoOf(ChildrenBuilderImpl).j5 = unaryPlus_0;
+  protoOf(ChildrenBuilderImpl).h5 = child;
+  protoOf(ChildrenBuilderImpl).k5 = invoke;
   //endregion
   //region block: exports
   _.$_$ = _.$_$ || {};

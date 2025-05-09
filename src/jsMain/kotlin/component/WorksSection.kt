@@ -10,6 +10,8 @@ import react.dom.html.ReactHTML.h3
 import react.dom.html.ReactHTML.img
 import react.dom.html.ReactHTML.p
 import react.dom.html.ReactHTML.section
+import util.fadeInAnimation
+import util.slideUpAnimation
 
 fun ChildrenBuilder.workSection(){
     section {
@@ -23,6 +25,7 @@ fun ChildrenBuilder.workSection(){
                 fontSize = 36.px
                 marginBottom = 30.px
                 color = Color("#1e293b")
+                fadeInAnimation(duration = 0.8.s)
             }
             +"My Works"
         }
@@ -44,6 +47,7 @@ fun ChildrenBuilder.workSection(){
                         backgroundColor = Color("white")
                         transition = "transform 0.3s ease".unsafeCast<Transition>()
                         cursor = Cursor.pointer
+                        slideUpAnimation(duration = 0.8.s, delay = (0.2 + (i-1) * 0.1).s)
                     }
                     onMouseOver = { event ->
                         (event.currentTarget as HTMLElement).style.transform = "translateY(-10px)"

@@ -1,8 +1,8 @@
 (function (factory) {
   if (typeof define === 'function' && define.amd)
-    define(['exports', 'react', '@emotion/css', 'react-dom/client', './kotlin-wrappers-kotlin-styled-js-ir.js', './kotlin-wrappers-kotlin-react-js-ir.js', './kotlin-wrappers-kotlin-react-core-js-ir.js', './kotlin-wrappers-kotlin-react-dom-js-ir.js', './kotlin-kotlin-stdlib.js'], factory);
+    define(['exports', 'react', '@emotion/css', 'react-dom/client', './kotlin-wrappers-kotlin-react-js-ir.js', './kotlin-wrappers-kotlin-react-core-js-ir.js', './kotlin-wrappers-kotlin-react-dom-js-ir.js', './kotlin-kotlin-stdlib.js', './kotlin-wrappers-kotlin-styled-js-ir.js'], factory);
   else if (typeof exports === 'object')
-    factory(module.exports, require('react'), require('@emotion/css'), require('react-dom/client'), require('./kotlin-wrappers-kotlin-styled-js-ir.js'), require('./kotlin-wrappers-kotlin-react-js-ir.js'), require('./kotlin-wrappers-kotlin-react-core-js-ir.js'), require('./kotlin-wrappers-kotlin-react-dom-js-ir.js'), require('./kotlin-kotlin-stdlib.js'));
+    factory(module.exports, require('react'), require('@emotion/css'), require('react-dom/client'), require('./kotlin-wrappers-kotlin-react-js-ir.js'), require('./kotlin-wrappers-kotlin-react-core-js-ir.js'), require('./kotlin-wrappers-kotlin-react-dom-js-ir.js'), require('./kotlin-kotlin-stdlib.js'), require('./kotlin-wrappers-kotlin-styled-js-ir.js'));
   else {
     if (typeof react === 'undefined') {
       throw new Error("Error loading module 'Portfolio'. Its dependency 'react' was not found. Please, check whether 'react' is loaded prior to 'Portfolio'.");
@@ -12,9 +12,6 @@
     }
     if (typeof globalThis['react-dom/client'] === 'undefined') {
       throw new Error("Error loading module 'Portfolio'. Its dependency 'react-dom/client' was not found. Please, check whether 'react-dom/client' is loaded prior to 'Portfolio'.");
-    }
-    if (typeof globalThis['kotlin-wrappers-kotlin-styled-js-ir'] === 'undefined') {
-      throw new Error("Error loading module 'Portfolio'. Its dependency 'kotlin-wrappers-kotlin-styled-js-ir' was not found. Please, check whether 'kotlin-wrappers-kotlin-styled-js-ir' is loaded prior to 'Portfolio'.");
     }
     if (typeof globalThis['kotlin-wrappers-kotlin-react-js-ir'] === 'undefined') {
       throw new Error("Error loading module 'Portfolio'. Its dependency 'kotlin-wrappers-kotlin-react-js-ir' was not found. Please, check whether 'kotlin-wrappers-kotlin-react-js-ir' is loaded prior to 'Portfolio'.");
@@ -28,32 +25,35 @@
     if (typeof globalThis['kotlin-kotlin-stdlib'] === 'undefined') {
       throw new Error("Error loading module 'Portfolio'. Its dependency 'kotlin-kotlin-stdlib' was not found. Please, check whether 'kotlin-kotlin-stdlib' is loaded prior to 'Portfolio'.");
     }
-    globalThis.Portfolio = factory(typeof Portfolio === 'undefined' ? {} : Portfolio, react, globalThis['@emotion/css'], globalThis['react-dom/client'], globalThis['kotlin-wrappers-kotlin-styled-js-ir'], globalThis['kotlin-wrappers-kotlin-react-js-ir'], globalThis['kotlin-wrappers-kotlin-react-core-js-ir'], globalThis['kotlin-wrappers-kotlin-react-dom-js-ir'], globalThis['kotlin-kotlin-stdlib']);
+    if (typeof globalThis['kotlin-wrappers-kotlin-styled-js-ir'] === 'undefined') {
+      throw new Error("Error loading module 'Portfolio'. Its dependency 'kotlin-wrappers-kotlin-styled-js-ir' was not found. Please, check whether 'kotlin-wrappers-kotlin-styled-js-ir' is loaded prior to 'Portfolio'.");
+    }
+    globalThis.Portfolio = factory(typeof Portfolio === 'undefined' ? {} : Portfolio, react, globalThis['@emotion/css'], globalThis['react-dom/client'], globalThis['kotlin-wrappers-kotlin-react-js-ir'], globalThis['kotlin-wrappers-kotlin-react-core-js-ir'], globalThis['kotlin-wrappers-kotlin-react-dom-js-ir'], globalThis['kotlin-kotlin-stdlib'], globalThis['kotlin-wrappers-kotlin-styled-js-ir']);
   }
-}(function (_, $module$react, $module$_emotion_css_2enn37, $module$react_dom_client_y5z5eu, kotlin_org_jetbrains_kotlin_wrappers_kotlin_styled, kotlin_org_jetbrains_kotlin_wrappers_kotlin_react, kotlin_org_jetbrains_kotlin_wrappers_kotlin_react_core, kotlin_org_jetbrains_kotlin_wrappers_kotlin_react_dom, kotlin_kotlin) {
+}(function (_, $module$react, $module$_emotion_css_2enn37, $module$react_dom_client_y5z5eu, kotlin_org_jetbrains_kotlin_wrappers_kotlin_react, kotlin_org_jetbrains_kotlin_wrappers_kotlin_react_core, kotlin_org_jetbrains_kotlin_wrappers_kotlin_react_dom, kotlin_kotlin, kotlin_org_jetbrains_kotlin_wrappers_kotlin_styled) {
   'use strict';
   //region block: imports
   var useState = $module$react.useState;
   var css = $module$_emotion_css_2enn37.css;
   var createRoot = $module$react_dom_client_y5z5eu.createRoot;
-  var injectGlobal = kotlin_org_jetbrains_kotlin_wrappers_kotlin_styled.$_$.a;
+  var imul = Math.imul;
   var FC = kotlin_org_jetbrains_kotlin_wrappers_kotlin_react.$_$.a;
   var useEffect = kotlin_org_jetbrains_kotlin_wrappers_kotlin_react_core.$_$.b;
   var ReactHTML_getInstance = kotlin_org_jetbrains_kotlin_wrappers_kotlin_react_dom.$_$.a;
   var Unit_getInstance = kotlin_kotlin.$_$.v3;
-  var listOf = kotlin_kotlin.$_$.l5;
+  var listOf = kotlin_kotlin.$_$.m5;
   var toString = kotlin_kotlin.$_$.f8;
   var to = kotlin_kotlin.$_$.na;
-  var mapOf = kotlin_kotlin.$_$.n5;
+  var mapOf = kotlin_kotlin.$_$.o5;
   var IllegalStateException_init_$Create$ = kotlin_kotlin.$_$.h1;
   var create = kotlin_org_jetbrains_kotlin_wrappers_kotlin_react.$_$.b;
+  var checkIndexOverflow = kotlin_kotlin.$_$.q4;
   var ReactSVG_getInstance = kotlin_org_jetbrains_kotlin_wrappers_kotlin_react_dom.$_$.b;
   var THROW_CCE = kotlin_kotlin.$_$.u9;
   var protoOf = kotlin_kotlin.$_$.c8;
-  var initMetadataForObject = kotlin_kotlin.$_$.k7;
+  var initMetadataForObject = kotlin_kotlin.$_$.l7;
+  var injectGlobal = kotlin_org_jetbrains_kotlin_wrappers_kotlin_styled.$_$.a;
   var VOID = kotlin_kotlin.$_$.d;
-  var ArrayList_init_$Create$ = kotlin_kotlin.$_$.h;
-  var json = kotlin_kotlin.$_$.w7;
   //endregion
   //region block: pre-declaration
   initMetadataForObject(Colors, 'Colors');
@@ -70,10 +70,6 @@
     return contactPlatform;
   }
   var contactPlatform;
-  function globalStyles() {
-    _init_properties_App_kt__fk8usv();
-    injectGlobal("* {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n}\n\nbody {\n    font-family: 'Roboto', 'Segoe UI', 'Helvetica Neue', sans-serif;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n    background-color: #f8fafc;\n}\n\nhtml, body {\n    height: 100%;\n    width: 100%;\n    scroll-behavior: smooth;\n}\n\n#root {\n    height: 100%;\n    width: 100%;\n}");
-  }
   function app() {
     _init_properties_App_kt__fk8usv();
     return FC(app$lambda);
@@ -151,6 +147,7 @@
     return function ($this$useEffect) {
       var handleScroll = app$lambda$lambda$lambda($setActiveSection);
       window.addEventListener('scroll', handleScroll);
+      initializeAnimations();
       // Inline function 'react.EffectBuilder.cleanup' call
       var block = app$lambda$lambda$lambda_0(handleScroll);
       // Inline function 'kotlin.js.asDynamic' call
@@ -311,6 +308,11 @@
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
     this_0.color = '#1e293b';
+    // Inline function 'csstype.s' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    var tmp$ret$12 = toString(0.8) + 's';
+    fadeInAnimation(this_0, tmp$ret$12);
     $this$h2.className = css(this_0);
     $this$h2.unaryPlus_76unot_k$('About Me');
     return Unit_getInstance();
@@ -338,6 +340,15 @@
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
     this_0.maxWidth = toString(800) + 'px';
+    // Inline function 'csstype.s' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    var tmp = toString(0.8) + 's';
+    // Inline function 'csstype.s' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    var tmp$ret$18 = toString(0.2) + 's';
+    slideUpAnimation(this_0, tmp, tmp$ret$18);
     $this$p.className = css(this_0);
     $this$p.unaryPlus_76unot_k$("I'm a passionate Web Designer with expertise in creating visually appealing and user-friendly websites. With a strong foundation in design principles and a keen eye for aesthetics, I strive to deliver engaging digital experiences that meet client objectives while exceeding user expectations.");
     return Unit_getInstance();
@@ -369,6 +380,15 @@
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
     this_0.marginTop = toString(20) + 'px';
+    // Inline function 'csstype.s' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    var tmp = toString(0.8) + 's';
+    // Inline function 'csstype.s' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    var tmp$ret$21 = toString(0.4) + 's';
+    slideUpAnimation(this_0, tmp, tmp$ret$21);
     $this$p.className = css(this_0);
     $this$p.unaryPlus_76unot_k$("My approach combines creativity with technical skills to produce responsive designs that work seamlessly across all devices. I'm constantly learning and adapting to the latest design trends and technologies to ensure my work remains current and innovative.");
     return Unit_getInstance();
@@ -401,6 +421,11 @@
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
     this_0.color = '#1e293b';
+    // Inline function 'csstype.s' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    var tmp$ret$12 = toString(0.8) + 's';
+    fadeInAnimation(this_0, tmp$ret$12);
     $this$h2.className = css(this_0);
     $this$h2.unaryPlus_76unot_k$('Contact Me');
     return Unit_getInstance();
@@ -537,41 +562,57 @@
   }
   function contactSection$lambda$lambda$lambda($contactPlatform, $email, $phone, $address) {
     return function ($this$div) {
+      // Inline function 'emotion.react.css' call
+      // Inline function 'emotion.css.ClassName' call
+      // Inline function 'js.core.jso' call
+      // Inline function 'js.core.jso' call
+      // Inline function 'kotlin.apply' call
+      var this_0 = {};
+      // Inline function 'csstype.s' call
+      // Inline function 'kotlin.js.unsafeCast' call
+      // Inline function 'kotlin.js.asDynamic' call
+      var tmp = toString(0.8) + 's';
+      // Inline function 'csstype.s' call
+      // Inline function 'kotlin.js.unsafeCast' call
+      // Inline function 'kotlin.js.asDynamic' call
+      var tmp$ret$6 = toString(0.2) + 's';
+      slideInLeftAnimation(this_0, tmp, tmp$ret$6);
+      $this$div.className = css(this_0);
       // Inline function 'react.dom.html.ReactHTML.h3' call
       ReactHTML_getInstance();
       // Inline function 'react.IntrinsicType' call
       // Inline function 'kotlin.js.unsafeCast' call
       // Inline function 'kotlin.js.asDynamic' call
-      var tmp = 'h3';
-      $this$div.invoke_mz6d4x_k$(tmp, contactSection$lambda$lambda$lambda$lambda);
+      var tmp_0 = 'h3';
+      $this$div.invoke_mz6d4x_k$(tmp_0, contactSection$lambda$lambda$lambda$lambda);
       // Inline function 'react.dom.html.ReactHTML.p' call
       ReactHTML_getInstance();
       // Inline function 'react.IntrinsicType' call
       // Inline function 'kotlin.js.unsafeCast' call
       // Inline function 'kotlin.js.asDynamic' call
-      var tmp_0 = 'p';
-      $this$div.invoke_mz6d4x_k$(tmp_0, contactSection$lambda$lambda$lambda$lambda_0);
-      // Inline function 'react.dom.html.ReactHTML.div' call
-      ReactHTML_getInstance();
-      // Inline function 'react.IntrinsicType' call
-      // Inline function 'kotlin.js.unsafeCast' call
-      // Inline function 'kotlin.js.asDynamic' call
-      var tmp_1 = 'div';
-      $this$div.invoke_mz6d4x_k$(tmp_1, contactSection$lambda$lambda$lambda$lambda_1($email));
+      var tmp_1 = 'p';
+      $this$div.invoke_mz6d4x_k$(tmp_1, contactSection$lambda$lambda$lambda$lambda_0);
       // Inline function 'react.dom.html.ReactHTML.div' call
       ReactHTML_getInstance();
       // Inline function 'react.IntrinsicType' call
       // Inline function 'kotlin.js.unsafeCast' call
       // Inline function 'kotlin.js.asDynamic' call
       var tmp_2 = 'div';
-      $this$div.invoke_mz6d4x_k$(tmp_2, contactSection$lambda$lambda$lambda$lambda_2($phone));
+      $this$div.invoke_mz6d4x_k$(tmp_2, contactSection$lambda$lambda$lambda$lambda_1($email));
       // Inline function 'react.dom.html.ReactHTML.div' call
       ReactHTML_getInstance();
       // Inline function 'react.IntrinsicType' call
       // Inline function 'kotlin.js.unsafeCast' call
       // Inline function 'kotlin.js.asDynamic' call
       var tmp_3 = 'div';
-      $this$div.invoke_mz6d4x_k$(tmp_3, contactSection$lambda$lambda$lambda$lambda_3($address));
+      $this$div.invoke_mz6d4x_k$(tmp_3, contactSection$lambda$lambda$lambda$lambda_2($phone));
+      // Inline function 'react.dom.html.ReactHTML.div' call
+      ReactHTML_getInstance();
+      // Inline function 'react.IntrinsicType' call
+      // Inline function 'kotlin.js.unsafeCast' call
+      // Inline function 'kotlin.js.asDynamic' call
+      var tmp_4 = 'div';
+      $this$div.invoke_mz6d4x_k$(tmp_4, contactSection$lambda$lambda$lambda$lambda_3($address));
       socialMediaIcons($this$div, $contactPlatform);
       return Unit_getInstance();
     };
@@ -615,14 +656,23 @@
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
     this_0.boxShadow = toString(tmp10) + ' ' + toString(tmp11) + ' ' + toString(tmp12) + ' ' + toString(color);
+    // Inline function 'csstype.s' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    var tmp = toString(0.8) + 's';
+    // Inline function 'csstype.s' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    var tmp$ret$30 = toString(0.2) + 's';
+    slideInRightAnimation(this_0, tmp, tmp$ret$30);
     $this$div.className = css(this_0);
     // Inline function 'react.dom.html.ReactHTML.form' call
     ReactHTML_getInstance();
     // Inline function 'react.IntrinsicType' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    var tmp = 'form';
-    $this$div.invoke_mz6d4x_k$(tmp, contactSection$lambda$lambda$lambda$lambda_4);
+    var tmp_0 = 'form';
+    $this$div.invoke_mz6d4x_k$(tmp_0, contactSection$lambda$lambda$lambda$lambda_4);
     return Unit_getInstance();
   }
   function contactSection$lambda$lambda$lambda$lambda_4($this$form) {
@@ -1336,7 +1386,7 @@
       // Inline function 'kotlin.js.unsafeCast' call
       // Inline function 'kotlin.js.asDynamic' call
       this_0.padding = toString(tmp2) + ' ' + toString(horizontal);
-      this_0.backgroundColor = Colors_getInstance().get_transparent_enj387_k$();
+      this_0.backgroundColor = Colors_getInstance().get_white_j0plog_k$();
       // Inline function 'csstype.px' call
       // Inline function 'kotlin.js.unsafeCast' call
       // Inline function 'kotlin.js.asDynamic' call
@@ -1521,7 +1571,7 @@
     // Inline function 'kotlin.js.asDynamic' call
     this_0.color = '#1e293b';
     $this$h2.className = css(this_0);
-    $this$h2.unaryPlus_76unot_k$('Web Designer');
+    $this$h2.unaryPlus_76unot_k$('Android Developer');
     return Unit_getInstance();
   }
   function heroSection$lambda$lambda$lambda_2($this$a) {
@@ -1596,144 +1646,9 @@
     tmp.scrollIntoView(this_0);
     return Unit_getInstance();
   }
-  function heroSection$lambda$lambda$lambda_3($this$div) {
-    // Inline function 'emotion.react.css' call
-    // Inline function 'emotion.css.ClassName' call
-    // Inline function 'js.core.jso' call
-    // Inline function 'js.core.jso' call
-    // Inline function 'kotlin.apply' call
-    var this_0 = {};
-    this_0.display = (/*union*/{block: 'block', inline: 'inline', runIn: 'run-in', flex: 'flex', flow: 'flow', flowRoot: 'flow-root', grid: 'grid', ruby: 'ruby', table: 'table', rubyBase: 'ruby-base', rubyBaseContainer: 'ruby-base-container', rubyText: 'ruby-text', rubyTextContainer: 'ruby-text-container', tableCaption: 'table-caption', tableCell: 'table-cell', tableColumn: 'table-column', tableColumnGroup: 'table-column-group', tableFooterGroup: 'table-footer-group', tableHeaderGroup: 'table-header-group', tableRow: 'table-row', tableRowGroup: 'table-row-group', inlineBlock: 'inline-block', inlineFlex: 'inline-flex', inlineGrid: 'inline-grid', inlineListItem: 'inline-list-item', inlineTable: 'inline-table', contents: 'contents', listItem: 'list-item'}/*union*/).flex;
-    // Inline function 'csstype.px' call
-    // Inline function 'kotlin.js.unsafeCast' call
-    // Inline function 'kotlin.js.asDynamic' call
-    this_0.gap = toString(20) + 'px';
-    // Inline function 'csstype.px' call
-    // Inline function 'kotlin.js.unsafeCast' call
-    // Inline function 'kotlin.js.asDynamic' call
-    this_0.marginTop = toString(40) + 'px';
-    $this$div.className = css(this_0);
-    // Inline function 'react.dom.html.ReactHTML.a' call
-    ReactHTML_getInstance();
-    // Inline function 'react.IntrinsicType' call
-    // Inline function 'kotlin.js.unsafeCast' call
-    // Inline function 'kotlin.js.asDynamic' call
-    var tmp = 'a';
-    $this$div.invoke_mz6d4x_k$(tmp, heroSection$lambda$lambda$lambda$lambda_1);
-    // Inline function 'react.dom.html.ReactHTML.a' call
-    ReactHTML_getInstance();
-    // Inline function 'react.IntrinsicType' call
-    // Inline function 'kotlin.js.unsafeCast' call
-    // Inline function 'kotlin.js.asDynamic' call
-    var tmp_0 = 'a';
-    $this$div.invoke_mz6d4x_k$(tmp_0, heroSection$lambda$lambda$lambda$lambda_2);
-    // Inline function 'react.dom.html.ReactHTML.a' call
-    ReactHTML_getInstance();
-    // Inline function 'react.IntrinsicType' call
-    // Inline function 'kotlin.js.unsafeCast' call
-    // Inline function 'kotlin.js.asDynamic' call
-    var tmp_1 = 'a';
-    $this$div.invoke_mz6d4x_k$(tmp_1, heroSection$lambda$lambda$lambda$lambda_3);
-    return Unit_getInstance();
-  }
-  function heroSection$lambda$lambda$lambda$lambda_1($this$a) {
-    $this$a.href = '#';
-    // Inline function 'emotion.react.css' call
-    // Inline function 'emotion.css.ClassName' call
-    // Inline function 'js.core.jso' call
-    // Inline function 'js.core.jso' call
-    // Inline function 'kotlin.apply' call
-    var this_0 = {};
-    // Inline function 'csstype.Color' call
-    // Inline function 'kotlin.js.unsafeCast' call
-    // Inline function 'kotlin.js.asDynamic' call
-    this_0.color = '#333';
-    // Inline function 'csstype.px' call
-    // Inline function 'kotlin.js.unsafeCast' call
-    // Inline function 'kotlin.js.asDynamic' call
-    this_0.fontSize = toString(24) + 'px';
-    $this$a.className = css(this_0);
-    // Inline function 'react.dom.html.ReactHTML.i' call
-    ReactHTML_getInstance();
-    // Inline function 'react.IntrinsicType' call
-    // Inline function 'kotlin.js.unsafeCast' call
-    // Inline function 'kotlin.js.asDynamic' call
-    var tmp = 'i';
-    $this$a.invoke_mz6d4x_k$(tmp, heroSection$lambda$lambda$lambda$lambda$lambda);
-    return Unit_getInstance();
-  }
-  function heroSection$lambda$lambda$lambda$lambda$lambda($this$i) {
-    // Inline function 'kotlin.js.unsafeCast' call
-    // Inline function 'kotlin.js.asDynamic' call
-    $this$i.className = 'fab fa-linkedin';
-    return Unit_getInstance();
-  }
-  function heroSection$lambda$lambda$lambda$lambda_2($this$a) {
-    $this$a.href = '#';
-    // Inline function 'emotion.react.css' call
-    // Inline function 'emotion.css.ClassName' call
-    // Inline function 'js.core.jso' call
-    // Inline function 'js.core.jso' call
-    // Inline function 'kotlin.apply' call
-    var this_0 = {};
-    // Inline function 'csstype.Color' call
-    // Inline function 'kotlin.js.unsafeCast' call
-    // Inline function 'kotlin.js.asDynamic' call
-    this_0.color = '#333';
-    // Inline function 'csstype.px' call
-    // Inline function 'kotlin.js.unsafeCast' call
-    // Inline function 'kotlin.js.asDynamic' call
-    this_0.fontSize = toString(24) + 'px';
-    $this$a.className = css(this_0);
-    // Inline function 'react.dom.html.ReactHTML.i' call
-    ReactHTML_getInstance();
-    // Inline function 'react.IntrinsicType' call
-    // Inline function 'kotlin.js.unsafeCast' call
-    // Inline function 'kotlin.js.asDynamic' call
-    var tmp = 'i';
-    $this$a.invoke_mz6d4x_k$(tmp, heroSection$lambda$lambda$lambda$lambda$lambda_0);
-    return Unit_getInstance();
-  }
-  function heroSection$lambda$lambda$lambda$lambda$lambda_0($this$i) {
-    // Inline function 'kotlin.js.unsafeCast' call
-    // Inline function 'kotlin.js.asDynamic' call
-    $this$i.className = 'fab fa-behance';
-    return Unit_getInstance();
-  }
-  function heroSection$lambda$lambda$lambda$lambda_3($this$a) {
-    $this$a.href = '#';
-    // Inline function 'emotion.react.css' call
-    // Inline function 'emotion.css.ClassName' call
-    // Inline function 'js.core.jso' call
-    // Inline function 'js.core.jso' call
-    // Inline function 'kotlin.apply' call
-    var this_0 = {};
-    // Inline function 'csstype.Color' call
-    // Inline function 'kotlin.js.unsafeCast' call
-    // Inline function 'kotlin.js.asDynamic' call
-    this_0.color = '#333';
-    // Inline function 'csstype.px' call
-    // Inline function 'kotlin.js.unsafeCast' call
-    // Inline function 'kotlin.js.asDynamic' call
-    this_0.fontSize = toString(24) + 'px';
-    $this$a.className = css(this_0);
-    // Inline function 'react.dom.html.ReactHTML.i' call
-    ReactHTML_getInstance();
-    // Inline function 'react.IntrinsicType' call
-    // Inline function 'kotlin.js.unsafeCast' call
-    // Inline function 'kotlin.js.asDynamic' call
-    var tmp = 'i';
-    $this$a.invoke_mz6d4x_k$(tmp, heroSection$lambda$lambda$lambda$lambda$lambda_1);
-    return Unit_getInstance();
-  }
-  function heroSection$lambda$lambda$lambda$lambda$lambda_1($this$i) {
-    // Inline function 'kotlin.js.unsafeCast' call
-    // Inline function 'kotlin.js.asDynamic' call
-    $this$i.className = 'fab fa-github';
-    return Unit_getInstance();
-  }
   function heroSection$lambda$lambda($name) {
     return function ($this$div) {
+      $this$div.id = 'home_text';
       // Inline function 'emotion.react.css' call
       // Inline function 'emotion.css.ClassName' call
       // Inline function 'js.core.jso' call
@@ -1744,6 +1659,11 @@
       // Inline function 'kotlin.js.unsafeCast' call
       // Inline function 'kotlin.js.asDynamic' call
       this_0.maxWidth = toString(500) + 'px';
+      // Inline function 'csstype.s' call
+      // Inline function 'kotlin.js.unsafeCast' call
+      // Inline function 'kotlin.js.asDynamic' call
+      var tmp$ret$6 = toString(0.8) + 's';
+      slideInLeftAnimation(this_0, tmp$ret$6);
       $this$div.className = css(this_0);
       // Inline function 'react.dom.html.ReactHTML.h1' call
       ReactHTML_getInstance();
@@ -1773,17 +1693,11 @@
       // Inline function 'kotlin.js.asDynamic' call
       var tmp_2 = 'a';
       $this$div.invoke_mz6d4x_k$(tmp_2, heroSection$lambda$lambda$lambda_2);
-      // Inline function 'react.dom.html.ReactHTML.div' call
-      ReactHTML_getInstance();
-      // Inline function 'react.IntrinsicType' call
-      // Inline function 'kotlin.js.unsafeCast' call
-      // Inline function 'kotlin.js.asDynamic' call
-      var tmp_3 = 'div';
-      $this$div.invoke_mz6d4x_k$(tmp_3, heroSection$lambda$lambda$lambda_3);
       return Unit_getInstance();
     };
   }
   function heroSection$lambda$lambda_0($this$div) {
+    $this$div.id = 'home_profile';
     // Inline function 'emotion.react.css' call
     // Inline function 'emotion.css.ClassName' call
     // Inline function 'js.core.jso' call
@@ -1810,6 +1724,11 @@
     this_0.display = (/*union*/{block: 'block', inline: 'inline', runIn: 'run-in', flex: 'flex', flow: 'flow', flowRoot: 'flow-root', grid: 'grid', ruby: 'ruby', table: 'table', rubyBase: 'ruby-base', rubyBaseContainer: 'ruby-base-container', rubyText: 'ruby-text', rubyTextContainer: 'ruby-text-container', tableCaption: 'table-caption', tableCell: 'table-cell', tableColumn: 'table-column', tableColumnGroup: 'table-column-group', tableFooterGroup: 'table-footer-group', tableHeaderGroup: 'table-header-group', tableRow: 'table-row', tableRowGroup: 'table-row-group', inlineBlock: 'inline-block', inlineFlex: 'inline-flex', inlineGrid: 'inline-grid', inlineListItem: 'inline-list-item', inlineTable: 'inline-table', contents: 'contents', listItem: 'list-item'}/*union*/).flex;
     this_0.justifyContent = (/*union*/{spaceAround: 'space-around', spaceBetween: 'space-between', spaceEvenly: 'space-evenly', stretch: 'stretch', center: 'center', end: 'end', flexEnd: 'flex-end', flexStart: 'flex-start', start: 'start', left: 'left', normal: 'normal', right: 'right'}/*union*/).center;
     this_0.alignItems = (/*union*/{center: 'center', end: 'end', flexEnd: 'flex-end', flexStart: 'flex-start', selfEnd: 'self-end', selfStart: 'self-start', start: 'start', baseline: 'baseline', normal: 'normal', stretch: 'stretch'}/*union*/).flexEnd;
+    // Inline function 'csstype.s' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    var tmp$ret$15 = toString(0.8) + 's';
+    slideInRightAnimation(this_0, tmp$ret$15);
     $this$div.className = css(this_0);
     // Inline function 'react.dom.html.ReactHTML.img' call
     ReactHTML_getInstance();
@@ -1817,11 +1736,11 @@
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
     var tmp = 'img';
-    $this$div.invoke_mz6d4x_k$(tmp, heroSection$lambda$lambda$lambda_4);
+    $this$div.invoke_mz6d4x_k$(tmp, heroSection$lambda$lambda$lambda_3);
     return Unit_getInstance();
   }
-  function heroSection$lambda$lambda$lambda_4($this$img) {
-    $this$img.src = 'https://via.placeholder.com/350x400';
+  function heroSection$lambda$lambda$lambda_3($this$img) {
+    $this$img.src = 'assets/profile_pic.png';
     $this$img.alt = 'Profile photo';
     // Inline function 'emotion.react.css' call
     // Inline function 'emotion.css.ClassName' call
@@ -1910,6 +1829,11 @@
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
     this_0.color = '#1e293b';
+    // Inline function 'csstype.s' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    var tmp$ret$12 = toString(0.8) + 's';
+    fadeInAnimation(this_0, tmp$ret$12);
     $this$h2.className = css(this_0);
     $this$h2.unaryPlus_76unot_k$('My Skills');
     return Unit_getInstance();
@@ -2036,7 +1960,7 @@
       return Unit_getInstance();
     };
   }
-  function skillSection$lambda$lambda$lambda($skill, $percentage) {
+  function skillSection$lambda$lambda$lambda($index, $skill, $percentage) {
     return function ($this$div) {
       // Inline function 'emotion.react.css' call
       // Inline function 'emotion.css.ClassName' call
@@ -2076,28 +2000,38 @@
       // Inline function 'kotlin.js.unsafeCast' call
       // Inline function 'kotlin.js.asDynamic' call
       this_0.boxShadow = toString(tmp10) + ' ' + toString(tmp11) + ' ' + toString(tmp12) + ' ' + toString(color);
+      // Inline function 'csstype.s' call
+      // Inline function 'kotlin.js.unsafeCast' call
+      // Inline function 'kotlin.js.asDynamic' call
+      var tmp = toString(0.8) + 's';
+      // Inline function 'csstype.s' call
+      var this_1 = 0.2 + $index * 0.1;
+      // Inline function 'kotlin.js.unsafeCast' call
+      // Inline function 'kotlin.js.asDynamic' call
+      var tmp$ret$30 = toString(this_1) + 's';
+      slideUpAnimation(this_0, tmp, tmp$ret$30);
       $this$div.className = css(this_0);
       // Inline function 'react.dom.html.ReactHTML.h3' call
       ReactHTML_getInstance();
       // Inline function 'react.IntrinsicType' call
       // Inline function 'kotlin.js.unsafeCast' call
       // Inline function 'kotlin.js.asDynamic' call
-      var tmp = 'h3';
-      $this$div.invoke_mz6d4x_k$(tmp, skillSection$lambda$lambda$lambda$lambda($skill));
-      // Inline function 'react.dom.html.ReactHTML.div' call
-      ReactHTML_getInstance();
-      // Inline function 'react.IntrinsicType' call
-      // Inline function 'kotlin.js.unsafeCast' call
-      // Inline function 'kotlin.js.asDynamic' call
-      var tmp_0 = 'div';
-      $this$div.invoke_mz6d4x_k$(tmp_0, skillSection$lambda$lambda$lambda$lambda_0($percentage));
+      var tmp_0 = 'h3';
+      $this$div.invoke_mz6d4x_k$(tmp_0, skillSection$lambda$lambda$lambda$lambda($skill));
       // Inline function 'react.dom.html.ReactHTML.div' call
       ReactHTML_getInstance();
       // Inline function 'react.IntrinsicType' call
       // Inline function 'kotlin.js.unsafeCast' call
       // Inline function 'kotlin.js.asDynamic' call
       var tmp_1 = 'div';
-      $this$div.invoke_mz6d4x_k$(tmp_1, skillSection$lambda$lambda$lambda$lambda_1($percentage));
+      $this$div.invoke_mz6d4x_k$(tmp_1, skillSection$lambda$lambda$lambda$lambda_0($percentage));
+      // Inline function 'react.dom.html.ReactHTML.div' call
+      ReactHTML_getInstance();
+      // Inline function 'react.IntrinsicType' call
+      // Inline function 'kotlin.js.unsafeCast' call
+      // Inline function 'kotlin.js.asDynamic' call
+      var tmp_2 = 'div';
+      $this$div.invoke_mz6d4x_k$(tmp_2, skillSection$lambda$lambda$lambda$lambda_1($percentage));
       return Unit_getInstance();
     };
   }
@@ -2118,22 +2052,25 @@
       // Inline function 'kotlin.js.asDynamic' call
       this_0.gap = toString(20) + 'px';
       $this$div.className = css(this_0);
-      // Inline function 'kotlin.collections.forEach' call
-      // Inline function 'kotlin.collections.iterator' call
+      // Inline function 'kotlin.collections.forEachIndexed' call
+      var index = 0;
       var _iterator__ex2g4s = $skills.get_entries_p20ztl_k$().iterator_jk1svi_k$();
       while (_iterator__ex2g4s.hasNext_bitz1p_k$()) {
-        var element = _iterator__ex2g4s.next_20eer_k$();
+        var item = _iterator__ex2g4s.next_20eer_k$();
+        var _unary__edvuaz = index;
+        index = _unary__edvuaz + 1 | 0;
+        var index_0 = checkIndexOverflow(_unary__edvuaz);
         // Inline function 'kotlin.collections.component1' call
-        var skill = element.get_key_18j28a_k$();
+        var skill = item.get_key_18j28a_k$();
         // Inline function 'kotlin.collections.component2' call
-        var percentage = element.get_value_j01efc_k$();
+        var percentage = item.get_value_j01efc_k$();
         // Inline function 'react.dom.html.ReactHTML.div' call
         ReactHTML_getInstance();
         // Inline function 'react.IntrinsicType' call
         // Inline function 'kotlin.js.unsafeCast' call
         // Inline function 'kotlin.js.asDynamic' call
         var tmp = 'div';
-        $this$div.invoke_mz6d4x_k$(tmp, skillSection$lambda$lambda$lambda(skill, percentage));
+        $this$div.invoke_mz6d4x_k$(tmp, skillSection$lambda$lambda$lambda(index_0, skill, percentage));
       }
       return Unit_getInstance();
     };
@@ -2382,6 +2319,11 @@
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
     this_0.color = '#1e293b';
+    // Inline function 'csstype.s' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    var tmp$ret$12 = toString(0.8) + 's';
+    fadeInAnimation(this_0, tmp$ret$12);
     $this$h2.className = css(this_0);
     $this$h2.unaryPlus_76unot_k$('My Works');
     return Unit_getInstance();
@@ -2582,6 +2524,16 @@
       // Inline function 'kotlin.js.asDynamic' call
       this_0.transition = 'transform 0.3s ease';
       this_0.cursor = (/*union*/{alias: 'alias', allScroll: 'all-scroll', cell: 'cell', colResize: 'col-resize', contextMenu: 'context-menu', copy: 'copy', crosshair: 'crosshair', default: 'default', eResize: 'e-resize', ewResize: 'ew-resize', grab: 'grab', grabbing: 'grabbing', help: 'help', move: 'move', nResize: 'n-resize', neResize: 'ne-resize', neswResize: 'nesw-resize', noDrop: 'no-drop', notAllowed: 'not-allowed', nsResize: 'ns-resize', nwResize: 'nw-resize', nwseResize: 'nwse-resize', pointer: 'pointer', progress: 'progress', rowResize: 'row-resize', sResize: 's-resize', seResize: 'se-resize', swResize: 'sw-resize', text: 'text', verticalText: 'vertical-text', wResize: 'w-resize', wait: 'wait', zoomIn: 'zoom-in', zoomOut: 'zoom-out'}/*union*/).pointer;
+      // Inline function 'csstype.s' call
+      // Inline function 'kotlin.js.unsafeCast' call
+      // Inline function 'kotlin.js.asDynamic' call
+      var tmp = toString(0.8) + 's';
+      // Inline function 'csstype.s' call
+      var this_1 = 0.2 + ($i - 1 | 0) * 0.1;
+      // Inline function 'kotlin.js.unsafeCast' call
+      // Inline function 'kotlin.js.asDynamic' call
+      var tmp$ret$29 = toString(this_1) + 's';
+      slideUpAnimation(this_0, tmp, tmp$ret$29);
       $this$div.className = css(this_0);
       $this$div.onMouseOver = workSection$lambda$lambda$lambda$lambda;
       $this$div.onMouseOut = workSection$lambda$lambda$lambda$lambda_0;
@@ -2590,15 +2542,15 @@
       // Inline function 'react.IntrinsicType' call
       // Inline function 'kotlin.js.unsafeCast' call
       // Inline function 'kotlin.js.asDynamic' call
-      var tmp = 'img';
-      $this$div.invoke_mz6d4x_k$(tmp, workSection$lambda$lambda$lambda$lambda_1($i));
+      var tmp_0 = 'img';
+      $this$div.invoke_mz6d4x_k$(tmp_0, workSection$lambda$lambda$lambda$lambda_1($i));
       // Inline function 'react.dom.html.ReactHTML.div' call
       ReactHTML_getInstance();
       // Inline function 'react.IntrinsicType' call
       // Inline function 'kotlin.js.unsafeCast' call
       // Inline function 'kotlin.js.asDynamic' call
-      var tmp_0 = 'div';
-      $this$div.invoke_mz6d4x_k$(tmp_0, workSection$lambda$lambda$lambda$lambda_2($i));
+      var tmp_1 = 'div';
+      $this$div.invoke_mz6d4x_k$(tmp_1, workSection$lambda$lambda$lambda$lambda_2($i));
       return Unit_getInstance();
     };
   }
@@ -2764,6 +2716,9 @@
       new Dimensions();
     return Dimensions_instance;
   }
+  function globalStyles() {
+    injectGlobal("* {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n}\n\nbody {\n    font-family: 'Roboto', 'Segoe UI', 'Helvetica Neue', sans-serif;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n    background-color: #f8fafc;\n}\n\nhtml, body {\n    height: 100%;\n    width: 100%;\n    scroll-behavior: smooth;\n}\n\n#root {\n    height: 100%;\n    width: 100%;\n}\n\n/* Animation classes */\n.animate-on-scroll {\n    opacity: 0;\n    transform: translateY(30px);\n    transition: opacity 0.8s ease, transform 0.8s ease;\n}\n\n.animate-on-scroll.visible {\n    opacity: 1;\n    transform: translateY(0);\n}\n\n/* Scroll-triggered animation base classes */\n.fade-in, .slide-up, .slide-in-left, .slide-in-right {\n    opacity: 0;\n    transition: opacity 0.8s ease, transform 0.8s ease;\n}\n\n/* Animation classes when visible */\n.fade-in.visible {\n    opacity: 1;\n}\n\n.slide-up.visible {\n    opacity: 1;\n    transform: translateY(0) !important;\n}\n\n.slide-in-left.visible {\n    opacity: 1;\n    transform: translateX(0) !important;\n}\n\n.slide-in-right.visible {\n    opacity: 1;\n    transform: translateX(0) !important;\n}\n\n/* Initial states for animations */\n.slide-up:not(.visible) {\n    transform: translateY(30px);\n}\n\n.slide-in-left:not(.visible) {\n    transform: translateX(-30px);\n}\n\n.slide-in-right:not(.visible) {\n    transform: translateX(30px);\n}\n\n/* Legacy animation classes */\n.animate-fade-in {\n    animation-name: fadeIn;\n    animation-duration: 1s;\n    animation-fill-mode: both;\n}\n\n.animate-slide-up {\n    animation-name: slideUp;\n    animation-duration: 1s;\n    animation-fill-mode: both;\n}\n\n.animate-slide-in-left {\n    animation-name: slideInLeft;\n    animation-duration: 1s;\n    animation-fill-mode: both;\n}\n\n.animate-slide-in-right {\n    animation-name: slideInRight;\n    animation-duration: 1s;\n    animation-fill-mode: both;\n}\n\n/* Animation keyframes */\n@keyframes fadeIn {\n    from {\n        opacity: 0;\n    }\n    to {\n        opacity: 1;\n    }\n}\n\n@keyframes slideUp {\n    from {\n        opacity: 0;\n        transform: translateY(50px);\n    }\n    to {\n        opacity: 1;\n        transform: translateY(0);\n    }\n}\n\n@keyframes slideInLeft {\n    from {\n        opacity: 0;\n        transform: translateX(-50px);\n    }\n    to {\n        opacity: 1;\n        transform: translateX(0);\n    }\n}\n\n@keyframes slideInRight {\n    from {\n        opacity: 0;\n        transform: translateX(50px);\n    }\n    to {\n        opacity: 1;\n        transform: translateX(0);\n    }\n}\n\n/* Animation delays */\n.delay-100 { animation-delay: 0.1s; }\n.delay-200 { animation-delay: 0.2s; }\n.delay-300 { animation-delay: 0.3s; }\n.delay-400 { animation-delay: 0.4s; }\n.delay-500 { animation-delay: 0.5s; }");
+  }
   function Typography() {
     Typography_instance = this;
     this.BASE_FONT_FAMILY_1 = "'Roboto', 'Segoe UI', 'Helvetica Neue', sans-serif";
@@ -2801,71 +2756,427 @@
       new Typography();
     return Typography_instance;
   }
-  function get_scrollAnimationStyles() {
-    return scrollAnimationStyles;
-  }
-  var scrollAnimationStyles;
-  function initScrollAnimations(animationClass, threshold, rootMargin) {
-    animationClass = animationClass === VOID ? 'animate' : animationClass;
-    threshold = threshold === VOID ? 0.1 : threshold;
-    rootMargin = rootMargin === VOID ? '0px' : rootMargin;
-    var tmp = window;
-    tmp.onload = initScrollAnimations$lambda(threshold, rootMargin, animationClass);
-  }
-  function initScrollAnimations$lambda$lambda($animationClass) {
-    return function (entries, observer) {
-      // Inline function 'kotlin.collections.forEach' call
-      var inductionVariable = 0;
-      var last = entries.length;
-      while (inductionVariable < last) {
-        var element = entries[inductionVariable];
-        inductionVariable = inductionVariable + 1 | 0;
-        if (element.isIntersecting) {
-          element.target.classList.add($animationClass);
-          observer.unobserve(element.target);
-        }
-      }
-      return Unit_getInstance();
-    };
-  }
-  function initScrollAnimations$lambda($threshold, $rootMargin, $animationClass) {
-    return function (it) {
-      var sectionIds = listOf(['home', 'about', 'skills', 'works', 'contact']);
-      // Inline function 'kotlin.collections.mapNotNull' call
-      // Inline function 'kotlin.collections.mapNotNullTo' call
-      var destination = ArrayList_init_$Create$();
-      // Inline function 'kotlin.collections.forEach' call
-      var _iterator__ex2g4s = sectionIds.iterator_jk1svi_k$();
-      while (_iterator__ex2g4s.hasNext_bitz1p_k$()) {
-        var element = _iterator__ex2g4s.next_20eer_k$();
-        var tmp0_safe_receiver = document.getElementById(element);
-        if (tmp0_safe_receiver == null)
-          null;
-        else {
-          // Inline function 'kotlin.let' call
-          destination.add_utx5q5_k$(tmp0_safe_receiver);
-        }
-      }
-      var sections = destination;
-      var options = json([to('threshold', $threshold), to('rootMargin', $rootMargin)]);
-      var observer = new IntersectionObserver(initScrollAnimations$lambda$lambda($animationClass), options);
-      // Inline function 'kotlin.collections.forEach' call
-      var _iterator__ex2g4s_0 = sections.iterator_jk1svi_k$();
-      while (_iterator__ex2g4s_0.hasNext_bitz1p_k$()) {
-        var element_0 = _iterator__ex2g4s_0.next_20eer_k$();
-        observer.observe(element_0);
-      }
-      return Unit_getInstance();
-    };
-  }
   function createRoot_0(container) {
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
     return createRoot(container);
   }
-  //region block: init
-  scrollAnimationStyles = '\n    .animate {\n        animation: fadeInUp 0.6s ease forwards;\n        opacity: 0;\n    }\n\n    @keyframes fadeInUp {\n        from {\n            opacity: 0;\n            transform: translateY(30px);\n        }\n        to {\n            opacity: 1;\n            transform: translateY(0);\n        }\n    }\n\n    @keyframes fadeInLeft {\n        from {\n            opacity: 0;\n            transform: translateX(-30px);\n        }\n        to {\n            opacity: 1;\n            transform: translateX(0);\n        }\n    }\n\n    @keyframes fadeInRight {\n        from {\n            opacity: 0;\n            transform: translateX(30px);\n        }\n        to {\n            opacity: 1;\n            transform: translateX(0);\n        }\n    }\n\n    @keyframes zoomIn {\n        from {\n            opacity: 0;\n            transform: scale(0.95);\n        }\n        to {\n            opacity: 1;\n            transform: scale(1);\n        }\n    }\n\n    /* Animation variants */\n    #home.animate {\n        animation-name: fadeInUp;\n        animation-duration: 0.8s;\n    }\n\n    #about.animate {\n        animation-name: fadeInLeft;\n        animation-duration: 0.7s;\n    }\n\n    #skills.animate {\n        animation-name: fadeInRight;\n        animation-duration: 0.7s;\n    }\n\n    #works.animate {\n        animation-name: zoomIn;\n        animation-duration: 0.8s;\n    }\n\n    #contact.animate {\n        animation-name: fadeInUp;\n        animation-duration: 0.7s;\n    }\n\n    /* Animation delays */\n    .animate-delay-100 {\n        animation-delay: 100ms;\n    }\n\n    .animate-delay-200 {\n        animation-delay: 200ms;\n    }\n\n    .animate-delay-300 {\n        animation-delay: 300ms;\n    }\n\n    .animate-delay-400 {\n        animation-delay: 400ms;\n    }\n\n    .animate-delay-500 {\n        animation-delay: 500ms;\n    }\n';
-  //endregion
+  function fadeInAnimation(_this__u8e3s4, duration, delay) {
+    var tmp;
+    if (duration === VOID) {
+      // Inline function 'csstype.s' call
+      // Inline function 'kotlin.js.unsafeCast' call
+      // Inline function 'kotlin.js.asDynamic' call
+      tmp = toString(1) + 's';
+    } else {
+      tmp = duration;
+    }
+    duration = tmp;
+    var tmp_0;
+    if (delay === VOID) {
+      // Inline function 'csstype.ms' call
+      // Inline function 'kotlin.js.unsafeCast' call
+      // Inline function 'kotlin.js.asDynamic' call
+      tmp_0 = toString(0) + 'ms';
+    } else {
+      tmp_0 = delay;
+    }
+    delay = tmp_0;
+    // Inline function 'csstype.pct' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    _this__u8e3s4.opacity = toString(0) + '%';
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    _this__u8e3s4.animation = 'fadeIn ' + toString(duration) + ' ease-out ' + toString(delay) + ' forwards';
+  }
+  function slideUpAnimation(_this__u8e3s4, duration, delay) {
+    var tmp;
+    if (duration === VOID) {
+      // Inline function 'csstype.s' call
+      // Inline function 'kotlin.js.unsafeCast' call
+      // Inline function 'kotlin.js.asDynamic' call
+      tmp = toString(1) + 's';
+    } else {
+      tmp = duration;
+    }
+    duration = tmp;
+    var tmp_0;
+    if (delay === VOID) {
+      // Inline function 'csstype.ms' call
+      // Inline function 'kotlin.js.unsafeCast' call
+      // Inline function 'kotlin.js.asDynamic' call
+      tmp_0 = toString(0) + 'ms';
+    } else {
+      tmp_0 = delay;
+    }
+    delay = tmp_0;
+    // Inline function 'csstype.pct' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    _this__u8e3s4.opacity = toString(0) + '%';
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    _this__u8e3s4.transform = 'translateY(30px)';
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    _this__u8e3s4.animation = 'slideUp ' + toString(duration) + ' ease-out ' + toString(delay) + ' forwards';
+  }
+  function slideInLeftAnimation(_this__u8e3s4, duration, delay) {
+    var tmp;
+    if (duration === VOID) {
+      // Inline function 'csstype.s' call
+      // Inline function 'kotlin.js.unsafeCast' call
+      // Inline function 'kotlin.js.asDynamic' call
+      tmp = toString(1) + 's';
+    } else {
+      tmp = duration;
+    }
+    duration = tmp;
+    var tmp_0;
+    if (delay === VOID) {
+      // Inline function 'csstype.ms' call
+      // Inline function 'kotlin.js.unsafeCast' call
+      // Inline function 'kotlin.js.asDynamic' call
+      tmp_0 = toString(0) + 'ms';
+    } else {
+      tmp_0 = delay;
+    }
+    delay = tmp_0;
+    // Inline function 'csstype.pct' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    _this__u8e3s4.opacity = toString(0) + '%';
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    _this__u8e3s4.transform = 'translateX(-30px)';
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    _this__u8e3s4.animation = 'slideInLeft ' + toString(duration) + ' ease-out ' + toString(delay) + ' forwards';
+  }
+  function slideInRightAnimation(_this__u8e3s4, duration, delay) {
+    var tmp;
+    if (duration === VOID) {
+      // Inline function 'csstype.s' call
+      // Inline function 'kotlin.js.unsafeCast' call
+      // Inline function 'kotlin.js.asDynamic' call
+      tmp = toString(1) + 's';
+    } else {
+      tmp = duration;
+    }
+    duration = tmp;
+    var tmp_0;
+    if (delay === VOID) {
+      // Inline function 'csstype.ms' call
+      // Inline function 'kotlin.js.unsafeCast' call
+      // Inline function 'kotlin.js.asDynamic' call
+      tmp_0 = toString(0) + 'ms';
+    } else {
+      tmp_0 = delay;
+    }
+    delay = tmp_0;
+    // Inline function 'csstype.pct' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    _this__u8e3s4.opacity = toString(0) + '%';
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    _this__u8e3s4.transform = 'translateX(30px)';
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    _this__u8e3s4.animation = 'slideInRight ' + toString(duration) + ' ease-out ' + toString(delay) + ' forwards';
+  }
+  function initializeAnimations() {
+  }
+  function initScrollAnimations() {
+    initializeAnimations();
+    var tmp = window;
+    tmp.addEventListener('scroll', initScrollAnimations$lambda);
+    initScrollAnimations$handleScroll();
+  }
+  function initScrollAnimations$isInViewportCenter(element) {
+    var rect = element.getBoundingClientRect();
+    var windowHeight = window.innerHeight;
+    var centerThreshold = windowHeight / 3 | 0;
+    return rect.top <= (windowHeight - centerThreshold | 0) && rect.bottom >= centerThreshold;
+  }
+  function initScrollAnimations$handleScroll() {
+    var sections = listOf(['home', 'about', 'skills', 'works', 'contact']);
+    // Inline function 'kotlin.collections.forEach' call
+    var _iterator__ex2g4s = sections.iterator_jk1svi_k$();
+    while (_iterator__ex2g4s.hasNext_bitz1p_k$()) {
+      var element = _iterator__ex2g4s.next_20eer_k$();
+      var section = document.getElementById(element);
+      var tmp;
+      if (!(section == null)) {
+        tmp = section instanceof HTMLElement;
+      } else {
+        tmp = false;
+      }
+      if (tmp) {
+        if (initScrollAnimations$isInViewportCenter(section)) {
+          switch (element) {
+            case 'home':
+              var homeText = document.getElementById('home_text');
+              var tmp_0;
+              if (homeText instanceof HTMLElement) {
+                tmp_0 = !(homeText.style.opacity === '1');
+              } else {
+                tmp_0 = false;
+              }
+
+              if (tmp_0) {
+                homeText.style.opacity = '0';
+                homeText.style.transform = 'translateX(-30px)';
+                homeText.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                var tmp_1 = window;
+                tmp_1.setTimeout(initScrollAnimations$handleScroll$lambda(homeText), 10);
+              }
+
+              var homeProfile = document.getElementById('home_profile');
+              var tmp_2;
+              if (homeProfile instanceof HTMLElement) {
+                tmp_2 = !(homeProfile.style.opacity === '1');
+              } else {
+                tmp_2 = false;
+              }
+
+              if (tmp_2) {
+                homeProfile.style.opacity = '0';
+                homeProfile.style.transform = 'translateX(30px)';
+                homeProfile.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                var tmp_3 = window;
+                tmp_3.setTimeout(initScrollAnimations$handleScroll$lambda_0(homeProfile), 10);
+              }
+
+              break;
+            case 'about':
+              if (!(section.style.opacity === '1')) {
+                section.style.opacity = '0';
+                section.style.transition = 'opacity 0.8s ease';
+                var tmp_4 = window;
+                tmp_4.setTimeout(initScrollAnimations$handleScroll$lambda_1(section), 10);
+              }
+
+              var paragraphs = section.getElementsByTagName('p');
+              var inductionVariable = 0;
+              var last = paragraphs.length;
+              if (inductionVariable < last)
+                do {
+                  var i = inductionVariable;
+                  inductionVariable = inductionVariable + 1 | 0;
+                  var paragraph = paragraphs.item(i);
+                  var tmp_5;
+                  if (paragraph instanceof HTMLElement) {
+                    tmp_5 = !(paragraph.style.opacity === '1');
+                  } else {
+                    tmp_5 = false;
+                  }
+                  if (tmp_5) {
+                    paragraph.style.opacity = '0';
+                    paragraph.style.transform = 'translateY(30px)';
+                    paragraph.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                    var tmp_6 = window;
+                    tmp_6.setTimeout(initScrollAnimations$handleScroll$lambda_2(paragraph), 10 + imul(i, 100) | 0);
+                  }
+                }
+                 while (inductionVariable < last);
+              break;
+            case 'skills':
+              if (!(section.style.opacity === '1')) {
+                section.style.opacity = '0';
+                section.style.transition = 'opacity 0.8s ease';
+                var tmp_7 = window;
+                tmp_7.setTimeout(initScrollAnimations$handleScroll$lambda_3(section), 10);
+              }
+
+              var skillItems = section.querySelectorAll('div > div');
+              var inductionVariable_0 = 0;
+              var last_0 = skillItems.length;
+              if (inductionVariable_0 < last_0)
+                do {
+                  var i_0 = inductionVariable_0;
+                  inductionVariable_0 = inductionVariable_0 + 1 | 0;
+                  var item = skillItems.item(i_0);
+                  var tmp_8;
+                  if (item instanceof HTMLElement) {
+                    tmp_8 = !(item.style.opacity === '1');
+                  } else {
+                    tmp_8 = false;
+                  }
+                  if (tmp_8) {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(30px)';
+                    item.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                    var tmp_9 = window;
+                    tmp_9.setTimeout(initScrollAnimations$handleScroll$lambda_4(item), 10 + imul(i_0, 100) | 0);
+                  }
+                }
+                 while (inductionVariable_0 < last_0);
+              break;
+            case 'works':
+              if (!(section.style.opacity === '1')) {
+                section.style.opacity = '0';
+                section.style.transition = 'opacity 0.8s ease';
+                var tmp_10 = window;
+                tmp_10.setTimeout(initScrollAnimations$handleScroll$lambda_5(section), 10);
+              }
+
+              var workItems = section.querySelectorAll('div > div');
+              var inductionVariable_1 = 0;
+              var last_1 = workItems.length;
+              if (inductionVariable_1 < last_1)
+                do {
+                  var i_1 = inductionVariable_1;
+                  inductionVariable_1 = inductionVariable_1 + 1 | 0;
+                  var item_0 = workItems.item(i_1);
+                  var tmp_11;
+                  if (item_0 instanceof HTMLElement) {
+                    tmp_11 = !(item_0.style.opacity === '1');
+                  } else {
+                    tmp_11 = false;
+                  }
+                  if (tmp_11) {
+                    item_0.style.opacity = '0';
+                    item_0.style.transform = 'translateY(30px)';
+                    item_0.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                    var tmp_12 = window;
+                    tmp_12.setTimeout(initScrollAnimations$handleScroll$lambda_6(item_0), 10 + imul(i_1, 100) | 0);
+                  }
+                }
+                 while (inductionVariable_1 < last_1);
+              break;
+            case 'contact':
+              if (!(section.style.opacity === '1')) {
+                section.style.opacity = '0';
+                section.style.transition = 'opacity 0.8s ease';
+                var tmp_13 = window;
+                tmp_13.setTimeout(initScrollAnimations$handleScroll$lambda_7(section), 10);
+              }
+
+              var contactInfo = section.querySelector('div > div:first-child');
+              var tmp_14;
+              if (contactInfo instanceof HTMLElement) {
+                tmp_14 = !(contactInfo.style.opacity === '1');
+              } else {
+                tmp_14 = false;
+              }
+
+              if (tmp_14) {
+                contactInfo.style.opacity = '0';
+                contactInfo.style.transform = 'translateX(-30px)';
+                contactInfo.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                var tmp_15 = window;
+                tmp_15.setTimeout(initScrollAnimations$handleScroll$lambda_8(contactInfo), 10);
+              }
+
+              var contactForm = section.querySelector('div > div:last-child');
+              var tmp_16;
+              if (contactForm instanceof HTMLElement) {
+                tmp_16 = !(contactForm.style.opacity === '1');
+              } else {
+                tmp_16 = false;
+              }
+
+              if (tmp_16) {
+                contactForm.style.opacity = '0';
+                contactForm.style.transform = 'translateX(30px)';
+                contactForm.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                var tmp_17 = window;
+                tmp_17.setTimeout(initScrollAnimations$handleScroll$lambda_9(contactForm), 10);
+              }
+
+              break;
+          }
+        }
+      }
+    }
+  }
+  function initScrollAnimations$lambda(it) {
+    initScrollAnimations$handleScroll();
+    return Unit_getInstance();
+  }
+  function initScrollAnimations$handleScroll$lambda($homeText) {
+    return function () {
+      $homeText.style.opacity = '1';
+      $homeText.style.transform = 'translateX(0)';
+      return Unit_getInstance();
+    };
+  }
+  function initScrollAnimations$handleScroll$lambda_0($homeProfile) {
+    return function () {
+      $homeProfile.style.opacity = '1';
+      $homeProfile.style.transform = 'translateX(0)';
+      return Unit_getInstance();
+    };
+  }
+  function initScrollAnimations$handleScroll$lambda_1($section) {
+    return function () {
+      $section.style.opacity = '1';
+      return Unit_getInstance();
+    };
+  }
+  function initScrollAnimations$handleScroll$lambda_2($paragraph) {
+    return function () {
+      $paragraph.style.opacity = '1';
+      $paragraph.style.transform = 'translateY(0)';
+      return Unit_getInstance();
+    };
+  }
+  function initScrollAnimations$handleScroll$lambda_3($section) {
+    return function () {
+      $section.style.opacity = '1';
+      return Unit_getInstance();
+    };
+  }
+  function initScrollAnimations$handleScroll$lambda_4($item) {
+    return function () {
+      $item.style.opacity = '1';
+      $item.style.transform = 'translateY(0)';
+      return Unit_getInstance();
+    };
+  }
+  function initScrollAnimations$handleScroll$lambda_5($section) {
+    return function () {
+      $section.style.opacity = '1';
+      return Unit_getInstance();
+    };
+  }
+  function initScrollAnimations$handleScroll$lambda_6($item) {
+    return function () {
+      $item.style.opacity = '1';
+      $item.style.transform = 'translateY(0)';
+      return Unit_getInstance();
+    };
+  }
+  function initScrollAnimations$handleScroll$lambda_7($section) {
+    return function () {
+      $section.style.opacity = '1';
+      return Unit_getInstance();
+    };
+  }
+  function initScrollAnimations$handleScroll$lambda_8($contactInfo) {
+    return function () {
+      $contactInfo.style.opacity = '1';
+      $contactInfo.style.transform = 'translateX(0)';
+      return Unit_getInstance();
+    };
+  }
+  function initScrollAnimations$handleScroll$lambda_9($contactForm) {
+    return function () {
+      $contactForm.style.opacity = '1';
+      $contactForm.style.transform = 'translateX(0)';
+      return Unit_getInstance();
+    };
+  }
   mainWrapper();
   return _;
 }));
