@@ -1,4 +1,5 @@
-package styles
+package styles.animation
+
 
 import csstype.*
 import kotlinx.browser.document

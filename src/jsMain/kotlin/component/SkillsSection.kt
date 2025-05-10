@@ -7,11 +7,14 @@ import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.h2
 import react.dom.html.ReactHTML.h3
 import react.dom.html.ReactHTML.section
-import styles.slideInLeftAnimation
-import styles.slideUpAnimation
+import styles.animation.slideInLeftAnimation
+import styles.animation.slideUpAnimation
+import styles.animation.useInViewport
 import kotlin.Float
 
 fun ChildrenBuilder.skillSection(skills: Map<String, Float>){
+
+    val (skillRef, isSkillVisible) = useInViewport()
     section {
         id = "skills"
         css {
@@ -19,11 +22,12 @@ fun ChildrenBuilder.skillSection(skills: Map<String, Float>){
         }
 
         h2 {
+            ref = skillRef
             css {
                 fontSize = 36.px
                 marginBottom = 30.px
                 color = Color("#1e293b")
-                slideInLeftAnimation(duration = 0.8.s, delay = 0.2.s)
+                slideInLeftAnimation(duration = 0.8.s, delay = 0.2.s, isVisible = isSkillVisible)
             }
             +"My Skills"
         }

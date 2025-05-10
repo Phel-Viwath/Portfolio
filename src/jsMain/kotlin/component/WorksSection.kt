@@ -10,10 +10,20 @@ import react.dom.html.ReactHTML.h3
 import react.dom.html.ReactHTML.img
 import react.dom.html.ReactHTML.p
 import react.dom.html.ReactHTML.section
-import styles.fadeInAnimation
-import styles.slideUpAnimation
+import styles.animation.fadeInAnimation
+import styles.animation.slideUpAnimation
+import styles.animation.useInViewport
 
-fun ChildrenBuilder.workSection(){
+data class MyWork(
+    val image: String,
+    val projectName: String,
+    val projectType: String
+)
+
+fun ChildrenBuilder.workSection(
+    myWorks: List<MyWork>
+){
+    val (workRef, isWorkVisible) = useInViewport()
     section {
         id = "works"
         css {
@@ -21,11 +31,12 @@ fun ChildrenBuilder.workSection(){
         }
 
         h2 {
+            ref = workRef
             css {
                 fontSize = 36.px
                 marginBottom = 30.px
                 color = Color("#1e293b")
-                fadeInAnimation(duration = 0.8.s)
+                fadeInAnimation(duration = 0.8.s, delay = 0.2.s, isVisible = isWorkVisible)
             }
             +"My Works"
         }
@@ -38,7 +49,7 @@ fun ChildrenBuilder.workSection(){
             }
 
             // Portfolio items
-            for (i in 1..6) {
+            myWorks.forEachIndexed { i, work ->
                 div {
                     css {
                         borderRadius = 12.px
@@ -57,7 +68,7 @@ fun ChildrenBuilder.workSection(){
                     }
 
                     img {
-                        src = "https://via.placeholder.com/350x200"
+                        src = work.image
                         alt = "Work sample $i"
                         css {
                             width = 100.pct
@@ -77,7 +88,7 @@ fun ChildrenBuilder.workSection(){
                                 fontSize = 18.px
                                 color = Color("#1e293b")
                             }
-                            +"Project $i"
+                            +"Project ${work.projectName}"
                         }
 
                         p {
@@ -85,7 +96,7 @@ fun ChildrenBuilder.workSection(){
                                 margin = 0.px
                                 color = Color("#64748b")
                             }
-                            +"Web Design & Development"
+                            +work.projectType
                         }
                     }
                 }

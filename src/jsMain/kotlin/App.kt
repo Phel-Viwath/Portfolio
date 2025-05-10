@@ -21,12 +21,19 @@ import util.Constant.TELEGRAM_ICON
 
 // Global styles are kept here
 private val mySkill: Map<String, Float> = mapOf(
-    "UI/UX Design" to 90f,
-    "HTML & CSS" to 95f,
-    "JavaScript" to 85f,
-    "React" to 80f,
-    "Figma" to 85f,
-    "Adobe XD" to 80f
+    "Kotlin" to 90f,
+    "Java" to 60f,
+    "MySQL" to 90f,
+    "MongoDB" to 50f,
+    "Spring Boot" to 85f,
+    "Android" to 85f,
+    "Android Studio" to 85f,
+    "Intellij Idea" to 80f
+)
+
+private val myWork: List<MyWork> = listOf(
+    MyWork("https://via.placeholder.com/350x200", "SRU Library Management", "Back-end development"),
+    MyWork("https://via.placeholder.com/350x200", "SRU Library Management", "Android development"),
 )
 
 private val contactPlatform: Map<SocialUrl, PathD> = mapOf(
@@ -95,7 +102,7 @@ fun app() = FC<Props> {
             skillSection(skills = mySkill)
 
             // Works section
-            workSection()
+            workSection(myWorks = myWork)
 
             // Contact section
             contactSection(

@@ -29,20 +29,20 @@
   //endregion
   //region block: pre-declaration
   function child(element) {
-    this.w4().n1(element);
+    this.l5().q1(element);
   }
   function child_0(type, props, handler) {
     if (handler == null) {
-      this.x4(createElement(type, props));
+      this.m5(createElement(type, props));
       return Unit_instance;
     }
     // Inline function 'kotlin.apply' call
     var this_0 = RElementBuilder(props);
     handler(this_0);
     // Inline function 'kotlin.collections.toTypedArray' call
-    var this_1 = this_0.w4();
+    var this_1 = this_0.l5();
     var children = copyToArray(this_1);
-    this.x4(createElement.apply(null, [type, props].concat([].slice.call(children.slice()))));
+    this.m5(createElement.apply(null, [type, props].concat([].slice.call(children.slice()))));
   }
   function child$default(type, props, handler, $super) {
     var tmp;
@@ -56,7 +56,7 @@
     handler = handler === VOID ? null : handler;
     var tmp_0;
     if ($super === VOID) {
-      this.y4(type, props, handler);
+      this.n5(type, props, handler);
       tmp_0 = Unit_instance;
     } else {
       child_0(type, props, handler);
@@ -92,15 +92,15 @@
   }
   function RElementBuilderImpl(attrs) {
     RBuilderImpl.call(this);
-    this.b5_1 = attrs;
+    this.q5_1 = attrs;
   }
   function RBuilderImpl() {
     var tmp = this;
     // Inline function 'kotlin.collections.mutableListOf' call
-    tmp.c5_1 = ArrayList_init_$Create$();
+    tmp.r5_1 = ArrayList_init_$Create$();
   }
-  protoOf(RBuilderImpl).w4 = function () {
-    return this.c5_1;
+  protoOf(RBuilderImpl).l5 = function () {
+    return this.r5_1;
   };
   function createBuilder() {
     return new RBuilderImpl();
@@ -109,11 +109,11 @@
     // Inline function 'kotlin.apply' call
     var this_0 = createBuilder();
     block(this_0);
-    var nodes = this_0.w4();
+    var nodes = this_0.l5();
     var tmp;
-    if (nodes.g() === 0) {
+    if (nodes.j() === 0) {
       tmp = null;
-    } else if (nodes.g() === 1 && isValidElement(first(nodes))) {
+    } else if (nodes.j() === 1 && isValidElement(first(nodes))) {
       // Inline function 'kotlin.js.unsafeCast' call
       // Inline function 'kotlin.js.asDynamic' call
       tmp = first(nodes);
@@ -128,9 +128,9 @@
     return tmp;
   }
   //region block: post-declaration
-  protoOf(RBuilderImpl).x4 = child;
-  protoOf(RBuilderImpl).y4 = child_0;
-  protoOf(RBuilderImpl).z4 = child$default;
+  protoOf(RBuilderImpl).m5 = child;
+  protoOf(RBuilderImpl).n5 = child_0;
+  protoOf(RBuilderImpl).o5 = child$default;
   //endregion
   //region block: exports
   _.$_$ = _.$_$ || {};

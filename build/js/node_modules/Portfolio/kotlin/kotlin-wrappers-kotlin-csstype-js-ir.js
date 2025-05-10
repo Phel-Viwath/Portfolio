@@ -1669,15 +1669,15 @@
   }
   function SimplePseudosRuleBuilder() {
   }
-  function get_ms(_this__u8e3s4) {
-    // Inline function 'kotlin.js.unsafeCast' call
-    // Inline function 'kotlin.js.asDynamic' call
-    return toString(_this__u8e3s4) + 'ms';
-  }
   function get_s(_this__u8e3s4) {
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
     return toString(_this__u8e3s4) + 's';
+  }
+  function get_ms(_this__u8e3s4) {
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return toString(_this__u8e3s4) + 'ms';
   }
   function PropertiesBuilder() {
   }

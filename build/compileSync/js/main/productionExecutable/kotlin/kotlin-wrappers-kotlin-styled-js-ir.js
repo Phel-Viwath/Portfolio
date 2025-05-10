@@ -35,9 +35,9 @@
   var createGlobalStyle = $module$styled_components_hletz0.createGlobalStyle;
   var Unit_instance = kotlin_kotlin.$_$.e;
   var HTML_instance = kotlin_org_jetbrains_kotlin_wrappers_kotlin_browser.$_$.a;
-  var THROW_CCE = kotlin_kotlin.$_$.s;
+  var THROW_CCE = kotlin_kotlin.$_$.u;
   var fc = kotlin_org_jetbrains_kotlin_wrappers_kotlin_react_legacy.$_$.a;
-  var lazy = kotlin_kotlin.$_$.t;
+  var lazy = kotlin_kotlin.$_$.v;
   var ArrayList_init_$Create$ = kotlin_kotlin.$_$.b;
   var protoOf = kotlin_kotlin.$_$.p;
   var initMetadataForObject = kotlin_kotlin.$_$.o;
@@ -70,17 +70,17 @@
     return tmp;
   }
   function _get_root__dd8asp($this) {
-    var tmp0 = $this.e5_1;
+    var tmp0 = $this.t5_1;
     // Inline function 'kotlin.getValue' call
     root$factory();
-    return tmp0.k();
+    return tmp0.n();
   }
   function GlobalStyles$component$lambda($this$fc, props) {
     // Inline function 'kotlin.collections.forEach' call
-    var _iterator__ex2g4s = props.globalStyles.b();
-    while (_iterator__ex2g4s.c()) {
-      var element = _iterator__ex2g4s.d();
-      $this$fc.z4(element);
+    var _iterator__ex2g4s = props.globalStyles.d();
+    while (_iterator__ex2g4s.e()) {
+      var element = _iterator__ex2g4s.f();
+      $this$fc.o5(element);
     }
     return Unit_instance;
   }
@@ -99,21 +99,21 @@
   function GlobalStyles() {
     GlobalStyles_instance = this;
     var tmp = this;
-    tmp.d5_1 = fc(GlobalStyles$component$lambda);
+    tmp.s5_1 = fc(GlobalStyles$component$lambda);
     var tmp_0 = this;
-    tmp_0.e5_1 = lazy(GlobalStyles$root$delegate$lambda);
+    tmp_0.t5_1 = lazy(GlobalStyles$root$delegate$lambda);
     var tmp_1 = this;
     // Inline function 'kotlin.collections.mutableListOf' call
-    tmp_1.f5_1 = ArrayList_init_$Create$();
+    tmp_1.u5_1 = ArrayList_init_$Create$();
   }
-  protoOf(GlobalStyles).g5 = function (globalStyle) {
-    this.f5_1.n1(globalStyle);
+  protoOf(GlobalStyles).v5 = function (globalStyle) {
+    this.u5_1.q1(globalStyle);
     // Inline function 'js.core.jso' call
     // Inline function 'js.core.jso' call
     // Inline function 'kotlin.apply' call
     var this_0 = {};
-    this_0.globalStyles = GlobalStyles_getInstance().f5_1;
-    var reactElement = createElement(this.d5_1, this_0);
+    this_0.globalStyles = GlobalStyles_getInstance().u5_1;
+    var reactElement = createElement(this.s5_1, this_0);
     render(reactElement, _get_root__dd8asp(this));
   };
   var GlobalStyles_instance;
@@ -129,7 +129,7 @@
   }
   function injectGlobal$lambda_0($globalStyle) {
     return function (it) {
-      GlobalStyles_getInstance().g5($globalStyle);
+      GlobalStyles_getInstance().v5($globalStyle);
       return Unit_instance;
     };
   }

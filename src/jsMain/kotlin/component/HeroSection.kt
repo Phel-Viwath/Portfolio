@@ -12,11 +12,16 @@ import react.dom.html.ReactHTML.h2
 import react.dom.html.ReactHTML.img
 import react.dom.html.ReactHTML.section
 import react.dom.html.ReactHTML.span
-import styles.slideInLeftAnimation
-import styles.slideInRightAnimation
+import styles.animation.slideInLeftAnimation
+import styles.animation.slideInRightAnimation
+import styles.animation.useInViewport
+import util.fontWeight
+import util.transition
 
 fun ChildrenBuilder.heroSection(name: String){
 
+    val (leftContentRef, leftContentVisible) = useInViewport()
+    val (profileRef, profileVisible) = useInViewport()
 
     section {
         id = "home"
@@ -31,9 +36,10 @@ fun ChildrenBuilder.heroSection(name: String){
         // Left content
         div {
             id = "home_text"
+            ref = leftContentRef
             css {
                 maxWidth = 500.px
-                slideInLeftAnimation(duration = 0.8.s)
+                slideInLeftAnimation(duration = 0.8.s, isVisible = leftContentVisible)
             }
             h1 {
                 css {
@@ -77,10 +83,10 @@ fun ChildrenBuilder.heroSection(name: String){
                     color = Color("white")
                     borderRadius = 8.px
                     textDecoration = None.none
-                    fontWeight = "600".unsafeCast<FontWeight>()
+                    fontWeight = "600".fontWeight()
                     fontSize = 16.px
                     marginTop = 20.px
-                    transition = "all 0.3s ease".unsafeCast<Transition>()
+                    transition = "all 0.3s ease".transition()
                 }
                 onClick = { event ->
                     event.preventDefault()
@@ -98,6 +104,7 @@ fun ChildrenBuilder.heroSection(name: String){
         // Profile image
         div {
             id = "home_profile"
+            ref = profileRef
             css {
                 width = 400.px
                 height = 400.px
@@ -107,7 +114,7 @@ fun ChildrenBuilder.heroSection(name: String){
                 display = Display.flex
                 justifyContent = JustifyContent.center
                 alignItems = AlignItems.flexEnd
-                slideInRightAnimation(duration = 0.8.s)
+                slideInRightAnimation(duration = 0.8.s, isVisible = profileVisible)
             }
             img {
                 src = "assets/profile_pic.png"

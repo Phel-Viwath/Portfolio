@@ -15,10 +15,12 @@ import react.dom.html.ReactHTML.p
 import react.dom.html.ReactHTML.section
 import react.dom.html.ReactHTML.strong
 import react.dom.html.ReactHTML.textarea
-import styles.fadeInAnimation
-import styles.slideInLeftAnimation
-import styles.slideInRightAnimation
-import styles.useInViewport
+import styles.Typography.buttonFontSize
+import styles.Typography.inputFontSize
+import styles.animation.fadeInAnimation
+import styles.animation.slideInLeftAnimation
+import styles.animation.slideInRightAnimation
+import styles.animation.useInViewport
 import web.html.ButtonType
 import web.html.InputType
 
@@ -147,7 +149,7 @@ fun ChildrenBuilder.contactSection(
                                 padding = 10.px
                                 borderRadius = 6.px
                                 border = Border(1.px, LineStyle.solid, Color("#e2e8f0"))
-                                fontSize = 16.px
+                                fontSize = inputFontSize
                             }
                         }
                     }
@@ -173,7 +175,7 @@ fun ChildrenBuilder.contactSection(
                                 padding = 10.px
                                 borderRadius = 6.px
                                 border = Border(1.px, LineStyle.solid, Color("#e2e8f0"))
-                                fontSize = 16.px
+                                fontSize = inputFontSize
                             }
                         }
                     }
@@ -215,7 +217,7 @@ fun ChildrenBuilder.contactSection(
                             borderRadius = 8.px
                             border = None.none
                             fontWeight = "600".unsafeCast<FontWeight>()
-                            fontSize = 16.px
+                            fontSize = buttonFontSize
                             cursor = Cursor.pointer
                             transition = "background-color 0.3s ease".unsafeCast<Transition>()
                         }
