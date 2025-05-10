@@ -1648,6 +1648,11 @@
     // Inline function 'kotlin.js.asDynamic' call
     return toString(vertical) + ' ' + toString(horizontal);
   }
+  function Padding_0(top, horizontal, bottom) {
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return toString(top) + ' ' + toString(horizontal) + ' ' + toString(bottom);
+  }
   function get_pct(_this__u8e3s4) {
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call

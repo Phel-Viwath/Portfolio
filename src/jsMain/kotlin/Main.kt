@@ -1,7 +1,7 @@
 import kotlinx.browser.document
 import react.create
 import util.createRoot
-import util.initScrollAnimations
+import styles.initScrollAnimations
 
 // App entry point
 fun main() {

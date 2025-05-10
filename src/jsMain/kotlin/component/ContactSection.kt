@@ -15,10 +15,10 @@ import react.dom.html.ReactHTML.p
 import react.dom.html.ReactHTML.section
 import react.dom.html.ReactHTML.strong
 import react.dom.html.ReactHTML.textarea
-import util.fadeInAnimation
-import util.slideInLeftAnimation
-import util.slideInRightAnimation
-import util.slideUpAnimation
+import styles.fadeInAnimation
+import styles.slideInLeftAnimation
+import styles.slideInRightAnimation
+import styles.useInViewport
 import web.html.ButtonType
 import web.html.InputType
 
@@ -28,18 +28,24 @@ fun ChildrenBuilder.contactSection(
     address: String,
     contactPlatform: Map<SocialUrl, PathD>
 ){
+    // Use the hook to detect if section is in viewport
+    val (titleRef, titleVisible) = useInViewport()
+    val (leftColumnRef, leftColumnVisible) = useInViewport()
+    val (rightColumnRef, rightColumnVisible) = useInViewport()
+
     section {
         id = "contact"
         css {
-            padding = Padding(100.px, 0.px)
+            padding = Padding(top =100.px, bottom = 0.px, horizontal = 0.px)
         }
 
         h2 {
+            ref = titleRef
             css {
                 fontSize = 36.px
                 marginBottom = 30.px
                 color = Color("#1e293b")
-                fadeInAnimation(duration = 0.8.s)
+                fadeInAnimation(duration = 0.8.s, delay = 0.2.s, isVisible = titleVisible)
             }
             +"Contact Me"
         }
@@ -53,8 +59,9 @@ fun ChildrenBuilder.contactSection(
 
             // Contact info
             div {
+                ref = leftColumnRef
                 css {
-                    slideInLeftAnimation(duration = 0.8.s, delay = 0.2.s)
+                    slideInLeftAnimation(duration = 0.8.s, delay = 0.2.s, isVisible = leftColumnVisible)
                 }
                 h3 {
                     css {
@@ -109,12 +116,13 @@ fun ChildrenBuilder.contactSection(
 
             // Contact form
             div {
+                ref = rightColumnRef
                 css {
                     backgroundColor = Color("white")
                     padding = 30.px
                     borderRadius = 12.px
                     boxShadow = BoxShadow(0.px, 4.px, 6.px, rgba(0, 0, 0, 0.05))
-                    slideInRightAnimation(duration = 0.8.s, delay = 0.2.s)
+                    slideInRightAnimation(duration = 0.8.s, delay = 0.2.s, isVisible = rightColumnVisible)
                 }
 
                 form {

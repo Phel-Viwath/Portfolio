@@ -12,10 +12,8 @@ import react.dom.html.ReactHTML.h2
 import react.dom.html.ReactHTML.img
 import react.dom.html.ReactHTML.section
 import react.dom.html.ReactHTML.span
-import util.fadeInAnimation
-import util.slideInLeftAnimation
-import util.slideInRightAnimation
-import util.slideUpAnimation
+import styles.slideInLeftAnimation
+import styles.slideInRightAnimation
 
 fun ChildrenBuilder.heroSection(name: String){
 

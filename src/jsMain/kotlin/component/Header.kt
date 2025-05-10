@@ -11,6 +11,7 @@ import react.dom.html.ReactHTML.h3
 import react.dom.html.ReactHTML.header
 import react.dom.html.ReactHTML.nav
 import styles.Colors
+import util.Constant.navSection
 
 fun ChildrenBuilder.header(
     activeSection: String,
@@ -50,7 +51,7 @@ fun ChildrenBuilder.header(
                 gap = 30.px
             }
 
-            listOf("Home", "About", "Skills", "Works", "Contact").forEach { section ->
+            navSection.forEach { section ->
                 val sectionId = section.lowercase()
                 a {
                     href = "#$sectionId"

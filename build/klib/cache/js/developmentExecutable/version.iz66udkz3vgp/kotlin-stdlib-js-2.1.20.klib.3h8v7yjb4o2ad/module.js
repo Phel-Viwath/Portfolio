@@ -368,17 +368,17 @@ if (typeof String.prototype.endsWith === 'undefined') {
   initMetadataForClass(findNext$1, VOID, VOID, VOID, [MatchResult]);
   initMetadataForClass(sam$kotlin_Comparator$0, 'sam$kotlin_Comparator$0', VOID, VOID, [Comparator, FunctionAdapter]);
   initMetadataForClass(DurationUnit, 'DurationUnit', VOID, Enum);
-  initMetadataForClass(Suppress, 'Suppress', VOID, VOID, [Annotation]);
-  initMetadataForClass(SinceKotlin, 'SinceKotlin', VOID, VOID, [Annotation]);
-  initMetadataForClass(Deprecated, 'Deprecated', VOID, VOID, [Annotation]);
   initMetadataForClass(ReplaceWith, 'ReplaceWith', VOID, VOID, [Annotation]);
-  initMetadataForClass(DeprecatedSinceKotlin, 'DeprecatedSinceKotlin', VOID, VOID, [Annotation]);
-  initMetadataForClass(PublishedApi, 'PublishedApi', VOID, VOID, [Annotation]);
+  initMetadataForClass(Suppress, 'Suppress', VOID, VOID, [Annotation]);
+  initMetadataForClass(Deprecated, 'Deprecated', VOID, VOID, [Annotation]);
+  initMetadataForClass(SinceKotlin, 'SinceKotlin', VOID, VOID, [Annotation]);
   initMetadataForClass(DeprecationLevel, 'DeprecationLevel', VOID, Enum);
-  initMetadataForClass(ExtensionFunctionType, 'ExtensionFunctionType', VOID, VOID, [Annotation]);
   initMetadataForClass(ParameterName, 'ParameterName', VOID, VOID, [Annotation]);
   initMetadataForClass(UnsafeVariance, 'UnsafeVariance', VOID, VOID, [Annotation]);
   initMetadataForClass(DslMarker, 'DslMarker', VOID, VOID, [Annotation]);
+  initMetadataForClass(DeprecatedSinceKotlin, 'DeprecatedSinceKotlin', VOID, VOID, [Annotation]);
+  initMetadataForClass(ExtensionFunctionType, 'ExtensionFunctionType', VOID, VOID, [Annotation]);
+  initMetadataForClass(PublishedApi, 'PublishedApi', VOID, VOID, [Annotation]);
   initMetadataForClass(Target, 'Target', VOID, VOID, [Annotation]);
   initMetadataForClass(AnnotationTarget, 'AnnotationTarget', VOID, Enum);
   initMetadataForClass(MustBeDocumented, 'MustBeDocumented', VOID, VOID, [Annotation]);
@@ -500,14 +500,14 @@ if (typeof String.prototype.endsWith === 'undefined') {
   initMetadataForInterface(EnumEntries, 'EnumEntries', VOID, VOID, [KtList]);
   initMetadataForClass(EnumEntriesList, 'EnumEntriesList', VOID, AbstractList, [EnumEntries, AbstractList, Serializable]);
   initMetadataForClass(ExperimentalTypeInference, 'ExperimentalTypeInference', VOID, VOID, [Annotation]);
-  initMetadataForClass(NoInfer, 'NoInfer', VOID, VOID, [Annotation]);
   initMetadataForClass(InlineOnly, 'InlineOnly', VOID, VOID, [Annotation]);
-  initMetadataForClass(DynamicExtension, 'DynamicExtension', VOID, VOID, [Annotation]);
-  initMetadataForClass(LowPriorityInOverloadResolution, 'LowPriorityInOverloadResolution', VOID, VOID, [Annotation]);
-  initMetadataForClass(HidesMembers, 'HidesMembers', VOID, VOID, [Annotation]);
   initMetadataForClass(OnlyInputTypes, 'OnlyInputTypes', VOID, VOID, [Annotation]);
-  initMetadataForClass(RequireKotlin, 'RequireKotlin', VOID, VOID, [Annotation]);
+  initMetadataForClass(NoInfer, 'NoInfer', VOID, VOID, [Annotation]);
   initMetadataForClass(RequireKotlinVersionKind, 'RequireKotlinVersionKind', VOID, Enum);
+  initMetadataForClass(RequireKotlin, 'RequireKotlin', VOID, VOID, [Annotation]);
+  initMetadataForClass(HidesMembers, 'HidesMembers', VOID, VOID, [Annotation]);
+  initMetadataForClass(LowPriorityInOverloadResolution, 'LowPriorityInOverloadResolution', VOID, VOID, [Annotation]);
+  initMetadataForClass(DynamicExtension, 'DynamicExtension', VOID, VOID, [Annotation]);
   initMetadataForClass(IntrinsicConstEvaluation, 'IntrinsicConstEvaluation', VOID, VOID, [Annotation]);
   initMetadataForClass(ExperimentalEncodingApi, 'ExperimentalEncodingApi', VOID, VOID, [Annotation]);
   initMetadataForCompanion(Companion_15);
@@ -8516,10 +8516,10 @@ if (typeof String.prototype.endsWith === 'undefined') {
     // Inline function 'kotlin.js.asDynamic' call
     return _this__u8e3s4;
   }
-  function unsafeCastDynamic(_this__u8e3s4) {
+  function asDynamic(_this__u8e3s4) {
     return _this__u8e3s4;
   }
-  function asDynamic(_this__u8e3s4) {
+  function unsafeCastDynamic(_this__u8e3s4) {
     return _this__u8e3s4;
   }
   function enumEntriesIntrinsic() {
@@ -11643,6 +11643,34 @@ if (typeof String.prototype.endsWith === 'undefined') {
   protoOf(Number_0).toChar_tavt71_k$ = function () {
     return numberToChar(numberToInt(this));
   };
+  function ReplaceWith(expression, imports) {
+    this.expression_1 = expression;
+    this.imports_1 = imports;
+  }
+  protoOf(ReplaceWith).get_expression_l5w7j5_k$ = function () {
+    return this.expression_1;
+  };
+  protoOf(ReplaceWith).get_imports_x49mdh_k$ = function () {
+    return this.imports_1;
+  };
+  protoOf(ReplaceWith).equals = function (other) {
+    if (!(other instanceof ReplaceWith))
+      return false;
+    var tmp0_other_with_cast = other instanceof ReplaceWith ? other : THROW_CCE();
+    if (!(this.expression_1 === tmp0_other_with_cast.expression_1))
+      return false;
+    if (!contentEquals_3(this.imports_1, tmp0_other_with_cast.imports_1))
+      return false;
+    return true;
+  };
+  protoOf(ReplaceWith).hashCode = function () {
+    var result = imul(getStringHashCode('expression'), 127) ^ getStringHashCode(this.expression_1);
+    result = result + (imul(getStringHashCode('imports'), 127) ^ hashCode(this.imports_1)) | 0;
+    return result;
+  };
+  protoOf(ReplaceWith).toString = function () {
+    return '@kotlin.ReplaceWith(' + 'expression=' + this.expression_1 + ', ' + 'imports=' + toString_1(this.imports_1) + ')';
+  };
   function Suppress(names) {
     this.names_1 = names;
   }
@@ -11662,26 +11690,6 @@ if (typeof String.prototype.endsWith === 'undefined') {
   };
   protoOf(Suppress).toString = function () {
     return '@kotlin.Suppress(' + 'names=' + toString_1(this.names_1) + ')';
-  };
-  function SinceKotlin(version) {
-    this.version_1 = version;
-  }
-  protoOf(SinceKotlin).get_version_72w4j3_k$ = function () {
-    return this.version_1;
-  };
-  protoOf(SinceKotlin).equals = function (other) {
-    if (!(other instanceof SinceKotlin))
-      return false;
-    var tmp0_other_with_cast = other instanceof SinceKotlin ? other : THROW_CCE();
-    if (!(this.version_1 === tmp0_other_with_cast.version_1))
-      return false;
-    return true;
-  };
-  protoOf(SinceKotlin).hashCode = function () {
-    return imul(getStringHashCode('version'), 127) ^ getStringHashCode(this.version_1);
-  };
-  protoOf(SinceKotlin).toString = function () {
-    return '@kotlin.SinceKotlin(' + 'version=' + this.version_1 + ')';
   };
   function Deprecated(message, replaceWith, level) {
     replaceWith = replaceWith === VOID ? new ReplaceWith('', []) : replaceWith;
@@ -11720,85 +11728,25 @@ if (typeof String.prototype.endsWith === 'undefined') {
   protoOf(Deprecated).toString = function () {
     return '@kotlin.Deprecated(' + 'message=' + this.message_1 + ', ' + 'replaceWith=' + toString_1(this.replaceWith_1) + ', ' + 'level=' + this.level_1.toString() + ')';
   };
-  function ReplaceWith(expression, imports) {
-    this.expression_1 = expression;
-    this.imports_1 = imports;
+  function SinceKotlin(version) {
+    this.version_1 = version;
   }
-  protoOf(ReplaceWith).get_expression_l5w7j5_k$ = function () {
-    return this.expression_1;
+  protoOf(SinceKotlin).get_version_72w4j3_k$ = function () {
+    return this.version_1;
   };
-  protoOf(ReplaceWith).get_imports_x49mdh_k$ = function () {
-    return this.imports_1;
-  };
-  protoOf(ReplaceWith).equals = function (other) {
-    if (!(other instanceof ReplaceWith))
+  protoOf(SinceKotlin).equals = function (other) {
+    if (!(other instanceof SinceKotlin))
       return false;
-    var tmp0_other_with_cast = other instanceof ReplaceWith ? other : THROW_CCE();
-    if (!(this.expression_1 === tmp0_other_with_cast.expression_1))
-      return false;
-    if (!contentEquals_3(this.imports_1, tmp0_other_with_cast.imports_1))
+    var tmp0_other_with_cast = other instanceof SinceKotlin ? other : THROW_CCE();
+    if (!(this.version_1 === tmp0_other_with_cast.version_1))
       return false;
     return true;
   };
-  protoOf(ReplaceWith).hashCode = function () {
-    var result = imul(getStringHashCode('expression'), 127) ^ getStringHashCode(this.expression_1);
-    result = result + (imul(getStringHashCode('imports'), 127) ^ hashCode(this.imports_1)) | 0;
-    return result;
+  protoOf(SinceKotlin).hashCode = function () {
+    return imul(getStringHashCode('version'), 127) ^ getStringHashCode(this.version_1);
   };
-  protoOf(ReplaceWith).toString = function () {
-    return '@kotlin.ReplaceWith(' + 'expression=' + this.expression_1 + ', ' + 'imports=' + toString_1(this.imports_1) + ')';
-  };
-  function DeprecatedSinceKotlin(warningSince, errorSince, hiddenSince) {
-    warningSince = warningSince === VOID ? '' : warningSince;
-    errorSince = errorSince === VOID ? '' : errorSince;
-    hiddenSince = hiddenSince === VOID ? '' : hiddenSince;
-    this.warningSince_1 = warningSince;
-    this.errorSince_1 = errorSince;
-    this.hiddenSince_1 = hiddenSince;
-  }
-  protoOf(DeprecatedSinceKotlin).get_warningSince_szk795_k$ = function () {
-    return this.warningSince_1;
-  };
-  protoOf(DeprecatedSinceKotlin).get_errorSince_6p3nh7_k$ = function () {
-    return this.errorSince_1;
-  };
-  protoOf(DeprecatedSinceKotlin).get_hiddenSince_8z3cp_k$ = function () {
-    return this.hiddenSince_1;
-  };
-  protoOf(DeprecatedSinceKotlin).equals = function (other) {
-    if (!(other instanceof DeprecatedSinceKotlin))
-      return false;
-    var tmp0_other_with_cast = other instanceof DeprecatedSinceKotlin ? other : THROW_CCE();
-    if (!(this.warningSince_1 === tmp0_other_with_cast.warningSince_1))
-      return false;
-    if (!(this.errorSince_1 === tmp0_other_with_cast.errorSince_1))
-      return false;
-    if (!(this.hiddenSince_1 === tmp0_other_with_cast.hiddenSince_1))
-      return false;
-    return true;
-  };
-  protoOf(DeprecatedSinceKotlin).hashCode = function () {
-    var result = imul(getStringHashCode('warningSince'), 127) ^ getStringHashCode(this.warningSince_1);
-    result = result + (imul(getStringHashCode('errorSince'), 127) ^ getStringHashCode(this.errorSince_1)) | 0;
-    result = result + (imul(getStringHashCode('hiddenSince'), 127) ^ getStringHashCode(this.hiddenSince_1)) | 0;
-    return result;
-  };
-  protoOf(DeprecatedSinceKotlin).toString = function () {
-    return '@kotlin.DeprecatedSinceKotlin(' + 'warningSince=' + this.warningSince_1 + ', ' + 'errorSince=' + this.errorSince_1 + ', ' + 'hiddenSince=' + this.hiddenSince_1 + ')';
-  };
-  function PublishedApi() {
-  }
-  protoOf(PublishedApi).equals = function (other) {
-    if (!(other instanceof PublishedApi))
-      return false;
-    other instanceof PublishedApi || THROW_CCE();
-    return true;
-  };
-  protoOf(PublishedApi).hashCode = function () {
-    return 0;
-  };
-  protoOf(PublishedApi).toString = function () {
-    return '@kotlin.PublishedApi(' + ')';
+  protoOf(SinceKotlin).toString = function () {
+    return '@kotlin.SinceKotlin(' + 'version=' + this.version_1 + ')';
   };
   var DeprecationLevel_WARNING_instance;
   var DeprecationLevel_ERROR_instance;
@@ -11838,20 +11786,6 @@ if (typeof String.prototype.endsWith === 'undefined') {
   function DeprecationLevel(name, ordinal) {
     Enum.call(this, name, ordinal);
   }
-  function ExtensionFunctionType() {
-  }
-  protoOf(ExtensionFunctionType).equals = function (other) {
-    if (!(other instanceof ExtensionFunctionType))
-      return false;
-    other instanceof ExtensionFunctionType || THROW_CCE();
-    return true;
-  };
-  protoOf(ExtensionFunctionType).hashCode = function () {
-    return 0;
-  };
-  protoOf(ExtensionFunctionType).toString = function () {
-    return '@kotlin.ExtensionFunctionType(' + ')';
-  };
   function ParameterName(name) {
     this.name_1 = name;
   }
@@ -11899,6 +11833,72 @@ if (typeof String.prototype.endsWith === 'undefined') {
   };
   protoOf(DslMarker).toString = function () {
     return '@kotlin.DslMarker(' + ')';
+  };
+  function DeprecatedSinceKotlin(warningSince, errorSince, hiddenSince) {
+    warningSince = warningSince === VOID ? '' : warningSince;
+    errorSince = errorSince === VOID ? '' : errorSince;
+    hiddenSince = hiddenSince === VOID ? '' : hiddenSince;
+    this.warningSince_1 = warningSince;
+    this.errorSince_1 = errorSince;
+    this.hiddenSince_1 = hiddenSince;
+  }
+  protoOf(DeprecatedSinceKotlin).get_warningSince_szk795_k$ = function () {
+    return this.warningSince_1;
+  };
+  protoOf(DeprecatedSinceKotlin).get_errorSince_6p3nh7_k$ = function () {
+    return this.errorSince_1;
+  };
+  protoOf(DeprecatedSinceKotlin).get_hiddenSince_8z3cp_k$ = function () {
+    return this.hiddenSince_1;
+  };
+  protoOf(DeprecatedSinceKotlin).equals = function (other) {
+    if (!(other instanceof DeprecatedSinceKotlin))
+      return false;
+    var tmp0_other_with_cast = other instanceof DeprecatedSinceKotlin ? other : THROW_CCE();
+    if (!(this.warningSince_1 === tmp0_other_with_cast.warningSince_1))
+      return false;
+    if (!(this.errorSince_1 === tmp0_other_with_cast.errorSince_1))
+      return false;
+    if (!(this.hiddenSince_1 === tmp0_other_with_cast.hiddenSince_1))
+      return false;
+    return true;
+  };
+  protoOf(DeprecatedSinceKotlin).hashCode = function () {
+    var result = imul(getStringHashCode('warningSince'), 127) ^ getStringHashCode(this.warningSince_1);
+    result = result + (imul(getStringHashCode('errorSince'), 127) ^ getStringHashCode(this.errorSince_1)) | 0;
+    result = result + (imul(getStringHashCode('hiddenSince'), 127) ^ getStringHashCode(this.hiddenSince_1)) | 0;
+    return result;
+  };
+  protoOf(DeprecatedSinceKotlin).toString = function () {
+    return '@kotlin.DeprecatedSinceKotlin(' + 'warningSince=' + this.warningSince_1 + ', ' + 'errorSince=' + this.errorSince_1 + ', ' + 'hiddenSince=' + this.hiddenSince_1 + ')';
+  };
+  function ExtensionFunctionType() {
+  }
+  protoOf(ExtensionFunctionType).equals = function (other) {
+    if (!(other instanceof ExtensionFunctionType))
+      return false;
+    other instanceof ExtensionFunctionType || THROW_CCE();
+    return true;
+  };
+  protoOf(ExtensionFunctionType).hashCode = function () {
+    return 0;
+  };
+  protoOf(ExtensionFunctionType).toString = function () {
+    return '@kotlin.ExtensionFunctionType(' + ')';
+  };
+  function PublishedApi() {
+  }
+  protoOf(PublishedApi).equals = function (other) {
+    if (!(other instanceof PublishedApi))
+      return false;
+    other instanceof PublishedApi || THROW_CCE();
+    return true;
+  };
+  protoOf(PublishedApi).hashCode = function () {
+    return 0;
+  };
+  protoOf(PublishedApi).toString = function () {
+    return '@kotlin.PublishedApi(' + ')';
   };
   function DeprecationLevel_WARNING_getInstance() {
     DeprecationLevel_initEntries();
@@ -14633,20 +14633,6 @@ if (typeof String.prototype.endsWith === 'undefined') {
   protoOf(ExperimentalTypeInference).toString = function () {
     return '@kotlin.experimental.ExperimentalTypeInference(' + ')';
   };
-  function NoInfer() {
-  }
-  protoOf(NoInfer).equals = function (other) {
-    if (!(other instanceof NoInfer))
-      return false;
-    other instanceof NoInfer || THROW_CCE();
-    return true;
-  };
-  protoOf(NoInfer).hashCode = function () {
-    return 0;
-  };
-  protoOf(NoInfer).toString = function () {
-    return '@kotlin.internal.NoInfer(' + ')';
-  };
   function InlineOnly() {
   }
   protoOf(InlineOnly).equals = function (other) {
@@ -14660,48 +14646,6 @@ if (typeof String.prototype.endsWith === 'undefined') {
   };
   protoOf(InlineOnly).toString = function () {
     return '@kotlin.internal.InlineOnly(' + ')';
-  };
-  function DynamicExtension() {
-  }
-  protoOf(DynamicExtension).equals = function (other) {
-    if (!(other instanceof DynamicExtension))
-      return false;
-    other instanceof DynamicExtension || THROW_CCE();
-    return true;
-  };
-  protoOf(DynamicExtension).hashCode = function () {
-    return 0;
-  };
-  protoOf(DynamicExtension).toString = function () {
-    return '@kotlin.internal.DynamicExtension(' + ')';
-  };
-  function LowPriorityInOverloadResolution() {
-  }
-  protoOf(LowPriorityInOverloadResolution).equals = function (other) {
-    if (!(other instanceof LowPriorityInOverloadResolution))
-      return false;
-    other instanceof LowPriorityInOverloadResolution || THROW_CCE();
-    return true;
-  };
-  protoOf(LowPriorityInOverloadResolution).hashCode = function () {
-    return 0;
-  };
-  protoOf(LowPriorityInOverloadResolution).toString = function () {
-    return '@kotlin.internal.LowPriorityInOverloadResolution(' + ')';
-  };
-  function HidesMembers() {
-  }
-  protoOf(HidesMembers).equals = function (other) {
-    if (!(other instanceof HidesMembers))
-      return false;
-    other instanceof HidesMembers || THROW_CCE();
-    return true;
-  };
-  protoOf(HidesMembers).hashCode = function () {
-    return 0;
-  };
-  protoOf(HidesMembers).toString = function () {
-    return '@kotlin.internal.HidesMembers(' + ')';
   };
   function OnlyInputTypes() {
   }
@@ -14717,6 +14661,58 @@ if (typeof String.prototype.endsWith === 'undefined') {
   protoOf(OnlyInputTypes).toString = function () {
     return '@kotlin.internal.OnlyInputTypes(' + ')';
   };
+  function NoInfer() {
+  }
+  protoOf(NoInfer).equals = function (other) {
+    if (!(other instanceof NoInfer))
+      return false;
+    other instanceof NoInfer || THROW_CCE();
+    return true;
+  };
+  protoOf(NoInfer).hashCode = function () {
+    return 0;
+  };
+  protoOf(NoInfer).toString = function () {
+    return '@kotlin.internal.NoInfer(' + ')';
+  };
+  var RequireKotlinVersionKind_LANGUAGE_VERSION_instance;
+  var RequireKotlinVersionKind_COMPILER_VERSION_instance;
+  var RequireKotlinVersionKind_API_VERSION_instance;
+  function values_6() {
+    return [RequireKotlinVersionKind_LANGUAGE_VERSION_getInstance(), RequireKotlinVersionKind_COMPILER_VERSION_getInstance(), RequireKotlinVersionKind_API_VERSION_getInstance()];
+  }
+  function valueOf_6(value) {
+    switch (value) {
+      case 'LANGUAGE_VERSION':
+        return RequireKotlinVersionKind_LANGUAGE_VERSION_getInstance();
+      case 'COMPILER_VERSION':
+        return RequireKotlinVersionKind_COMPILER_VERSION_getInstance();
+      case 'API_VERSION':
+        return RequireKotlinVersionKind_API_VERSION_getInstance();
+      default:
+        RequireKotlinVersionKind_initEntries();
+        THROW_IAE('No enum constant value.');
+        break;
+    }
+  }
+  function get_entries_6() {
+    if ($ENTRIES_6 == null)
+      $ENTRIES_6 = enumEntries(values_6());
+    return $ENTRIES_6;
+  }
+  var RequireKotlinVersionKind_entriesInitialized;
+  function RequireKotlinVersionKind_initEntries() {
+    if (RequireKotlinVersionKind_entriesInitialized)
+      return Unit_getInstance();
+    RequireKotlinVersionKind_entriesInitialized = true;
+    RequireKotlinVersionKind_LANGUAGE_VERSION_instance = new RequireKotlinVersionKind('LANGUAGE_VERSION', 0);
+    RequireKotlinVersionKind_COMPILER_VERSION_instance = new RequireKotlinVersionKind('COMPILER_VERSION', 1);
+    RequireKotlinVersionKind_API_VERSION_instance = new RequireKotlinVersionKind('API_VERSION', 2);
+  }
+  var $ENTRIES_6;
+  function RequireKotlinVersionKind(name, ordinal) {
+    Enum.call(this, name, ordinal);
+  }
   function RequireKotlin(version, message, level, versionKind, errorCode) {
     message = message === VOID ? '' : message;
     level = level === VOID ? DeprecationLevel_ERROR_getInstance() : level;
@@ -14770,44 +14766,48 @@ if (typeof String.prototype.endsWith === 'undefined') {
   protoOf(RequireKotlin).toString = function () {
     return '@kotlin.internal.RequireKotlin(' + 'version=' + this.version_1 + ', ' + 'message=' + this.message_1 + ', ' + 'level=' + this.level_1.toString() + ', ' + 'versionKind=' + this.versionKind_1.toString() + ', ' + 'errorCode=' + this.errorCode_1 + ')';
   };
-  var RequireKotlinVersionKind_LANGUAGE_VERSION_instance;
-  var RequireKotlinVersionKind_COMPILER_VERSION_instance;
-  var RequireKotlinVersionKind_API_VERSION_instance;
-  function values_6() {
-    return [RequireKotlinVersionKind_LANGUAGE_VERSION_getInstance(), RequireKotlinVersionKind_COMPILER_VERSION_getInstance(), RequireKotlinVersionKind_API_VERSION_getInstance()];
+  function HidesMembers() {
   }
-  function valueOf_6(value) {
-    switch (value) {
-      case 'LANGUAGE_VERSION':
-        return RequireKotlinVersionKind_LANGUAGE_VERSION_getInstance();
-      case 'COMPILER_VERSION':
-        return RequireKotlinVersionKind_COMPILER_VERSION_getInstance();
-      case 'API_VERSION':
-        return RequireKotlinVersionKind_API_VERSION_getInstance();
-      default:
-        RequireKotlinVersionKind_initEntries();
-        THROW_IAE('No enum constant value.');
-        break;
-    }
+  protoOf(HidesMembers).equals = function (other) {
+    if (!(other instanceof HidesMembers))
+      return false;
+    other instanceof HidesMembers || THROW_CCE();
+    return true;
+  };
+  protoOf(HidesMembers).hashCode = function () {
+    return 0;
+  };
+  protoOf(HidesMembers).toString = function () {
+    return '@kotlin.internal.HidesMembers(' + ')';
+  };
+  function LowPriorityInOverloadResolution() {
   }
-  function get_entries_6() {
-    if ($ENTRIES_6 == null)
-      $ENTRIES_6 = enumEntries(values_6());
-    return $ENTRIES_6;
+  protoOf(LowPriorityInOverloadResolution).equals = function (other) {
+    if (!(other instanceof LowPriorityInOverloadResolution))
+      return false;
+    other instanceof LowPriorityInOverloadResolution || THROW_CCE();
+    return true;
+  };
+  protoOf(LowPriorityInOverloadResolution).hashCode = function () {
+    return 0;
+  };
+  protoOf(LowPriorityInOverloadResolution).toString = function () {
+    return '@kotlin.internal.LowPriorityInOverloadResolution(' + ')';
+  };
+  function DynamicExtension() {
   }
-  var RequireKotlinVersionKind_entriesInitialized;
-  function RequireKotlinVersionKind_initEntries() {
-    if (RequireKotlinVersionKind_entriesInitialized)
-      return Unit_getInstance();
-    RequireKotlinVersionKind_entriesInitialized = true;
-    RequireKotlinVersionKind_LANGUAGE_VERSION_instance = new RequireKotlinVersionKind('LANGUAGE_VERSION', 0);
-    RequireKotlinVersionKind_COMPILER_VERSION_instance = new RequireKotlinVersionKind('COMPILER_VERSION', 1);
-    RequireKotlinVersionKind_API_VERSION_instance = new RequireKotlinVersionKind('API_VERSION', 2);
-  }
-  var $ENTRIES_6;
-  function RequireKotlinVersionKind(name, ordinal) {
-    Enum.call(this, name, ordinal);
-  }
+  protoOf(DynamicExtension).equals = function (other) {
+    if (!(other instanceof DynamicExtension))
+      return false;
+    other instanceof DynamicExtension || THROW_CCE();
+    return true;
+  };
+  protoOf(DynamicExtension).hashCode = function () {
+    return 0;
+  };
+  protoOf(DynamicExtension).toString = function () {
+    return '@kotlin.internal.DynamicExtension(' + ')';
+  };
   function RequireKotlinVersionKind_LANGUAGE_VERSION_getInstance() {
     RequireKotlinVersionKind_initEntries();
     return RequireKotlinVersionKind_LANGUAGE_VERSION_instance;

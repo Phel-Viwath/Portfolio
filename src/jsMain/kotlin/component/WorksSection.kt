@@ -10,8 +10,8 @@ import react.dom.html.ReactHTML.h3
 import react.dom.html.ReactHTML.img
 import react.dom.html.ReactHTML.p
 import react.dom.html.ReactHTML.section
-import util.fadeInAnimation
-import util.slideUpAnimation
+import styles.fadeInAnimation
+import styles.slideUpAnimation
 
 fun ChildrenBuilder.workSection(){
     section {
