@@ -80,7 +80,7 @@ fun ChildrenBuilder.contactSection(
                         lineHeight = 1.6.em
                         marginBottom = 20.px
                     }
-                    +"I'm currently available for freelance work. Feel free to reach out if you have a project in mind or just want to say hello."
+                    +"I'm currently available. Feel free to reach out if you have a project in mind or just want to say hello."
                 }
 
                 div {

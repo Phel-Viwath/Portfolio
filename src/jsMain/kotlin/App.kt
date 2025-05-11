@@ -2,6 +2,7 @@ import component.*
 import csstype.Auto
 import csstype.Margin
 import csstype.Padding
+import csstype.pct
 import csstype.px
 import emotion.react.css
 import kotlinx.browser.document
@@ -34,6 +35,9 @@ private val mySkill: Map<String, Float> = mapOf(
 private val myWork: List<MyWork> = listOf(
     MyWork("https://via.placeholder.com/350x200", "SRU Library Management", "Back-end development"),
     MyWork("https://via.placeholder.com/350x200", "SRU Library Management", "Android development"),
+    MyWork("https://via.placeholder.com/350x200", "SRU Library Management", "Android development"),
+    MyWork("https://via.placeholder.com/350x200", "SRU Library Management", "Android development"),
+    MyWork("https://via.placeholder.com/350x200", "SRU Library Management", "Android development"),
 )
 
 private val contactPlatform: Map<SocialUrl, PathD> = mapOf(
@@ -65,8 +69,6 @@ fun app() = FC<Props> {
         }
 
         window.addEventListener("scroll", handleScroll)
-
-        // Initialize scroll animations
 
         // Clean up event listener
         cleanup {
@@ -112,8 +114,9 @@ fun app() = FC<Props> {
                 contactPlatform = contactPlatform
             )
         }
-
-        // Footer
-        footer(profileName)
     }
+    // Footer
+    footer(
+        profileName
+    )
 }

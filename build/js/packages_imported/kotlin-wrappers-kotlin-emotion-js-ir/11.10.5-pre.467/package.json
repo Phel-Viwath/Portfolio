@@ -1,0 +1,15 @@
+{
+  "name": "kotlin-wrappers-kotlin-emotion-js-ir",
+  "version": "11.10.5-pre.467",
+  "main": "kotlin-wrappers-kotlin-emotion-js-ir.js",
+  "types": "kotlin-wrappers-kotlin-emotion-js-ir.d.ts",
+  "devDependencies": {},
+  "dependencies": {
+    "@emotion/css": "^11.10.5",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5"
+  },
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "bundledDependencies": []
+}
