@@ -1,0 +1,3 @@
+# This is a placeholder for a real favicon.ico file.
+# Please rename this file to favicon.ico or replace it with a real favicon.ico file.
+# A favicon.ico file is a small icon that appears in the browser tab.
