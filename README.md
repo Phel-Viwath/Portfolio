@@ -79,12 +79,13 @@ Run the project with:
 
 Using gradle:
 ```bash
-gradle run
+gradle jsBrowserDevelopmentRun
 ```
-
-Using yarn:
 ```bash
-yarn start
+gradle jsBrowserDevelopmentRun --continuous 
+```
+```bash
+gradle jsBrowserDevelopmentRun -t
 ```
 
 ### Testing
