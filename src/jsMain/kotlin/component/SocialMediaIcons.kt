@@ -1,12 +1,12 @@
 package component
 
-import csstype.*
 import emotion.react.css
 import react.ChildrenBuilder
 import react.dom.html.ReactHTML.a
 import react.dom.html.ReactHTML.div
 import react.dom.svg.ReactSVG.path
 import react.dom.svg.ReactSVG.svg
+import csstype.*
 import web.window.WindowTarget
 
 typealias SocialUrl = String

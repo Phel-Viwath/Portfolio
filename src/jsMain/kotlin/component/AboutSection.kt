@@ -1,6 +1,5 @@
 package component
 
-import csstype.*
 import emotion.react.css
 import react.ChildrenBuilder
 import react.dom.html.ReactHTML.h2
@@ -8,6 +7,7 @@ import react.dom.html.ReactHTML.p
 import react.dom.html.ReactHTML.section
 import styles.paragraphStyles
 import util.toOpacity
+import csstype.*
 
 fun ChildrenBuilder.aboutSection() {
     section {

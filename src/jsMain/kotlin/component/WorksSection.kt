@@ -1,7 +1,7 @@
 package component
 
-import csstype.*
 import emotion.react.css
+import model.MyWork
 import org.w3c.dom.HTMLElement
 import react.ChildrenBuilder
 import react.dom.html.ReactHTML.div
@@ -13,15 +13,12 @@ import react.dom.html.ReactHTML.section
 import styles.animation.fadeInAnimation
 import styles.animation.slideUpAnimation
 import styles.animation.useInViewport
-
-data class MyWork(
-    val image: String,
-    val projectName: String,
-    val projectType: String
-)
+import csstype.*
+import kotlin.js.unsafeCast
 
 fun ChildrenBuilder.workSection(
-    myWorks: List<MyWork>
+    myWorks: List<MyWork>,
+    onClickEvent: (Int) -> Unit
 ){
     val (workRef, isWorkVisible) = useInViewport()
     section {
@@ -49,12 +46,13 @@ fun ChildrenBuilder.workSection(
             }
 
             // Portfolio items
-            myWorks.forEachIndexed { i, work ->
+            myWorks.forEachIndexed { i: Int, work: MyWork ->
                 div {
+                    onClick = { onClickEvent(i) }
                     css {
                         borderRadius = 12.px
                         overflow = Overflow.hidden
-                        boxShadow = BoxShadow(0.px, 4.px, 6.px, rgba(0, 0, 0, 0.05))
+                        boxShadow = BoxShadow(0.px,4.px, 6.px, Color("#0000000d"))
                         backgroundColor = Color("white")
                         transition = "transform 0.3s ease".unsafeCast<Transition>()
                         cursor = Cursor.pointer

@@ -1,7 +1,5 @@
 package component
 
-import csstype.*
-import emotion.react.css
 import kotlinx.browser.window
 import react.ChildrenBuilder
 import react.dom.html.ReactHTML.button
@@ -22,6 +20,8 @@ import styles.animation.slideInLeftAnimation
 import styles.animation.slideInRightAnimation
 import styles.animation.useInViewport
 import web.html.ButtonType
+import csstype.*
+import emotion.react.css
 import web.html.InputType
 
 fun ChildrenBuilder.contactSection(
@@ -123,7 +123,7 @@ fun ChildrenBuilder.contactSection(
                     backgroundColor = Color("white")
                     padding = 30.px
                     borderRadius = 12.px
-                    boxShadow = BoxShadow(0.px, 4.px, 6.px, rgba(0, 0, 0, 0.05))
+                    boxShadow = BoxShadow(0.px, 4.px, 6.px, Color("#0000000d"))
                     slideInRightAnimation(duration = 0.8.s, delay = 0.2.s, isVisible = rightColumnVisible)
                 }
 

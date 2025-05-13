@@ -1,8 +1,6 @@
 package component
 
-import csstype.*
 import emotion.react.css
-import js.core.jso
 import kotlinx.browser.document
 import react.ChildrenBuilder
 import react.dom.html.ReactHTML.a
@@ -12,6 +10,8 @@ import react.dom.html.ReactHTML.header
 import react.dom.html.ReactHTML.nav
 import styles.Colors
 import util.Constant.navSection
+import csstype.*
+import js.core.jso
 
 fun ChildrenBuilder.header(
     activeSection: String,
@@ -27,7 +27,7 @@ fun ChildrenBuilder.header(
             borderRadius = 20.px
             margin = Margin(20.px, Auto.auto)
             width = 80.pct
-            boxShadow = BoxShadow(4.px, 6.px, rgba(0,0,0,0.05))
+            boxShadow = BoxShadow(4.px, 6.px, Color("#0000000d"))
             position = Position.sticky
             top = 20.px
             zIndex = "1000".unsafeCast<ZIndex>()

@@ -1,8 +1,6 @@
 package component
 
-import csstype.*
 import emotion.react.css
-import js.core.jso
 import kotlinx.browser.document
 import react.ChildrenBuilder
 import react.dom.html.ReactHTML.a
@@ -17,6 +15,8 @@ import styles.animation.slideInRightAnimation
 import styles.animation.useInViewport
 import util.fontWeight
 import util.transition
+import csstype.*
+import js.core.jso
 
 fun ChildrenBuilder.heroSection(name: String){
 

@@ -1,6 +1,5 @@
 package component
 
-import csstype.*
 import emotion.react.css
 import react.ChildrenBuilder
 import react.dom.html.ReactHTML.div
@@ -11,6 +10,7 @@ import styles.animation.slideInLeftAnimation
 import styles.animation.slideUpAnimation
 import styles.animation.useInViewport
 import kotlin.Float
+import csstype.*
 
 fun ChildrenBuilder.skillSection(skills: Map<String, Float>){
 
@@ -46,7 +46,7 @@ fun ChildrenBuilder.skillSection(skills: Map<String, Float>){
                         backgroundColor = Color("white")
                         padding = 20.px
                         borderRadius = 10.px
-                        boxShadow = BoxShadow(0.px, 4.px, 6.px, rgba(0, 0, 0, 0.05))
+                        boxShadow = BoxShadow(0.px, 4.px, 6.px, Color("#0000000d"))
                         slideUpAnimation(duration = 0.8.s, delay = (0.2 + index * 0.1).s)
                     }
 

@@ -1,11 +1,8 @@
 package util
 
-import csstype.ClassName
-import csstype.FontWeight
-import csstype.Opacity
-import csstype.Percentage
-import csstype.Transition
 import org.w3c.dom.Element
+import csstype.*
+import web.cssom.*
 import react.dom.client.createRoot as reactCreateRoot
 import web.dom.Element as WebElement
 

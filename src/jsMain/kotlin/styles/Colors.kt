@@ -2,6 +2,7 @@ package styles
 
 import csstype.Color
 
+
 object Colors {
     // Main gradient colors
     val backgroundGradientStart = Color("#4ac8e0")

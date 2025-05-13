@@ -1,15 +1,10 @@
 package component
 
-import csstype.Color
-import csstype.Padding
-import csstype.TextAlign
-import csstype.pct
-import csstype.px
-import csstype.vh
 import emotion.react.css
 import react.ChildrenBuilder
 import react.dom.html.ReactHTML.footer
 import react.dom.html.ReactHTML.p
+import csstype.*
 
 fun ChildrenBuilder.footer(name: String){
     footer {

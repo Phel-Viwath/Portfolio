@@ -1,11 +1,8 @@
 package styles
 
-import csstype.Color
+
 import csstype.PropertiesBuilder
-import csstype.Transform
-import csstype.em
-import csstype.pct
-import csstype.px
+import csstype.*
 import styles.Typography.paragraphFontSize
 import util.toOpacity
 
