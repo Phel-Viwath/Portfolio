@@ -6,8 +6,8 @@ import react.dom.html.ReactHTML.a
 import react.dom.html.ReactHTML.div
 import react.dom.svg.ReactSVG.path
 import react.dom.svg.ReactSVG.svg
-import csstype.*
 import web.window.WindowTarget
+import web.cssom.*
 
 typealias SocialUrl = String
 typealias PathD = String

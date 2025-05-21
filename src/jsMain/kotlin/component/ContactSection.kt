@@ -1,5 +1,6 @@
 package component
 
+import emotion.react.css
 import kotlinx.browser.window
 import react.ChildrenBuilder
 import react.dom.html.ReactHTML.button
@@ -19,9 +20,8 @@ import styles.animation.fadeInAnimation
 import styles.animation.slideInLeftAnimation
 import styles.animation.slideInRightAnimation
 import styles.animation.useInViewport
+import web.cssom.*
 import web.html.ButtonType
-import csstype.*
-import emotion.react.css
 import web.html.InputType
 
 fun ChildrenBuilder.contactSection(

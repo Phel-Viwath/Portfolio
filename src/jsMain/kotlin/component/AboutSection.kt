@@ -7,7 +7,7 @@ import react.dom.html.ReactHTML.p
 import react.dom.html.ReactHTML.section
 import styles.paragraphStyles
 import util.toOpacity
-import csstype.*
+import web.cssom.*
 
 fun ChildrenBuilder.aboutSection() {
     section {

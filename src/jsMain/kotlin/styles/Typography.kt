@@ -1,7 +1,6 @@
 package styles
 
-import csstype.px
-
+import web.cssom.px
 
 object Typography {
     const val BASE_FONT_FAMILY = "'Roboto', 'Segoe UI', 'Helvetica Neue', sans-serif"

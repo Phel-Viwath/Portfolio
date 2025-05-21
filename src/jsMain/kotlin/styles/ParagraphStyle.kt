@@ -2,10 +2,9 @@ package styles
 
 
 import csstype.PropertiesBuilder
-import csstype.*
 import styles.Typography.paragraphFontSize
 import util.toOpacity
-
+import web.cssom.*
 
 fun PropertiesBuilder.paragraphStyles() {
     fontSize = paragraphFontSize

@@ -10,7 +10,7 @@ import styles.animation.slideInLeftAnimation
 import styles.animation.slideUpAnimation
 import styles.animation.useInViewport
 import kotlin.Float
-import csstype.*
+import web.cssom.*
 
 fun ChildrenBuilder.skillSection(skills: Map<String, Float>){
 

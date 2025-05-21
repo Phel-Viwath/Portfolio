@@ -10,6 +10,7 @@ import react.useRef
 import react.useState
 import util.Constant.navSection
 import util.toOpacity
+import web.cssom.*
 
 fun PropertiesBuilder.fadeInAnimation(
     duration: AnimationDuration = 1.s,

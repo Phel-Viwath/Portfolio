@@ -1,6 +1,7 @@
 package component
 
 import emotion.react.css
+import js.objects.unsafeJso
 import kotlinx.browser.document
 import react.ChildrenBuilder
 import react.dom.html.ReactHTML.a
@@ -10,8 +11,7 @@ import react.dom.html.ReactHTML.header
 import react.dom.html.ReactHTML.nav
 import styles.Colors
 import util.Constant.navSection
-import csstype.*
-import js.core.jso
+import web.cssom.*
 
 fun ChildrenBuilder.header(
     activeSection: String,
@@ -65,7 +65,7 @@ fun ChildrenBuilder.header(
                     onClick = { event ->
                         event.preventDefault()
                         val targetElement = document.getElementById(sectionId)
-                        targetElement?.asDynamic().scrollIntoView(jso {
+                        targetElement?.asDynamic().scrollIntoView(unsafeJso {
                             behavior = "smooth"
                             block = "center"
                         })

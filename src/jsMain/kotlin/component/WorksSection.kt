@@ -13,7 +13,7 @@ import react.dom.html.ReactHTML.section
 import styles.animation.fadeInAnimation
 import styles.animation.slideUpAnimation
 import styles.animation.useInViewport
-import csstype.*
+import web.cssom.*
 import kotlin.js.unsafeCast
 
 fun ChildrenBuilder.workSection(

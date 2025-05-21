@@ -1,7 +1,6 @@
 package styles
 
-import csstype.Color
-
+import web.cssom.Color
 
 object Colors {
     // Main gradient colors

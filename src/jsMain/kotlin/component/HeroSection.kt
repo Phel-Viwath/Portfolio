@@ -1,6 +1,7 @@
 package component
 
 import emotion.react.css
+import js.objects.unsafeJso
 import kotlinx.browser.document
 import react.ChildrenBuilder
 import react.dom.html.ReactHTML.a
@@ -15,8 +16,7 @@ import styles.animation.slideInRightAnimation
 import styles.animation.useInViewport
 import util.fontWeight
 import util.transition
-import csstype.*
-import js.core.jso
+import web.cssom.*
 
 fun ChildrenBuilder.heroSection(name: String){
 
@@ -91,7 +91,7 @@ fun ChildrenBuilder.heroSection(name: String){
                 onClick = { event ->
                     event.preventDefault()
                     val contactSection = document.getElementById("contact")
-                    contactSection?.asDynamic().scrollIntoView(jso {
+                    contactSection?.asDynamic().scrollIntoView(unsafeJso {
                         behavior = "smooth"
                         block = "center"
                     })

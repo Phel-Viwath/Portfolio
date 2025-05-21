@@ -4,7 +4,7 @@ import emotion.react.css
 import react.ChildrenBuilder
 import react.dom.html.ReactHTML.footer
 import react.dom.html.ReactHTML.p
-import csstype.*
+import web.cssom.*
 
 fun ChildrenBuilder.footer(name: String){
     footer {

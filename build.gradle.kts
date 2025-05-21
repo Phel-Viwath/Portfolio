@@ -1,5 +1,6 @@
 plugins {
     kotlin("multiplatform") version "2.1.20"
+    kotlin("plugin.serialization") version "2.1.20"
 }
 
 repositories {
@@ -27,20 +28,16 @@ kotlin {
     sourceSets {
         jsMain{
             dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-html-js:0.8.0")
-                implementation("org.jetbrains.kotlin-wrappers:kotlin-browser:0.0.1-pre.620")
                 implementation(kotlin("stdlib-js"))
-                implementation("org.jetbrains.kotlin-wrappers:kotlin-react:18.2.0-pre.467")
-                implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom:18.2.0-pre.467")
-                implementation("org.jetbrains.kotlin-wrappers:kotlin-react-router-dom:6.3.0-pre.346")
-                implementation("org.jetbrains.kotlin-wrappers:kotlin-styled:5.3.6-pre.510")
-                implementation("org.jetbrains.kotlin-wrappers:kotlin-emotion:11.10.5-pre.467")
-                implementation("org.jetbrains.kotlin-wrappers:kotlin-csstype:3.1.1-pre.467")
-                implementation("org.jetbrains.kotlin-wrappers:kotlin-web:0.0.1-pre.467")
+                implementation("org.jetbrains.kotlin-wrappers:kotlin-react:2025.5.8-19.1.0")
+                implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom:2025.5.8-19.1.0")
+                implementation("org.jetbrains.kotlin-wrappers:kotlin-react-router-dom:2025.1.6-6.28.0")
 
-                // Coroutines & serialization
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-js:1.6.4")
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
+                implementation("org.jetbrains.kotlin-wrappers:kotlin-emotion:2025.3.26")
+                implementation("org.jetbrains.kotlin-wrappers:kotlin-csstype:2025.5.8-3.1.3")
+                implementation("org.jetbrains.kotlin-wrappers:kotlin-web:2025.5.8")
+
+                runtimeOnly("org.jetbrains.kotlin:kotlinx-atomicfu-runtime:2.1.21")
             }
         }
     }
