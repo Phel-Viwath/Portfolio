@@ -29,6 +29,7 @@ kotlin {
         jsMain{
             dependencies {
                 implementation(kotlin("stdlib-js"))
+
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-react:2025.5.8-19.1.0")
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom:2025.5.8-19.1.0")
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-react-router-dom:2025.1.6-6.28.0")

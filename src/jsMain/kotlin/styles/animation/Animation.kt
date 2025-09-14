@@ -1,6 +1,5 @@
 package styles.animation
 
-
 import csstype.*
 import kotlinx.browser.document
 import kotlinx.browser.window
