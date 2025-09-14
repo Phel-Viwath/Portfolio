@@ -5,7 +5,6 @@ build/
 
 # Kotlin/JavaScript output
 kotlin-js-store/
-kotlin/
 out/
 processedResources/
 
