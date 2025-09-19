@@ -30,7 +30,7 @@ fun ChildrenBuilder.heroSection(name: String){
             justifyContent = JustifyContent.spaceBetween
             alignItems = AlignItems.center
             minHeight = "calc(100vh - 120px)".unsafeCast<MinHeight>()
-            padding = Padding(60.px, 0.px)
+            padding = Padding(0.px, 0.px)
         }
 
         // Left content
