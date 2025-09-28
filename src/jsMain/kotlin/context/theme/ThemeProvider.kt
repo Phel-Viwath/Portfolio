@@ -33,7 +33,7 @@ object ThemeState {
 
 
 // Theme Provider Component (Simplified)
-fun ThemeProvider(): FC<PropsWithChildren> = FC { props ->
+val ThemeProvider = FC<PropsWithChildren> { props ->
     val (theme, _) = useTheme()
 
     // Apply theme class to body

@@ -7,13 +7,18 @@ import react.dom.html.ReactHTML.p
 import react.dom.html.ReactHTML.section
 import styles.paragraphStyles
 import util.toOpacity
+import util.useThemeColors
 import web.cssom.*
 
 fun ChildrenBuilder.aboutSection() {
+
+    val colors = useThemeColors()
+
     section {
         id = "about"
         css {
             padding = Padding(100.px, 0.px)
+            backgroundColor = colors.background
         }
 
         h2 {

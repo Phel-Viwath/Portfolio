@@ -9,16 +9,20 @@ import react.dom.html.ReactHTML.section
 import styles.animation.slideInLeftAnimation
 import styles.animation.slideUpAnimation
 import styles.animation.useInViewport
+import util.useThemeColors
 import kotlin.Float
 import web.cssom.*
 
 fun ChildrenBuilder.skillSection(skills: Map<String, Float>){
 
+    val colors = useThemeColors() // theme colors
     val (skillRef, isSkillVisible) = useInViewport()
+
     section {
         id = "skills"
         css {
             padding = Padding(100.px, 0.px)
+            background = colors.background
         }
 
         h2 {

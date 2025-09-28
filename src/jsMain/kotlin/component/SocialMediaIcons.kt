@@ -6,6 +6,7 @@ import react.dom.html.ReactHTML.a
 import react.dom.html.ReactHTML.div
 import react.dom.svg.ReactSVG.path
 import react.dom.svg.ReactSVG.svg
+import util.useThemeColors
 import web.window.WindowTarget
 import web.cssom.*
 
@@ -15,11 +16,15 @@ typealias PathD = String
 fun ChildrenBuilder.socialMediaIcons(
     appMap: Map<SocialUrl, PathD>
 ){
+
+    val colors = useThemeColors()
+
     div {
         css {
             display = Display.flex
             gap = 15.px
             marginTop = 20.px
+            background = colors.background
         }
 
         appMap.forEach {

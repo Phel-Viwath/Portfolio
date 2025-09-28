@@ -1,6 +1,8 @@
-package styles
+package styles.color
 
+import styles.color.ThemeColorsPalette
 import web.cssom.Color
+
 object ThemeColors {
     val Light = ThemeColorsPalette(
         background = Color("#f8fafc"),

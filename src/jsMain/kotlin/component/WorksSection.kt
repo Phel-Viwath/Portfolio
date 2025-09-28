@@ -13,6 +13,7 @@ import react.dom.html.ReactHTML.section
 import styles.animation.fadeInAnimation
 import styles.animation.slideUpAnimation
 import styles.animation.useInViewport
+import util.useThemeColors
 import web.cssom.*
 import kotlin.js.unsafeCast
 
@@ -20,10 +21,13 @@ fun ChildrenBuilder.workSection(
     myWorks: List<MyWork>,
     onClickEvent: (Int) -> Unit
 ){
+    val colors = useThemeColors()
     val (workRef, isWorkVisible) = useInViewport()
+
     section {
         id = "works"
         css {
+            background = colors.background
             padding = Padding(100.px, 0.px)
         }
 

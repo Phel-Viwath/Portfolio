@@ -16,9 +16,12 @@ import styles.animation.slideInRightAnimation
 import styles.animation.useInViewport
 import util.fontWeight
 import util.transition
+import util.useThemeColors
 import web.cssom.*
 
 fun ChildrenBuilder.heroSection(name: String){
+
+    val colors = useThemeColors() // theme color
 
     val (leftContentRef, leftContentVisible) = useInViewport()
     val (profileRef, profileVisible) = useInViewport()
@@ -31,6 +34,7 @@ fun ChildrenBuilder.heroSection(name: String){
             alignItems = AlignItems.center
             minHeight = "calc(100vh - 120px)".unsafeCast<MinHeight>()
             padding = Padding(0.px, 0.px)
+            background = colors.background
         }
 
         // Left content
@@ -45,7 +49,7 @@ fun ChildrenBuilder.heroSection(name: String){
                 css {
                     fontSize = 48.px
                     margin = 0.px
-                    color = Color("#1e293b")
+                    color = colors.text
                 }
                 +"Hi,"
             }
@@ -54,12 +58,12 @@ fun ChildrenBuilder.heroSection(name: String){
                 css {
                     fontSize = 48.px
                     margin = Margin(10.px, 0.px)
-                    color = Color("#1e293b")
+                    color = colors.text
                 }
                 +"I'm "
                 span {
                     css {
-                        color = Color("#4169e1")
+                        color = colors.primary
                     }
                     +name
                 }
@@ -69,9 +73,9 @@ fun ChildrenBuilder.heroSection(name: String){
                 css {
                     fontSize = 36.px
                     margin = Margin(10.px, 0.px, 20.px, 0.px)
-                    color = Color("#1e293b")
+                    color = colors.text
                 }
-                +"Android Developer"
+                +"Android and Spring Boot Developer"
             }
 
             a {
@@ -79,7 +83,7 @@ fun ChildrenBuilder.heroSection(name: String){
                 css {
                     display = Display.inlineBlock
                     padding = Padding(12.px, 30.px)
-                    backgroundColor = Color("#4169e1")
+                    backgroundColor = colors.primary
                     color = Color("white")
                     borderRadius = 8.px
                     textDecoration = None.none
@@ -87,6 +91,9 @@ fun ChildrenBuilder.heroSection(name: String){
                     fontSize = 16.px
                     marginTop = 20.px
                     transition = "all 0.3s ease".transition()
+                    hover {
+                        backgroundColor = colors.primaryHover
+                    }
                 }
                 onClick = { event ->
                     event.preventDefault()
@@ -108,7 +115,7 @@ fun ChildrenBuilder.heroSection(name: String){
             css {
                 width = 400.px
                 height = 400.px
-                backgroundColor = Color("#4169e1")
+                backgroundColor = colors.primary
                 borderRadius = 50.pct
                 overflow = Overflow.hidden
                 display = Display.flex

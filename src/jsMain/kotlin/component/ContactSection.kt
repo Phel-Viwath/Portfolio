@@ -20,6 +20,7 @@ import styles.animation.fadeInAnimation
 import styles.animation.slideInLeftAnimation
 import styles.animation.slideInRightAnimation
 import styles.animation.useInViewport
+import util.useThemeColors
 import web.cssom.*
 import web.html.ButtonType
 import web.html.InputType
@@ -30,6 +31,9 @@ fun ChildrenBuilder.contactSection(
     address: String,
     contactPlatform: Map<SocialUrl, PathD>
 ){
+    // theme color
+    val colors = useThemeColors()
+
     // Use the hook to detect if section is in viewport
     val (titleRef, titleVisible) = useInViewport()
     val (leftColumnRef, leftColumnVisible) = useInViewport()
@@ -38,6 +42,7 @@ fun ChildrenBuilder.contactSection(
     section {
         id = "contact"
         css {
+            background = colors.background
             padding = Padding(top =100.px, bottom = 0.px, horizontal = 0.px)
         }
 

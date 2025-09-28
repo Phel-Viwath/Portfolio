@@ -1,10 +1,14 @@
 import kotlinx.browser.document
 import react.create
 import styles.animation.initScrollAnimations
+import styles.injectGlobalStyles
 import util.createRoot
 
 // App entry point
 fun main() {
+    // Inject global styles first
+    injectGlobalStyles()
+
     // Get the root element
     val container = document.getElementById("root") ?: error("Couldn't find root container!")
 

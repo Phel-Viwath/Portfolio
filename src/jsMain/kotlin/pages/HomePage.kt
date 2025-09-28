@@ -18,6 +18,7 @@ import util.Constant.GITHUB_ICON
 import util.Constant.LINKEDIN_ICON
 import util.Constant.TELEGRAM_ICON
 import util.Constant.navSection
+import util.useThemeColors
 import web.cssom.Margin
 import web.cssom.Padding
 import web.cssom.px
@@ -25,6 +26,7 @@ import kotlin.js.unsafeCast
 
 class HomePage{
     private val myWork = MyWorksRepository()
+    val colors = useThemeColors() // theme colors
 
     private val mySkill: Map<String, Float> = mapOf(
         "Kotlin" to 90f,
@@ -33,8 +35,8 @@ class HomePage{
         "MongoDB" to 50f,
         "Spring Boot" to 85f,
         "Android" to 85f,
-        "Android Studio" to 85f,
-        "Intellij Idea" to 80f
+        "Android Studio" to 90f,
+        "Intellij Idea" to 90f
     )
 
     private val contactPlatform: Map<SocialUrl, PathD> = mapOf(
@@ -81,6 +83,8 @@ class HomePage{
                 maxWidth = 1200.px
                 margin = "0px auto".unsafeCast<Margin>()
                 padding = Padding(0.px, 20.px)
+                minHeight = "100vh".unsafeCast<web.cssom.MinHeight>()
+                transition = "all 0.3s ease".unsafeCast<web.cssom.Transition>()
             }
 
             // Header
@@ -88,7 +92,6 @@ class HomePage{
                 activeSection = activeSection,
                 profileName = profileName
             )
-
 
             // Main content
             main {
@@ -116,9 +119,7 @@ class HomePage{
             }
         }
         // Footer
-        footer(
-            profileName
-        )
+        footer(profileName)
     }
 
 }

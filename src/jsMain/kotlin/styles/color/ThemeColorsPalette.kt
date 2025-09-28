@@ -1,4 +1,4 @@
-package styles
+package styles.color
 
 import web.cssom.Color
 
