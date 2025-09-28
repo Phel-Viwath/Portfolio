@@ -1,7 +1,6 @@
 package util
 
 import org.w3c.dom.Element
-import csstype.*
 import web.cssom.*
 import react.dom.client.createRoot as reactCreateRoot
 import web.dom.Element as WebElement

@@ -1,6 +1,7 @@
 package component
 
 import emotion.react.css
+import hooks.useTheme
 import js.objects.unsafeJso
 import kotlinx.browser.document
 import react.ChildrenBuilder
@@ -9,21 +10,24 @@ import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.h3
 import react.dom.html.ReactHTML.header
 import react.dom.html.ReactHTML.nav
-import styles.Colors
 import util.Constant.navSection
+import util.useThemeColors
 import web.cssom.*
 
 fun ChildrenBuilder.header(
     activeSection: String,
     profileName: String
 ){
+    val (theme, toggleTheme) = useTheme()
+    val colors = useThemeColors()
+
     header {
         css {
             display = Display.flex
             justifyContent = JustifyContent.spaceBetween
             alignItems = AlignItems.center
             padding = Padding(20.px, 10.px)
-            backgroundColor = Colors.white
+            backgroundColor = colors.headerBg
             borderRadius = 20.px
             margin = Margin(20.px, Auto.auto)
             width = 80.pct
