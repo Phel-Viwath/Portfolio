@@ -3,19 +3,23 @@ package context.theme
 import hooks.useTheme
 import react.FC
 import react.PropsWithChildren
-import react.createContext
-import react.internal.buildCleanupCallback
 import react.useEffect
-import react.useState
+import repository.ThemePrefs
 import web.dom.document
 
 object ThemeState {
-    var currentTheme: Theme = Theme.LIGHT
+
+    private val themePrefs = ThemePrefs()
     private val listeners = mutableListOf<(Theme) -> Unit>()
+
+    var currentTheme: Theme = themePrefs.loadTheme()
 
     fun setTheme(newTheme: Theme) {
         currentTheme = newTheme
-        listeners.forEach { it(newTheme) }
+        themePrefs.saveTheme(newTheme)
+        listeners.forEach {
+            it(newTheme)
+        }
     }
 
     fun toggleTheme() {
@@ -29,6 +33,7 @@ object ThemeState {
     fun removeListener(listener: (Theme) -> Unit) {
         listeners.remove(listener)
     }
+
 }
 
 

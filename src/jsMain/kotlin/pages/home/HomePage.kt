@@ -1,5 +1,7 @@
 package pages.home
 
+import component.PathD
+import component.SocialUrl
 import emotion.react.css
 import kotlinx.browser.document
 import kotlinx.browser.window

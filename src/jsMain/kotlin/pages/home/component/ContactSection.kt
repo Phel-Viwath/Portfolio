@@ -1,6 +1,9 @@
 package pages.home.component
 
+import component.PathD
+import component.SocialUrl
 import component.inputField
+import component.socialMediaIcons
 import emotion.react.css
 import kotlinx.browser.window
 import react.ChildrenBuilder
@@ -14,6 +17,7 @@ import react.dom.html.ReactHTML.p
 import react.dom.html.ReactHTML.section
 import react.dom.html.ReactHTML.strong
 import react.dom.html.ReactHTML.textarea
+import react.useState
 import styles.Typography.buttonFontSize
 import styles.animation.fadeInAnimation
 import styles.animation.slideInLeftAnimation
@@ -39,6 +43,13 @@ fun ChildrenBuilder.contactSection(
     val (titleRef, titleVisible) = useInViewport()
     val (leftColumnRef, leftColumnVisible) = useInViewport()
     val (rightColumnRef, rightColumnVisible) = useInViewport()
+
+    // Form state
+    val (formName, setFormName) = useState("")
+    val (formEmail, setFormEmail) = useState("")
+    val (formMessage, setFormMessage) = useState("")
+    val (isSubmitting, setIsSubmitting) = useState(false)
+    val (submitStatus, setSubmitStatus) = useState<String?>(null)
 
     section {
         id = "contact"
@@ -139,6 +150,24 @@ fun ChildrenBuilder.contactSection(
                     slideInRightAnimation(duration = 0.8.s, delay = 0.2.s, isVisible = rightColumnVisible)
                 }
 
+                // Status message
+                submitStatus?.let { status ->
+                    div {
+                        css {
+                            padding = 12.px
+                            borderRadius = 6.px
+                            marginBottom = 20.px
+                            backgroundColor = if (status.startsWith("Success"))
+                                Color("#10b981").unsafeCast<BackgroundColor>()
+                            else
+                                Color("#ef4444").unsafeCast<BackgroundColor>()
+                            color = Color("white")
+                            fontSize = 14.px
+                        }
+                        +status
+                    }
+                } // end submit status
+
                 form {
                     inputField(
                         displayName = "Name",
@@ -154,7 +183,10 @@ fun ChildrenBuilder.contactSection(
                         iId = "email",
                         inputType = InputType.email,
                         bottomMargin = 20.px,
-                        colors = colors
+                        colors = colors,
+                        textValue = { value ->
+                            formEmail = value
+                        }
                     )
                     div {
                         css {
@@ -187,6 +219,7 @@ fun ChildrenBuilder.contactSection(
 
                     button {
                         type = ButtonType.submit
+                        disabled = isSubmitting
                         css {
                             width = 100.pct
                             backgroundColor = colors.primary
@@ -198,16 +231,20 @@ fun ChildrenBuilder.contactSection(
                             fontSize = buttonFontSize
                             cursor = Cursor.pointer
                             transition = "background-color 0.3s ease".transition()
-
                             hover {
-                                backgroundColor = colors.primaryHover
+                                if (!isSubmitting) {
+                                    backgroundColor = colors.primaryHover
+                                }
+                            }
+                            disabled {
+                                opacity = 0.6.unsafeCast<Opacity>()
                             }
                         }
                         onClick = { event ->
                             event.preventDefault()
                             window.alert("Message sent! (This is a demo)")
                         }
-                        +"Send Message"
+                        +(if (isSubmitting) "Sending..." else "Send Message")
                     }
                 }
             }

@@ -23,7 +23,8 @@ fun ChildrenBuilder.inputField(
     iId: String,
     inputType: InputType,
     bottomMargin: MarginBottom = 20.px,
-    colors: ThemeColorsPalette
+    colors: ThemeColorsPalette,
+    textValue: (String) -> Unit
 ) {
     div {
         css {
@@ -41,6 +42,7 @@ fun ChildrenBuilder.inputField(
         input {
             type = inputType
             id = iId
+            value = textValue
             css {
                 width = 100.pct
                 padding = 10.px
