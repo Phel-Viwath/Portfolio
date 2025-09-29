@@ -1,32 +1,25 @@
-package pages
+package pages.home
 
-import component.*
 import emotion.react.css
 import kotlinx.browser.document
 import kotlinx.browser.window
 import org.w3c.dom.events.Event
+import pages.home.component.*
 import react.FC
 import react.Props
-import react.dom.html.ReactHTML.div
-import react.dom.html.ReactHTML.main
+import react.dom.html.ReactHTML
 import react.internal.buildCleanupCallback
 import react.router.useNavigate
 import react.useEffect
 import react.useState
 import repository.MyWorksRepository
-import util.Constant.GITHUB_ICON
-import util.Constant.LINKEDIN_ICON
-import util.Constant.TELEGRAM_ICON
-import util.Constant.navSection
-import util.useThemeColors
-import web.cssom.Margin
-import web.cssom.Padding
-import web.cssom.px
-import kotlin.js.unsafeCast
+import util.Constant
+import web.cssom.*
+import kotlin.Float
 
 class HomePage{
+
     private val myWork = MyWorksRepository()
-    val colors = useThemeColors() // theme colors
 
     private val mySkill: Map<String, Float> = mapOf(
         "Kotlin" to 90f,
@@ -40,12 +33,12 @@ class HomePage{
     )
 
     private val contactPlatform: Map<SocialUrl, PathD> = mapOf(
-        "https://github.com/Phel-Viwath" to GITHUB_ICON,
-        "https://www.linkedin.com/in/phel-viwath-a0707b281/" to LINKEDIN_ICON,
-        "https://t.me/phel_viwath" to TELEGRAM_ICON
+        "https://github.com/Phel-Viwath" to Constant.GITHUB_ICON,
+        "https://www.linkedin.com/in/phel-viwath-a0707b281/" to Constant.LINKEDIN_ICON,
+        "https://t.me/phel_viwath" to Constant.TELEGRAM_ICON
     )
 
-    fun homePage() = FC<Props>{
+    fun homePage() = FC<Props> {
         val navigate = useNavigate()
         // State for tracking active section
         val (activeSection, setActiveSection) = useState("home")
@@ -54,7 +47,7 @@ class HomePage{
         // Effect to handle scroll and update active section
         useEffect {
             val handleScroll: (Event) -> Unit = {
-                val sections = navSection
+                val sections = Constant.navSection
 
                 // Find the section that is currently in view
                 val currentSection = sections.find { sectionId ->
@@ -78,13 +71,13 @@ class HomePage{
 //        globalStyles()
 
         // Container
-        div {
+        ReactHTML.div {
             css {
                 maxWidth = 1200.px
                 margin = "0px auto".unsafeCast<Margin>()
                 padding = Padding(0.px, 20.px)
-                minHeight = "100vh".unsafeCast<web.cssom.MinHeight>()
-                transition = "all 0.3s ease".unsafeCast<web.cssom.Transition>()
+                minHeight = "100vh".unsafeCast<MinHeight>()
+                transition = "all 0.3s ease".unsafeCast<Transition>()
             }
 
             // Header
@@ -94,7 +87,7 @@ class HomePage{
             )
 
             // Main content
-            main {
+            ReactHTML.main {
                 // Hero section
                 heroSection(profileName)
                 // About section
@@ -104,7 +97,7 @@ class HomePage{
                 skillSection(skills = mySkill)
 
                 // Works section
-                workSection(myWorks = myWork.getMyWorks()){ workId ->
+                workSection(myWorks = myWork.getMyWorks()) { workId ->
                     // route to WorkDetail
                     navigate("/work/$workId")
                 }

@@ -1,5 +1,6 @@
-package component
+package pages.home.component
 
+import component.inputField
 import emotion.react.css
 import kotlinx.browser.window
 import react.ChildrenBuilder
@@ -8,18 +9,18 @@ import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.form
 import react.dom.html.ReactHTML.h2
 import react.dom.html.ReactHTML.h3
-import react.dom.html.ReactHTML.input
 import react.dom.html.ReactHTML.label
 import react.dom.html.ReactHTML.p
 import react.dom.html.ReactHTML.section
 import react.dom.html.ReactHTML.strong
 import react.dom.html.ReactHTML.textarea
 import styles.Typography.buttonFontSize
-import styles.Typography.inputFontSize
 import styles.animation.fadeInAnimation
 import styles.animation.slideInLeftAnimation
 import styles.animation.slideInRightAnimation
 import styles.animation.useInViewport
+import util.fontWeight
+import util.transition
 import util.useThemeColors
 import web.cssom.*
 import web.html.ButtonType
@@ -42,7 +43,6 @@ fun ChildrenBuilder.contactSection(
     section {
         id = "contact"
         css {
-            background = colors.background
             padding = Padding(top =100.px, bottom = 0.px, horizontal = 0.px)
         }
 
@@ -51,7 +51,7 @@ fun ChildrenBuilder.contactSection(
             css {
                 fontSize = 36.px
                 marginBottom = 30.px
-                color = Color("#1e293b")
+                color = colors.text
                 fadeInAnimation(duration = 0.8.s, delay = 0.2.s, isVisible = titleVisible)
             }
             +"Contact Me"
@@ -73,7 +73,7 @@ fun ChildrenBuilder.contactSection(
                 h3 {
                     css {
                         fontSize = 20.px
-                        color = Color("#1e293b")
+                        color = colors.text
                         marginBottom = 20.px
                     }
                     +"Get in Touch"
@@ -81,7 +81,7 @@ fun ChildrenBuilder.contactSection(
 
                 p {
                     css {
-                        color = Color("#64748b")
+                        color = colors.textSecondary
                         lineHeight = 1.6.em
                         marginBottom = 20.px
                     }
@@ -91,8 +91,10 @@ fun ChildrenBuilder.contactSection(
                 div {
                     css {
                         marginBottom = 15.px
+                        color = colors.textSecondary
                     }
                     strong {
+                        css { color = colors.text }
                         +"Email: "
                     }
                     +email
@@ -101,8 +103,10 @@ fun ChildrenBuilder.contactSection(
                 div {
                     css {
                         marginBottom = 15.px
+                        color = colors.textSecondary
                     }
                     strong {
+                        css { color = colors.text }
                         +"Phone: "
                     }
                     +phone
@@ -111,8 +115,10 @@ fun ChildrenBuilder.contactSection(
                 div {
                     css {
                         marginBottom = 15.px
+                        color = colors.textSecondary
                     }
                     strong {
+                        css { color = colors.text }
                         +"Location: "
                     }
                     +address
@@ -125,66 +131,31 @@ fun ChildrenBuilder.contactSection(
             div {
                 ref = rightColumnRef
                 css {
-                    backgroundColor = Color("white")
+                    backgroundColor = colors.surface
                     padding = 30.px
                     borderRadius = 12.px
-                    boxShadow = BoxShadow(0.px, 4.px, 6.px, Color("#0000000d"))
+                    boxShadow = BoxShadow(0.px, 4.px, 6.px, colors.shadow)
+                    border = Border(1.px, LineStyle.solid, colors.border)
                     slideInRightAnimation(duration = 0.8.s, delay = 0.2.s, isVisible = rightColumnVisible)
                 }
 
                 form {
-                    div {
-                        css {
-                            marginBottom = 20.px
-                        }
-                        label {
-                            htmlFor = "name"
-                            css {
-                                display = Display.block
-                                marginBottom = 5.px
-                                color = Color("#64748b")
-                            }
-                            +"Name"
-                        }
-                        input {
-                            type = InputType.text
-                            id = "name"
-                            css {
-                                width = 100.pct
-                                padding = 10.px
-                                borderRadius = 6.px
-                                border = Border(1.px, LineStyle.solid, Color("#e2e8f0"))
-                                fontSize = inputFontSize
-                            }
-                        }
-                    }
-
-                    div {
-                        css {
-                            marginBottom = 20.px
-                        }
-                        label {
-                            htmlFor = "email"
-                            css {
-                                display = Display.block
-                                marginBottom = 5.px
-                                color = Color("#64748b")
-                            }
-                            +"Email"
-                        }
-                        input {
-                            type = InputType.email
-                            id = "email"
-                            css {
-                                width = 100.pct
-                                padding = 10.px
-                                borderRadius = 6.px
-                                border = Border(1.px, LineStyle.solid, Color("#e2e8f0"))
-                                fontSize = inputFontSize
-                            }
-                        }
-                    }
-
+                    inputField(
+                        displayName = "Name",
+                        useFor = "name",
+                        iId = "name",
+                        inputType = InputType.text,
+                        bottomMargin = 20.px,
+                        colors = colors
+                    )
+                    inputField(
+                        displayName = "Email",
+                        useFor = "email",
+                        iId = "email",
+                        inputType = InputType.email,
+                        bottomMargin = 20.px,
+                        colors = colors
+                    )
                     div {
                         css {
                             marginBottom = 20.px
@@ -194,7 +165,7 @@ fun ChildrenBuilder.contactSection(
                             css {
                                 display = Display.block
                                 marginBottom = 5.px
-                                color = Color("#64748b")
+                                color = colors.textSecondary
                             }
                             +"Message"
                         }
@@ -204,10 +175,12 @@ fun ChildrenBuilder.contactSection(
                                 width = 100.pct
                                 padding = 10.px
                                 borderRadius = 6.px
-                                border = Border(1.px, LineStyle.solid, Color("#e2e8f0"))
+                                border = Border(1.px, LineStyle.solid, colors.border)
                                 fontSize = 16.px
                                 minHeight = 150.px
                                 resize = Resize.vertical
+                                color = colors.text
+                                backgroundColor = colors.background
                             }
                         }
                     }
@@ -216,15 +189,19 @@ fun ChildrenBuilder.contactSection(
                         type = ButtonType.submit
                         css {
                             width = 100.pct
-                            backgroundColor = Color("#4169e1")
-                            color = Color("white")
+                            backgroundColor = colors.primary
+                            color = colors.text
                             padding = Padding(12.px, 30.px)
                             borderRadius = 8.px
                             border = None.none
-                            fontWeight = "600".unsafeCast<FontWeight>()
+                            fontWeight = "600".fontWeight()
                             fontSize = buttonFontSize
                             cursor = Cursor.pointer
-                            transition = "background-color 0.3s ease".unsafeCast<Transition>()
+                            transition = "background-color 0.3s ease".transition()
+
+                            hover {
+                                backgroundColor = colors.primaryHover
+                            }
                         }
                         onClick = { event ->
                             event.preventDefault()

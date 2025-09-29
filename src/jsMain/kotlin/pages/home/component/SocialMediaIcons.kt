@@ -1,4 +1,4 @@
-package component
+package pages.home.component
 
 import emotion.react.css
 import react.ChildrenBuilder

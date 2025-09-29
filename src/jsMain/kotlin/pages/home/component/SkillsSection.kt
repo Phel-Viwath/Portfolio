@@ -1,4 +1,4 @@
-package component
+package pages.home.component
 
 import emotion.react.css
 import react.ChildrenBuilder
@@ -22,7 +22,6 @@ fun ChildrenBuilder.skillSection(skills: Map<String, Float>){
         id = "skills"
         css {
             padding = Padding(100.px, 0.px)
-            background = colors.background
         }
 
         h2 {
@@ -30,7 +29,7 @@ fun ChildrenBuilder.skillSection(skills: Map<String, Float>){
             css {
                 fontSize = 36.px
                 marginBottom = 30.px
-                color = Color("#1e293b")
+                color = colors.text
                 slideInLeftAnimation(duration = 0.8.s, delay = 0.2.s, isVisible = isSkillVisible)
             }
             +"My Skills"
@@ -47,18 +46,18 @@ fun ChildrenBuilder.skillSection(skills: Map<String, Float>){
             skills.entries.forEachIndexed { index, (skill, percentage) ->
                 div {
                     css {
-                        backgroundColor = Color("white")
+                        backgroundColor = colors.surface
                         padding = 20.px
                         borderRadius = 10.px
-                        boxShadow = BoxShadow(0.px, 4.px, 6.px, Color("#0000000d"))
-                        slideUpAnimation(duration = 0.8.s, delay = (0.2 + index * 0.1).s)
+                        boxShadow = BoxShadow(0.px, 4.px, 6.px, colors.shadow)
+                        slideUpAnimation(duration = 0.4.s, delay = (0.2 + index * 0.1).s)
                     }
 
                     h3 {
                         css {
                             margin = Margin(0.px, 0.px, 15.px, 0.px)
                             fontSize = 18.px
-                            color = Color("#1e293b")
+                            color = colors.text
                         }
                         +skill
                     }
@@ -66,7 +65,7 @@ fun ChildrenBuilder.skillSection(skills: Map<String, Float>){
                     div {
                         css {
                             height = 8.px
-                            backgroundColor = Color("#e2e8f0")
+                            backgroundColor = colors.border
                             borderRadius = 4.px
                             overflow = Overflow.hidden
                         }
@@ -75,7 +74,8 @@ fun ChildrenBuilder.skillSection(skills: Map<String, Float>){
                             css {
                                 height = 100.pct
                                 width = "$percentage%".unsafeCast<Width>()
-                                backgroundColor = Color("#4169e1")
+                                backgroundColor = colors.primary
+                                transition = "width 1s ease-out".unsafeCast<Transition>()
                             }
                         }
                     }
@@ -85,7 +85,7 @@ fun ChildrenBuilder.skillSection(skills: Map<String, Float>){
                             textAlign = TextAlign.right
                             marginTop = 5.px
                             fontSize = 14.px
-                            color = Color("#64748b")
+                            color = colors.textSecondary
                         }
                         +"$percentage%"
                     }

@@ -1,4 +1,4 @@
-package component
+package pages.home.component
 
 import emotion.react.css
 import react.ChildrenBuilder
@@ -18,7 +18,6 @@ fun ChildrenBuilder.aboutSection() {
         id = "about"
         css {
             padding = Padding(100.px, 0.px)
-            backgroundColor = colors.background
         }
 
         h2 {
@@ -26,7 +25,7 @@ fun ChildrenBuilder.aboutSection() {
             css {
                 fontSize = 36.px
                 marginBottom = 30.px
-                color = Color("#1e293b")
+                color = colors.text
                 opacity = 0.pct.toOpacity()
                 transform = "translateX(-30px)".unsafeCast<Transform>()
             }
@@ -35,12 +34,18 @@ fun ChildrenBuilder.aboutSection() {
 
         p {
             id = "about-paragraph-first"
-            css { this.paragraphStyles() }
+            css {
+                this.paragraphStyles()
+                color = colors.textSecondary
+            }
             + "I'm a passionate Web Designer with expertise in creating visually appealing and user-friendly websites. With a strong foundation in design principles and a keen eye for aesthetics, I strive to deliver engaging digital experiences that meet client objectives while exceeding user expectations."
         }
         p {
             id = "about-paragraph-second"
-            css { this.paragraphStyles() }
+            css {
+                this.paragraphStyles()
+                color = colors.textSecondary
+            }
             +"My approach combines creativity with technical skills to produce responsive designs that work seamlessly across all devices. I'm constantly learning and adapting to the latest design trends and technologies to ensure my work remains current and innovative."
         }
     }

@@ -1,7 +1,7 @@
 package routes
 
 import js.objects.unsafeJso
-import pages.HomePage
+import pages.home.HomePage
 import pages.workDetailPage
 import react.FC
 import react.Props

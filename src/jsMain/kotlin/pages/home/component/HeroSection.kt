@@ -1,4 +1,4 @@
-package component
+package pages.home.component
 
 import emotion.react.css
 import js.objects.unsafeJso
@@ -34,7 +34,6 @@ fun ChildrenBuilder.heroSection(name: String){
             alignItems = AlignItems.center
             minHeight = "calc(100vh - 120px)".unsafeCast<MinHeight>()
             padding = Padding(0.px, 0.px)
-            background = colors.background
         }
 
         // Left content
