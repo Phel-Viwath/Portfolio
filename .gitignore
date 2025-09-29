@@ -8,6 +8,10 @@ kotlin-js-store/
 out/
 processedResources/
 
+# EmailJS Configuration
+src/jsMain/kotlin/config/EmailConfig.kt
+
+
 # Node modules
 node_modules/
 
@@ -19,7 +23,6 @@ node_modules/
 *.log
 *.tmp
 *.temp
-.env
 
 # OS generated files
 .DS_Store
