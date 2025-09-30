@@ -6,6 +6,9 @@ import react.dom.html.ReactHTML.h2
 import react.dom.html.ReactHTML.p
 import react.dom.html.ReactHTML.section
 import styles.paragraphStyles
+import util.Constant
+import util.Constant.ABOUT_FIRST_PARAGRAPH
+import util.Constant.ABOUT_SECOND_PARAGRAPH
 import util.toOpacity
 import util.useThemeColors
 import web.cssom.*
@@ -38,7 +41,7 @@ fun ChildrenBuilder.aboutSection() {
                 this.paragraphStyles()
                 color = colors.textSecondary
             }
-            + "I'm a passionate Web Designer with expertise in creating visually appealing and user-friendly websites. With a strong foundation in design principles and a keen eye for aesthetics, I strive to deliver engaging digital experiences that meet client objectives while exceeding user expectations."
+            + ABOUT_FIRST_PARAGRAPH
         }
         p {
             id = "about-paragraph-second"
@@ -46,7 +49,7 @@ fun ChildrenBuilder.aboutSection() {
                 this.paragraphStyles()
                 color = colors.textSecondary
             }
-            +"My approach combines creativity with technical skills to produce responsive designs that work seamlessly across all devices. I'm constantly learning and adapting to the latest design trends and technologies to ensure my work remains current and innovative."
+            + ABOUT_SECOND_PARAGRAPH
         }
     }
 }
