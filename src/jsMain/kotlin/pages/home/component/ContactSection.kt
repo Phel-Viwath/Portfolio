@@ -5,7 +5,6 @@ import component.SocialUrl
 import component.inputField
 import component.socialMediaIcons
 import emotion.react.css
-import kotlinx.browser.window
 import react.ChildrenBuilder
 import react.dom.html.ReactHTML.button
 import react.dom.html.ReactHTML.div
@@ -17,13 +16,16 @@ import react.dom.html.ReactHTML.p
 import react.dom.html.ReactHTML.section
 import react.dom.html.ReactHTML.strong
 import react.dom.html.ReactHTML.textarea
+import react.useEffect
 import react.useState
+import service.EmailService
 import styles.Typography.buttonFontSize
 import styles.animation.fadeInAnimation
 import styles.animation.slideInLeftAnimation
 import styles.animation.slideInRightAnimation
 import styles.animation.useInViewport
 import util.fontWeight
+import util.toast
 import util.transition
 import util.useThemeColors
 import web.cssom.*
@@ -50,6 +52,12 @@ fun ChildrenBuilder.contactSection(
     val (formMessage, setFormMessage) = useState("")
     val (isSubmitting, setIsSubmitting) = useState(false)
     val (submitStatus, setSubmitStatus) = useState<String?>(null)
+
+    useEffect(submitStatus){
+        if (submitStatus != null)
+            toast(submitStatus, js("{ position: 'top-center', autoClose: 3000 }"))
+    }
+
 
     section {
         id = "contact"
@@ -150,32 +158,43 @@ fun ChildrenBuilder.contactSection(
                     slideInRightAnimation(duration = 0.8.s, delay = 0.2.s, isVisible = rightColumnVisible)
                 }
 
-                // Status message
-                submitStatus?.let { status ->
-                    div {
-                        css {
-                            padding = 12.px
-                            borderRadius = 6.px
-                            marginBottom = 20.px
-                            backgroundColor = if (status.startsWith("Success"))
-                                Color("#10b981").unsafeCast<BackgroundColor>()
-                            else
-                                Color("#ef4444").unsafeCast<BackgroundColor>()
-                            color = Color("white")
-                            fontSize = 14.px
-                        }
-                        +status
-                    }
-                } // end submit status
-
                 form {
+
+                    onSubmit = { event ->
+                        event.preventDefault()
+
+                        if (!isSubmitting) {
+                            setIsSubmitting(true)
+                            setSubmitStatus(null)
+                            EmailService.sendEmail(
+                                name = formName,
+                                email = formEmail,
+                                message = formMessage,
+                                onSuccess = {
+                                    setSubmitStatus("Success! Your message has been sent.")
+                                    setFormName("")
+                                    setFormEmail("")
+                                    setFormMessage("")
+                                    setIsSubmitting(false)
+                                },
+                                onError = { error ->
+                                    setSubmitStatus("Error: $error")
+                                    setIsSubmitting(false)
+                                }
+                            )
+                        }
+                    }
+
                     inputField(
                         displayName = "Name",
                         useFor = "name",
                         iId = "name",
                         inputType = InputType.text,
                         bottomMargin = 20.px,
-                        colors = colors
+                        colors = colors,
+                        value = formName,
+                        onValueChange = { setFormName(it) },
+                        isDisable = isSubmitting
                     )
                     inputField(
                         displayName = "Email",
@@ -184,9 +203,9 @@ fun ChildrenBuilder.contactSection(
                         inputType = InputType.email,
                         bottomMargin = 20.px,
                         colors = colors,
-                        textValue = { value ->
-                            formEmail = value
-                        }
+                        value = formEmail,
+                        onValueChange = { setFormEmail(it) },
+                        isDisable = isSubmitting
                     )
                     div {
                         css {
@@ -203,6 +222,11 @@ fun ChildrenBuilder.contactSection(
                         }
                         textarea {
                             id = "message"
+                            value = formMessage
+                            onChange = { event ->
+                                setFormMessage(event.target.value)
+                            }
+                            required = true
                             css {
                                 width = 100.pct
                                 padding = 10.px
@@ -239,10 +263,6 @@ fun ChildrenBuilder.contactSection(
                             disabled {
                                 opacity = 0.6.unsafeCast<Opacity>()
                             }
-                        }
-                        onClick = { event ->
-                            event.preventDefault()
-                            window.alert("Message sent! (This is a demo)")
                         }
                         +(if (isSubmitting) "Sending..." else "Send Message")
                     }

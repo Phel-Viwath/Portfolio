@@ -72,11 +72,14 @@ Using yarn:
 ```bash
 yarn install
 ```
-
 ### Usage
 
 Run the project with:
 
+Upgrade yarn:
+```bash
+./gradlew kotlinUpgradeYarnLock
+```
 Using gradle:
 ```bash
 gradle jsBrowserDevelopmentRun

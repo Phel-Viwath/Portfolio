@@ -18,6 +18,7 @@ object EmailService {
         val emailJs = window.asDynamic().emailjs
         if (emailJs != null) {
             emailJs.init(PUBLIC_KEY)
+            console.log("EmailJS initialized successfully")
         } else {
             console.error("EmailJS not loaded. Please include the EmailJS script in your HTML.")
         }
@@ -57,8 +58,8 @@ object EmailService {
         }
 
         val templateParams = json(
-            "from_name" to name,
-            "from_email" to email,
+            "name" to name,
+            "email" to email,
             "message" to message,
             "to_name" to "Phel Viwath"
         )
@@ -80,6 +81,4 @@ object EmailService {
         val emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$".toRegex()
         return emailRegex.matches(email)
     }
-
-
 }

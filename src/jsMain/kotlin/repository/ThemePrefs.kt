@@ -38,6 +38,7 @@ class ThemePrefs {
             val prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
             if (prefersDark) Theme.DARK else Theme.LIGHT
         } catch (e: Exception) {
+            console.error("Error detected system theme:", e)
             Theme.LIGHT
         }
     }

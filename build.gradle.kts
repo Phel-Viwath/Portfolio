@@ -28,6 +28,7 @@ kotlin {
     sourceSets {
         jsMain{
             dependencies {
+                implementation(npm("react-toastify", "11.0.2")) // <-- latest stable at the moment
                 implementation(kotlin("stdlib-js"))
 
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-react:2025.5.8-19.1.0")

@@ -8,13 +8,7 @@ import react.dom.html.ReactHTML.label
 import styles.Typography.inputFontSize
 import styles.color.ThemeColorsPalette
 import util.transition
-import web.cssom.Border
-import web.cssom.Display
-import web.cssom.LineStyle
-import web.cssom.MarginBottom
-import web.cssom.None
-import web.cssom.pct
-import web.cssom.px
+import web.cssom.*
 import web.html.InputType
 
 fun ChildrenBuilder.inputField(
@@ -24,7 +18,9 @@ fun ChildrenBuilder.inputField(
     inputType: InputType,
     bottomMargin: MarginBottom = 20.px,
     colors: ThemeColorsPalette,
-    textValue: (String) -> Unit
+    value: String,                       // current value
+    onValueChange: (String) -> Unit,      // callback when user types
+    isDisable: Boolean = false
 ) {
     div {
         css {
@@ -42,7 +38,13 @@ fun ChildrenBuilder.inputField(
         input {
             type = inputType
             id = iId
-            value = textValue
+            this.value = value
+            onChange = { event ->
+                val newValue = event.target.value
+                onValueChange(newValue)
+            }
+            disabled = isDisable
+            required = true
             css {
                 width = 100.pct
                 padding = 10.px
