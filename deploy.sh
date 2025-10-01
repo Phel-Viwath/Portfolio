@@ -1,4 +1,4 @@
-#!/usr/bin
+#!/bin/bash
 
 set -e
 
@@ -7,7 +7,7 @@ NGINX_CONF=/etc/nginx/sites-available/portfolio
 
 # Build Kotlin/JS
 cd $PROJECT_DIR
-./gradlew jsBrowserProductionExecutableDistribution
+./gradlew jsBrowserDevelopmentRun
 
 # Copy Nginx config (from repo) into place
 sudo cp $PROJECT_DIR/nginx/portfolio.conf $NGINX_CONF
