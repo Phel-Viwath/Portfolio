@@ -8,14 +8,16 @@ object Constant {
 
 
     const val ABOUT_FIRST_PARAGRAPH = """
-        I'm a passionate Web Designer with expertise in creating visually appealing and user-friendly websites. 
-        With a strong foundation in design principles and a keen eye for aesthetics, 
-        I strive to deliver engaging digital experiences that meet client objectives while exceeding user expectations.
+        I am a passionate Android Developer with a strong focus on creating efficient, intuitive, and user-friendly mobile applications. 
+        My expertise lies in the full Android development lifecycle, from concept and design to testing and deployment, 
+        ensuring the delivery of high-quality, performant apps that provide an excellent user experience.
     """
 
     const val ABOUT_SECOND_PARAGRAPH = """
-        My approach combines creativity with technical skills to produce responsive designs that work seamlessly across all devices. 
-        I'm constantly learning and adapting to the latest design trends and technologies to ensure my work remains current and innovative.
+        Complementing my mobile development skills, I have foundational experience with Spring Boot, 
+        giving me valuable insight into backend systems and RESTful API design. 
+        This full-stack awareness allows me to better understand application architecture as a whole and enables seamless, 
+        effective collaboration with backend teams to build more robust and well-integrated digital products.
     """
 
 
