@@ -53,6 +53,7 @@ fun ChildrenBuilder.contactSection(
     val (isSubmitting, setIsSubmitting) = useState(false)
     val (submitStatus, setSubmitStatus) = useState<String?>(null)
 
+    // work like jetpack compose LaunchEffect
     useEffect(submitStatus){
         if (submitStatus != null)
             toast(submitStatus, js("{ position: 'top-center', autoClose: 3000 }"))
@@ -258,6 +259,9 @@ fun ChildrenBuilder.contactSection(
                             hover {
                                 if (!isSubmitting) {
                                     backgroundColor = colors.primaryHover
+                                }
+                                if (formName.isEmpty() || formEmail.isEmpty() || formMessage.isEmpty()){
+                                    backgroundColor = colors.warningHover
                                 }
                             }
                             disabled {

@@ -123,11 +123,11 @@ fun ChildrenBuilder.heroSection(name: String){
                 slideInRightAnimation(duration = 0.8.s, isVisible = profileVisible)
             }
             img {
-                src = "assets/profile_pic.png"
+                src = "assets/monkey_avatar.png"
                 alt = "Profile photo"
                 css {
-                    width = 350.px
-                    height = Auto.auto
+                    width = 550.px
+                    height = 400.px
                 }
             }
         }

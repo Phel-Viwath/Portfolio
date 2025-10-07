@@ -11,3 +11,10 @@ fun Percentage.toOpacity() = this.unsafeCast<Opacity>()
 fun String.className() = this.unsafeCast<ClassName>()
 fun String.transition() = this.unsafeCast<Transition>()
 fun String.fontWeight() = this.unsafeCast<FontWeight>()
+fun String.width() = this.unsafeCast<Width>()
+fun String.rgba() = this.unsafeCast<Color>()
+fun String.gradientShadow() = this.unsafeCast<BoxShadow>()
+
+fun translateY(px: Int): Transform{
+    return "translateY(${px}px)".unsafeCast<Transform>()
+}

@@ -6,12 +6,14 @@ import react.dom.html.ReactHTML.h2
 import react.dom.html.ReactHTML.p
 import react.dom.html.ReactHTML.section
 import styles.paragraphStyles
-import util.Constant
 import util.Constant.ABOUT_FIRST_PARAGRAPH
 import util.Constant.ABOUT_SECOND_PARAGRAPH
 import util.toOpacity
 import util.useThemeColors
-import web.cssom.*
+import web.cssom.Padding
+import web.cssom.Transform
+import web.cssom.pct
+import web.cssom.px
 
 fun ChildrenBuilder.aboutSection() {
 

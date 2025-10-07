@@ -1,7 +1,5 @@
 package pages.home
 
-import component.PathD
-import component.SocialUrl
 import emotion.react.css
 import kotlinx.browser.document
 import kotlinx.browser.window
@@ -16,29 +14,13 @@ import react.useEffect
 import react.useState
 import repository.MyWorksRepository
 import util.Constant
+import util.Constant.CONTACT_PLATFORM
+import util.Constant.MY_SKILL
 import web.cssom.*
-import kotlin.Float
 
 class HomePage{
 
     private val myWork = MyWorksRepository()
-
-    private val mySkill: Map<String, Float> = mapOf(
-        "Kotlin" to 90f,
-        "Java" to 60f,
-        "MySQL" to 90f,
-        "MongoDB" to 50f,
-        "Spring Boot" to 85f,
-        "Android" to 85f,
-        "Android Studio" to 90f,
-        "Intellij Idea" to 90f
-    )
-
-    private val contactPlatform: Map<SocialUrl, PathD> = mapOf(
-        "https://github.com/Phel-Viwath" to Constant.GITHUB_ICON,
-        "https://www.linkedin.com/in/phel-viwath-a0707b281/" to Constant.LINKEDIN_ICON,
-        "https://t.me/phel_viwath" to Constant.TELEGRAM_ICON
-    )
 
     fun homePage() = FC<Props> {
         val navigate = useNavigate()
@@ -96,7 +78,7 @@ class HomePage{
                 aboutSection()
 
                 // Skills section
-                skillSection(skills = mySkill)
+                skillSection(skills = MY_SKILL)
 
                 // Works section
                 workSection(myWorks = myWork.getMyWorks()) { workId ->
@@ -109,7 +91,7 @@ class HomePage{
                     email = "phelviwath@gmail.com",
                     phone = "+855 889 043 903",
                     address = "Chantrea, Svay Rieng, Cambodia",
-                    contactPlatform = contactPlatform
+                    contactPlatform = CONTACT_PLATFORM
                 )
             }
         }

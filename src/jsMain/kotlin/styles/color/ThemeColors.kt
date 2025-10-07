@@ -1,6 +1,5 @@
 package styles.color
 
-import styles.color.ThemeColorsPalette
 import web.cssom.Color
 
 object ThemeColors {
@@ -8,7 +7,8 @@ object ThemeColors {
         background = Color("#f8fafc"),
         surface = Color("#ffffff"),
         primary = Color("#4169e1"),
-        primaryHover = Color("#3b5ce8"),
+        primaryHover = Color("#72bf6a"),
+        warningHover = Color("#F75D59"),
         text = Color("#1e293b"),
         textSecondary = Color("#64748b"),
         border = Color("#e2e8f0"),
@@ -20,7 +20,8 @@ object ThemeColors {
         background = Color("#0f172a"),
         surface = Color("#1e293b"),
         primary = Color("#6366f1"),
-        primaryHover = Color("#7c3aed"),
+        primaryHover = Color("#72bf6a"),
+        warningHover = Color("#F75D59"),
         text = Color("#f1f5f9"),
         textSecondary = Color("#cbd5e1"),
         border = Color("#334155"),

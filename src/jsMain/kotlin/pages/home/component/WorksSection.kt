@@ -1,18 +1,14 @@
 package pages.home.component
 
+import component.workItem
 import emotion.react.css
 import model.MyWork
 import react.ChildrenBuilder
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.h2
-import react.dom.html.ReactHTML.h3
-import react.dom.html.ReactHTML.img
-import react.dom.html.ReactHTML.p
 import react.dom.html.ReactHTML.section
 import styles.animation.fadeInAnimation
-import styles.animation.slideUpAnimation
 import styles.animation.useInViewport
-import util.transition
 import util.useThemeColors
 import web.cssom.*
 import kotlin.js.unsafeCast
@@ -50,57 +46,12 @@ fun ChildrenBuilder.workSection(
 
             // Portfolio items
             myWorks.forEachIndexed { i: Int, work: MyWork ->
-                div {
-                    onClick = { onClickEvent(i) }
-                    css {
-                        borderRadius = 12.px
-                        overflow = Overflow.hidden
-                        boxShadow = BoxShadow(0.px,4.px, 6.px, colors.shadow)
-                        backgroundColor = colors.surface
-                        transition = "transform 0.3s ease".transition()
-                        cursor = Cursor.pointer
-                        slideUpAnimation(duration = 0.8.s, delay = (0.2 + (i-1) * 0.1).s)
-                    }
-                    onMouseOver = { event ->
-                        event.currentTarget.style.transform = "translateY(-10px)"
-                    }
-                    onMouseOut = { event ->
-                        event.currentTarget.style.transform = "translateY(0)"
-                    }
-
-                    img {
-                        src = work.image
-                        alt = "Work sample $i"
-                        css {
-                            width = 100.pct
-                            height = 200.px
-                            objectFit = ObjectFit.cover
-                        }
-                    }
-
-                    div {
-                        css {
-                            padding = 20.px
-                        }
-
-                        h3 {
-                            css {
-                                margin = Margin(0.px, 0.px, 10.px, 0.px)
-                                fontSize = 18.px
-                                color = colors.text
-                            }
-                            +"Project ${work.projectName}"
-                        }
-
-                        p {
-                            css {
-                                margin = 0.px
-                                color =colors.textSecondary
-                            }
-                            +work.projectType
-                        }
-                    }
-                }
+                workItem(
+                    work = work,
+                    colors = colors,
+                    index = i,
+                    onClickEvent = { onClickEvent(i)}
+                )
             }
         }
     }

@@ -45,6 +45,7 @@ fun ChildrenBuilder.socialMediaIcons(
                         transition = "transform 0.3s ease".unsafeCast<Transition>()
                         hover {
                             transform = "scale(1.1)".unsafeCast<Transform>()
+                            background = colors.primaryHover
                         }
                     }
 

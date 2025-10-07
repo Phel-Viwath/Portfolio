@@ -7,6 +7,7 @@ data class ThemeColorsPalette(
     val surface: Color,
     val primary: Color,
     val primaryHover: Color,
+    val warningHover: Color,
     val text: Color,
     val textSecondary: Color,
     val border: Color,
