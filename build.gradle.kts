@@ -45,3 +45,9 @@ kotlin {
     }
 
 }
+
+tasks.register("dev") {
+    group = "application"
+    description = "Run Kotlin/JS browser development server"
+    dependsOn("jsBrowserDevelopmentRun")
+}

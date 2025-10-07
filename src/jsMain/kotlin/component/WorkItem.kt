@@ -1,9 +1,9 @@
 package component
 
 import emotion.react.css
+import kotlinx.browser.window
 import model.MyWork
 import react.ChildrenBuilder
-import react.dom.html.ReactHTML.button
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.h3
 import react.dom.html.ReactHTML.img
@@ -26,7 +26,6 @@ fun ChildrenBuilder.workItem(
     var isDetailVisible by useState(false)
 
     div {
-        onClick = { onClickEvent() }
         onMouseEnter = {
             isHovered = true
             isDetailVisible = true // keep visible after hover
@@ -48,7 +47,7 @@ fun ChildrenBuilder.workItem(
             transition = "transform 0.3s ease, box-shadow 0.3s ease".transition()
             cursor = Cursor.pointer
             position = Position.relative
-            height = 320.px
+            height = 250.px
             slideUpAnimation(duration = 0.8.s, delay = (0.2 + (index - 1) * 0.1).s)
         }
 
@@ -83,10 +82,10 @@ fun ChildrenBuilder.workItem(
                     left = 0.px
                     right = 0.px
                     padding = 16.px
-                    backgroundColor = colors.primary
+                    backgroundColor = colors.surface
                     transition = "transform 0.4s ease, background-color 0.3s ease".transition()
                     zIndex = integer(5)
-                    boxShadow = BoxShadow(0.px, (-2).px, 8.px, colors.shadow)
+                    boxShadow = BoxShadow(0.px, (-5).px, 8.px, colors.shadow)
                     borderTopLeftRadius = 12.px
                     borderTopRightRadius = 12.px
                 }
@@ -96,7 +95,7 @@ fun ChildrenBuilder.workItem(
                         fontWeight = integer(700)
                         color = colors.text
                     }
-                    +"Project ${work.projectName}"
+                    +work.projectName
                 }
 
                 p {
@@ -132,7 +131,7 @@ fun ChildrenBuilder.workItem(
                         color = colors.textSecondary
                         lineHeight = number(1.6)
                     }
-                    +"Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis dolorem harum dolorum debitis."
+                    +work.description
                 }
 
                 div {
@@ -140,52 +139,27 @@ fun ChildrenBuilder.workItem(
                         display = Display.flex
                         gap = 15.px
                         alignItems = AlignItems.center
+                        justifyContent = JustifyContent.spaceBetween
+                        paddingLeft = 20.px
+                        paddingRight = 20.px
                     }
 
-                    button {
-                        css {
-                            display = Display.flex
-                            alignItems = AlignItems.center
-                            gap = 8.px
-                            padding = Padding(10.px, 20.px)
-                            borderRadius = 6.px
-                            border = None.none
-                            backgroundColor = colors.text
-                            color = colors.surface
-                            cursor = Cursor.pointer
-                            fontSize = 14.px
-                            fontWeight = integer(500)
-                            transition = "all 0.3s ease".transition()
-
-                            hover {
-                                transform = scale(1.05)
-                                boxShadow = BoxShadow(0.px, 4.px, 12.px, colors.shadow)
-                            }
-                        }
-                        +"👁 View"
+                    linkButton(
+                        text = "👁 View",
+                        textColor = colors.surface,
+                        background = colors.text,
+                        shadowColor = colors.shadow
+                    ){
+                        onClickEvent()
                     }
 
-                    button {
-                        css {
-                            display = Display.flex
-                            alignItems = AlignItems.center
-                            gap = 8.px
-                            padding = Padding(10.px, 20.px)
-                            borderRadius = 6.px
-                            border = None.none
-                            backgroundColor = colors.text
-                            color = colors.surface
-                            cursor = Cursor.pointer
-                            fontSize = 14.px
-                            fontWeight = integer(500)
-                            transition = "all 0.3s ease".transition()
-
-                            hover {
-                                transform = scale(1.05)
-                                boxShadow = BoxShadow(0.px, 4.px, 12.px, colors.shadow)
-                            }
-                        }
-                        +"</> Code"
+                    linkButton(
+                        text = "</> Code",
+                        textColor = colors.surface,
+                        background = colors.text,
+                        shadowColor = colors.shadow
+                    ){
+                        window.open(work.codeLink, "_blank")
                     }
                 }
             }
