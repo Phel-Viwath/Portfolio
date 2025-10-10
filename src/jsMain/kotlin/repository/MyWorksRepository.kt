@@ -8,21 +8,21 @@ class MyWorksRepository {
             "assets/monkey_avatar.png",
             "SRU Library Management",
             "Back-end development",
-            "Design and develop database and API.",
+            "Design and develop database (MySQL) and API using Spring Boot WebFlux.",
             "https://github.com/Phel-Viwath/sru_library_ms.git"
         ),
         MyWork(
             "assets/monkey_avatar.png",
             "SRU Library Management",
             "Android development",
-            "Integrate API with Android via Retrofit and use feature like Biometric, QR Reader, File Upload.",
+            "Integrate API with Android via Retrofit and use feature like Biometric, QR Reader, File Upload using Kotlin",
             "https://github.com/Phel-Viwath/sru_lib_android.git"
         ),
         MyWork(
             "assets/monkey_avatar.png",
             "Music Player",
             "Android development",
-            "Create music player with Jetpack compose UI.",
+            "Using Kotlin, Jetpack compose and ExoPlayer to create this Music Player.",
             "https://github.com/Phel-Viwath/Music_Player.git"
         ),
         MyWork(

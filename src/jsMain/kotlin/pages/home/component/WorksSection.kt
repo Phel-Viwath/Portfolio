@@ -7,6 +7,7 @@ import react.ChildrenBuilder
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.h2
 import react.dom.html.ReactHTML.section
+import react.useState
 import styles.animation.fadeInAnimation
 import styles.animation.useInViewport
 import util.useThemeColors
@@ -19,6 +20,8 @@ fun ChildrenBuilder.workSection(
 ){
     val colors = useThemeColors()
     val (workRef, isWorkVisible) = useInViewport()
+
+    var hoveredIndex by useState<Int?>(null)
 
     section {
         id = "works"
@@ -50,6 +53,10 @@ fun ChildrenBuilder.workSection(
                     work = work,
                     colors = colors,
                     index = i,
+                    isHovered = i == hoveredIndex,
+                    onHoverChange = { index, hovered ->
+                        hoveredIndex = if (hovered) index else null
+                    },
                     onClickEvent = { onClickEvent(i)}
                 )
             }

@@ -20,18 +20,19 @@ fun ChildrenBuilder.workItem(
     work: MyWork,
     colors: ThemeColorsPalette,
     index: Int,
-    onClickEvent: () -> Unit
+    isHovered: Boolean,
+    onHoverChange: (Int?, Boolean) -> Unit,
+    onClickEvent: () -> Unit,
 ) {
-    var isHovered by useState(false)
-    var isDetailVisible by useState(false)
+    var isDetailVisible  by useState(false)
 
     div {
         onMouseEnter = {
-            isHovered = true
-            isDetailVisible = true // keep visible after hover
+            onHoverChange(index, true) // keep visible after hover
+            isDetailVisible = true
         }
         onMouseLeave = {
-            isHovered = false
+            onHoverChange(null, false)
         }
 
         css {

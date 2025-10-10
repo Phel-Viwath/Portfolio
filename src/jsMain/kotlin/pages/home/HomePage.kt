@@ -12,6 +12,7 @@ import react.internal.buildCleanupCallback
 import react.router.useNavigate
 import react.useEffect
 import react.useState
+import repository.EducationRepository
 import repository.MyWorksRepository
 import util.Constant
 import util.Constant.CONTACT_PLATFORM
@@ -21,19 +22,20 @@ import web.cssom.*
 class HomePage{
 
     private val myWork = MyWorksRepository()
+    private val education = EducationRepository()
 
     fun homePage() = FC<Props> {
         val navigate = useNavigate()
-        // State for tracking active section
+        // State for tracking active-section
         val (activeSection, setActiveSection) = useState("home")
         val profileName = "Phel Viwath"
 
-        // Effect to handle scroll and update active section
+        // Effect to handle scroll and update active-section
         useEffect {
             val handleScroll: (Event) -> Unit = {
                 val sections = Constant.navSection
 
-                // Find the section that is currently in view
+                // Find the section currently in view
                 val currentSection = sections.find { sectionId ->
                     val element = document.getElementById(sectionId) ?: return@find false
                     val rect = element.getBoundingClientRect()
@@ -45,7 +47,7 @@ class HomePage{
 
             window.addEventListener("scroll", handleScroll)
 
-            // Clean up event listener
+            // Clean_up event listener
             buildCleanupCallback {
                 window.removeEventListener("scroll", handleScroll)
             }
@@ -74,8 +76,12 @@ class HomePage{
             ReactHTML.main {
                 // Hero section
                 heroSection(profileName)
+
                 // About section
                 aboutSection()
+
+                // education section
+                educationSection(education = education.getEducation())
 
                 // Skills section
                 skillSection(skills = MY_SKILL)
