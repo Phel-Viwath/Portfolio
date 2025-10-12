@@ -51,3 +51,9 @@ tasks.register("dev") {
     description = "Run Kotlin/JS browser development server"
     dependsOn("jsBrowserDevelopmentRun")
 }
+
+tasks.register("yarnUp") {
+    group = "application"
+    description = "Update yarn"
+    dependsOn("kotlinUpgradeYarnLock")
+}

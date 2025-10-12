@@ -1,5 +1,6 @@
 package pages.home.component
 
+import component.eduItem
 import emotion.react.css
 import model.Education
 import react.ChildrenBuilder
@@ -10,6 +11,7 @@ import styles.animation.fadeInAnimation
 import styles.animation.useInViewport
 import util.useThemeColors
 import web.cssom.Display
+import web.cssom.FlexDirection
 import web.cssom.Padding
 import web.cssom.px
 import web.cssom.s
@@ -21,7 +23,7 @@ fun ChildrenBuilder.educationSection(
     val colors = useThemeColors()
     val (eduRef, isEduVisible) = useInViewport()
 
-    section{
+    section {
         id = "education"
         css {
             padding = Padding(100.px, 0.px)
@@ -40,11 +42,19 @@ fun ChildrenBuilder.educationSection(
 
         div {
             css {
-                display = Display.tableColumn
+                display = Display.flex
+                flexDirection = FlexDirection.column
+                gap = 16.px
             }
 
-
-
+            education.forEachIndexed { index, edu ->
+                eduItem(
+                    education = edu,
+                    colors = colors,
+                    index = index,
+                    isVisible = isEduVisible,
+                )
+            }
         }
     }
 

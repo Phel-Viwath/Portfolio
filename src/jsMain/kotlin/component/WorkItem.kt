@@ -24,7 +24,7 @@ fun ChildrenBuilder.workItem(
     onHoverChange: (Int?, Boolean) -> Unit,
     onClickEvent: () -> Unit,
 ) {
-    var isDetailVisible  by useState(false)
+    var isDetailVisible by useState(false)
 
     div {
         onMouseEnter = {
