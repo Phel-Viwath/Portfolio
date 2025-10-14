@@ -73,15 +73,16 @@ fun ChildrenBuilder.eduItem(
                     +education.school
                 }
 
-                // Show Major and GPA (if available)
-                p {
-                    css {
-                        margin = Margin(4.px, 0.px, 0.px, 0.px)
-                        color = colors.textSecondary
-                        fontSize = 14.px
-                        fontWeight = integer(500)
+                education.major?.let{ major ->
+                    p {
+                        css {
+                            margin = Margin(4.px, 0.px, 0.px, 0.px)
+                            color = colors.textSecondary
+                            fontSize = 14.px
+                            fontWeight = integer(500)
+                        }
+                        +"Major: $major"
                     }
-                    +education.major
                 }
 
                 education.gpa?.let{ gpa ->
@@ -92,7 +93,7 @@ fun ChildrenBuilder.eduItem(
                             fontSize = 14.px
                             fontWeight = integer(500)
                         }
-                        +gpa
+                        +"GPA: $gpa"
                     }
                 }
 

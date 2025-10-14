@@ -8,6 +8,7 @@ import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.h2
 import react.dom.html.ReactHTML.section
 import styles.animation.fadeInAnimation
+import styles.animation.slideInLeftAnimation
 import styles.animation.useInViewport
 import util.useThemeColors
 import web.cssom.Display
@@ -24,18 +25,19 @@ fun ChildrenBuilder.educationSection(
     val (eduRef, isEduVisible) = useInViewport()
 
     section {
+        ref = eduRef
         id = "education"
         css {
             padding = Padding(100.px, 0.px)
         }
 
         h2 {
-            ref = eduRef
+            id = "education_title"
             css {
                 fontSize = 36.px
                 marginBottom = 30.px
                 color = colors.text
-                fadeInAnimation(duration = 0.8.s, delay = 0.2.s, isVisible = isEduVisible)
+                slideInLeftAnimation(delay = 0.2.s, isVisible = isEduVisible)
             }
             +"My Education"
         }

@@ -13,10 +13,10 @@ class EducationRepository {
         ),
         Education(
             schoolLogo = "assets/chantrea_logo.jpg",
-            school = "BunRany HunSen High School",
-            major = "",
+            school = "Bun Rany Hun Sen Chantrea High School",
+            major = null,
             period = "2014-2020",
-            gpa = ""
+            gpa = null
         ),
     )
 

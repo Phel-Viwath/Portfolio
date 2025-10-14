@@ -44,6 +44,7 @@ fun ChildrenBuilder.skillSection(skills: Map<String, Float>){
             // Skill items
             skills.entries.forEachIndexed { index, (skill, percentage) ->
                 skillItem(
+                    isVisible = isSkillVisible,
                     index = index,
                     skill = skill,
                     percentage = percentage,

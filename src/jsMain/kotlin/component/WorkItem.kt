@@ -8,7 +8,7 @@ import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.h3
 import react.dom.html.ReactHTML.img
 import react.dom.html.ReactHTML.p
-import react.useState
+import styles.animation.hoverAnimation
 import styles.animation.slideUpAnimation
 import styles.color.ThemeColorsPalette
 import util.gradientShadow
@@ -17,6 +17,7 @@ import util.translateY
 import web.cssom.*
 
 fun ChildrenBuilder.workItem(
+    isVisible: Boolean,
     work: MyWork,
     colors: ThemeColorsPalette,
     index: Int,
@@ -24,16 +25,11 @@ fun ChildrenBuilder.workItem(
     onHoverChange: (Int?, Boolean) -> Unit,
     onClickEvent: () -> Unit,
 ) {
-    var isDetailVisible by useState(false)
-
     div {
-        onMouseEnter = {
-            onHoverChange(index, true) // keep visible after hover
-            isDetailVisible = true
-        }
-        onMouseLeave = {
-            onHoverChange(null, false)
-        }
+        className = ClassName("work-item")
+
+        onMouseEnter = { onHoverChange(index, true) }
+        onMouseLeave = { onHoverChange(null, false) }
 
         css {
             borderRadius = 12.px
@@ -45,11 +41,11 @@ fun ChildrenBuilder.workItem(
             }
             backgroundColor = colors.surface
             transform = if (isHovered) translateY(-5) else translateY(0)
-            transition = "transform 0.3s ease, box-shadow 0.3s ease".transition()
+            //transition = "transform 0.3s ease, box-shadow 0.3s ease".transition()
             cursor = Cursor.pointer
             position = Position.relative
             height = 250.px
-            slideUpAnimation(duration = 0.8.s, delay = (0.2 + (index - 1) * 0.1).s)
+            slideUpAnimation(duration = 0.8.s, delay = (0.2 + (index - 1) * 0.1).s, isVisible = isVisible)
         }
 
         // --- Main content wrapper ---
@@ -111,60 +107,60 @@ fun ChildrenBuilder.workItem(
         }
 
         // --- Detail panel (slide up) ---
-        if (isDetailVisible) {
+        div {
+            className = ClassName("detail-panel")
+            css {
+                position = Position.absolute
+                bottom = if (isHovered) 0.px else (-180).px
+                left = 0.px
+                right = 0.px
+                backgroundColor = colors.surface
+                padding = 20.px
+                boxShadow = BoxShadow(0.px, (-4).px, 12.px, colors.shadow)
+                zIndex = integer(10)
+                hoverAnimation(isHovered)
+            }
+
+            p {
+                css {
+                    margin = Margin(0.px, 0.px, 20.px, 0.px)
+                    fontSize = 14.px
+                    color = colors.textSecondary
+                    lineHeight = number(1.6)
+                }
+                +work.description
+            }
+
             div {
                 css {
-                    position = Position.absolute
-                    bottom = if (isHovered) 0.px else (-180).px
-                    left = 0.px
-                    right = 0.px
-                    backgroundColor = colors.surface
-                    padding = 20.px
-                    boxShadow = BoxShadow(0.px, (-4).px, 12.px, colors.shadow)
-                    transition = "bottom 0.6s cubic-bezier(0.23, 1, 0.32, 1)".transition()
-                    zIndex = integer(10)
+                    display = Display.flex
+                    gap = 15.px
+                    alignItems = AlignItems.center
+                    justifyContent = JustifyContent.spaceBetween
+                    paddingLeft = 20.px
+                    paddingRight = 20.px
                 }
 
-                p {
-                    css {
-                        margin = Margin(0.px, 0.px, 20.px, 0.px)
-                        fontSize = 14.px
-                        color = colors.textSecondary
-                        lineHeight = number(1.6)
-                    }
-                    +work.description
+                linkButton(
+                    text = "👁 View",
+                    textColor = colors.surface,
+                    background = colors.text,
+                    shadowColor = colors.shadow
+                ){
+                    onClickEvent()
                 }
 
-                div {
-                    css {
-                        display = Display.flex
-                        gap = 15.px
-                        alignItems = AlignItems.center
-                        justifyContent = JustifyContent.spaceBetween
-                        paddingLeft = 20.px
-                        paddingRight = 20.px
-                    }
-
-                    linkButton(
-                        text = "👁 View",
-                        textColor = colors.surface,
-                        background = colors.text,
-                        shadowColor = colors.shadow
-                    ){
-                        onClickEvent()
-                    }
-
-                    linkButton(
-                        text = "</> Code",
-                        textColor = colors.surface,
-                        background = colors.text,
-                        shadowColor = colors.shadow
-                    ){
-                        window.open(work.codeLink, "_blank")
-                    }
+                linkButton(
+                    text = "</> Code",
+                    textColor = colors.surface,
+                    background = colors.text,
+                    shadowColor = colors.shadow
+                ){
+                    window.open(work.codeLink, "_blank")
                 }
             }
         }
+
     }
 }
 

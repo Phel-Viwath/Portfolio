@@ -39,6 +39,7 @@ import kotlin.Float
  * @param colors theme palette containing surface, primary, text, border and shadow colors
  */
 fun ChildrenBuilder.skillItem(
+    isVisible: Boolean,
     index: Int,
     skill: String,
     percentage: Float,
@@ -56,12 +57,11 @@ fun ChildrenBuilder.skillItem(
             cursor = Cursor.pointer
 
             // staggered slide-up animation on mount
-            slideUpAnimation(duration = 0.4.s, delay = (0.2 + index * 0.1).s)
+            slideUpAnimation(duration = 0.4.s, delay = (0.2 + index * 0.1).s, isVisible = isVisible)
 
-            // Hover effect: colorful dual shadow + slight translate
+            // Hover effect: colorful dual shadow
             hover {
                 boxShadow = "6px 6px 15px rgba(0, 255, 255, 0.5), -6px 0 15px rgba(255, 0, 255, 0.5)".gradientShadow()
-                transform = translateY(-5)
             }
         }
 

@@ -1,6 +1,5 @@
 package styles.animation
 
-import csstype.*
 import kotlinx.browser.document
 import kotlinx.browser.window
 import org.w3c.dom.HTMLElement
@@ -8,68 +7,8 @@ import react.useEffect
 import react.useRef
 import react.useState
 import util.Constant.navSection
-import util.toOpacity
-import web.cssom.*
 
-fun PropertiesBuilder.fadeInAnimation(
-    duration: AnimationDuration = 1.s,
-    delay: AnimationDelay = 0.ms,
-    isVisible: Boolean = false
-) {
-    if (!isVisible) {
-        opacity = 0.pct.toOpacity()
-    } else {
-        opacity = 100.pct.toOpacity()
-        transition = "opacity $duration ease-out $delay".unsafeCast<Transition>()
-    }
-}
-
-fun PropertiesBuilder.slideUpAnimation(
-    duration: AnimationDuration = 1.s,
-    delay: AnimationDelay = 0.ms,
-    isVisible: Boolean = false
-) {
-    if (!isVisible) {
-        opacity = 0.pct.toOpacity()
-        transform = "translateY(30px)".unsafeCast<Transform>()
-    } else {
-        opacity = 100.pct.toOpacity()
-        transform = "translateY(0)".unsafeCast<Transform>()
-        transition = "opacity $duration ease-out $delay, transform $duration ease-out $delay".unsafeCast<Transition>()
-    }
-}
-
-fun PropertiesBuilder.slideInLeftAnimation(
-    duration: AnimationDuration = 1.s,
-    delay: AnimationDelay = 0.ms,
-    isVisible: Boolean = false
-) {
-    if (!isVisible) {
-        opacity = 0.pct.toOpacity()
-        transform = "translateX(-30px)".unsafeCast<Transform>()
-    } else {
-        opacity = 100.pct.toOpacity()
-        transform = "translateX(0)".unsafeCast<Transform>()
-        transition = "opacity $duration ease-out $delay, transform $duration ease-out $delay".unsafeCast<Transition>()
-    }
-}
-
-fun PropertiesBuilder.slideInRightAnimation(
-    duration: AnimationDuration = 1.s,
-    delay: AnimationDelay = 0.ms,
-    isVisible: Boolean = false
-) {
-    if (!isVisible) {
-        opacity = 0.pct.toOpacity()
-        transform = "translateX(30px)".unsafeCast<Transform>()
-    } else {
-        opacity = 100.pct.toOpacity()
-        transform = "translateX(0)".unsafeCast<Transform>()
-        transition = "opacity $duration ease-out $delay, transform $duration ease-out $delay".unsafeCast<Transition>()
-    }
-}
-
-// Hook to detect when element is in viewport
+// Hook to detect when Element is in Viewport
 fun useInViewport(viewportOffset: Double = 0.33): Pair<dynamic, Boolean> {
     val ref = useRef<HTMLElement>(null)
     val (isVisible, setIsVisible) = useState(false)
@@ -118,6 +57,31 @@ private fun isInViewportCenter(element: HTMLElement): Boolean {
     return rect.top <= windowHeight - centerThreshold && rect.bottom >= centerThreshold
 }
 
+//private fun animateElement(
+//    element: HTMLElement?,
+//    initialOpacity: String = "0",
+//    initialTransform: String? = null,
+//    transition: String = "opacity 1s ease-out, transform 1s ease-out",
+//    delay: Int = 10,
+//    index: Int = 0
+//) {
+//    // element != null && element.style.opacity != "1"
+//    if (element != null && element.style.opacity != "1") {
+//        element.style.opacity = initialOpacity
+//        initialTransform?.let { element.style.transform = it }
+//        element.style.transition = transition
+//
+//        window.setTimeout({
+//            element.style.opacity = "1"
+//            if (initialTransform != null) {
+//                element.style.transform = "translateX(0)"
+//                    .takeIf { "X" in initialTransform }
+//                    ?: "translateY(0)"
+//            }
+//        }, delay + (index * 100))
+//    }
+//}
+
 private fun animateElement(
     element: HTMLElement?,
     initialOpacity: String = "0",
@@ -126,10 +90,13 @@ private fun animateElement(
     delay: Int = 10,
     index: Int = 0
 ) {
+    // element != null && element.style.opacity != "1"
     if (element != null && element.style.opacity != "1") {
         element.style.opacity = initialOpacity
         initialTransform?.let { element.style.transform = it }
         element.style.transition = transition
+
+        val totalDelay = delay + (index * 100)
 
         window.setTimeout({
             element.style.opacity = "1"
@@ -138,7 +105,18 @@ private fun animateElement(
                     .takeIf { "X" in initialTransform }
                     ?: "translateY(0)"
             }
-        }, delay + (index * 100))
+
+            // Parse the first duration (in seconds) from the transition string (e.g. "opacity 0.8s ...")
+            val durationSec = Regex("(\\d+(?:\\.\\d+)?)s").find(transition)?.groupValues?.get(1)?.toDoubleOrNull()
+            val durationMs = (durationSec?.times(1000))?.toInt() ?: 1000
+
+            // After the transition finishes, remove the inline transform/transition so CSS hover rules can take effect.
+            window.setTimeout({
+                // Remove only transform and transition, keep opacity = "1" so element remains visible.
+                element.style.removeProperty("transform")
+                element.style.removeProperty("transition")
+            }, durationMs + 50)
+        }, totalDelay)
     }
 }
 
@@ -149,8 +127,14 @@ private fun handleSectionAnimation(sectionId: String) {
 
     when (sectionId) {
         "home" -> {
-            animateElement(document.getElementById("home_text") as? HTMLElement, initialTransform = "translateX(-30px)")
-            animateElement(document.getElementById("home_profile") as? HTMLElement, initialTransform = "translateX(30px)")
+            animateElement(
+                element = document.getElementById("home_text") as? HTMLElement,
+                initialTransform = "translateX(-30px)"
+            )
+            animateElement(
+                element = document.getElementById("home_profile") as? HTMLElement,
+                initialTransform = "translateX(30px)"
+            )
         }
         "about" -> {
             animateElement(
@@ -170,21 +154,36 @@ private fun handleSectionAnimation(sectionId: String) {
                 index = 1
             )
         }
+        "education" -> {
+            animateElement(
+                element = document.getElementById("education_title") as? HTMLElement,
+                initialTransform = "translateX(30px)"
+            )
+        }
         "skills", "works" -> {
             animateElement(section)
             val items = section.querySelectorAll("div > div")
             for (i in 0 until items.length) {
-                animateElement(items.item(i) as? HTMLElement, initialTransform = "translateY(30px)", index = i)
+                animateElement(
+                    element = items.item(i) as? HTMLElement,
+                    initialTransform = "translateY(30px)",
+                    index = i
+                )
             }
         }
         "contact" -> {
             animateElement(section)
-            animateElement(section.querySelector("div > div:first-child") as? HTMLElement, initialTransform = "translateX(-30px)")
-            animateElement(section.querySelector("div > div:last-child") as? HTMLElement, initialTransform = "translateX(30px)")
+            animateElement(
+                element = section.querySelector("div > div:first-child") as? HTMLElement,
+                initialTransform = "translateX(-30px)"
+            )
+            animateElement(
+                element = section.querySelector("div > div:last-child") as? HTMLElement,
+                initialTransform = "translateX(30px)"
+            )
         }
     }
 }
-
 
 private fun handleScroll() {
     navSection.forEach(::handleSectionAnimation)

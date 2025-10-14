@@ -24,13 +24,13 @@ fun ChildrenBuilder.workSection(
     var hoveredIndex by useState<Int?>(null)
 
     section {
+        ref = workRef
         id = "works"
         css {
             padding = Padding(100.px, 0.px)
         }
 
         h2 {
-            ref = workRef
             css {
                 fontSize = 36.px
                 marginBottom = 30.px
@@ -50,6 +50,7 @@ fun ChildrenBuilder.workSection(
             // Portfolio items
             myWorks.forEachIndexed { i: Int, work: MyWork ->
                 workItem(
+                    isVisible = isWorkVisible,
                     work = work,
                     colors = colors,
                     index = i,

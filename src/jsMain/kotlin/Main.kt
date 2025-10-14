@@ -14,7 +14,8 @@ fun main() {
     EmailService.init()
 
     // Get the root element
-    val container = document.getElementById("root") ?: error("Couldn't find root container!")
+    val container = document.getElementById("root")
+        ?: error("Couldn't find root container!")
 
     // Create a root
     val root = createRoot(container)
