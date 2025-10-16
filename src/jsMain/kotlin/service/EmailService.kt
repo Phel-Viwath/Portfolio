@@ -15,6 +15,7 @@ object EmailService {
      * Call this in Main.kt before rendering the app
      */
     fun init() {
+        console.log("${PUBLIC_KEY}, ${SERVICE_ID}, $TEMPLATE_ID")
         val emailJs = window.asDynamic().emailjs
         if (emailJs != null) {
             emailJs.init(PUBLIC_KEY)
@@ -29,7 +30,7 @@ object EmailService {
      * @param name Sender's name
      * @param email Sender's email
      * @param message Message content
-     * @param onSuccess Callback for successful send
+     * @param onSuccess Callback for successful sending
      * @param onError Callback for error
      */
     fun sendEmail(
