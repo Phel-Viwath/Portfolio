@@ -13,7 +13,7 @@ object Constant {
 
 
     const val ABOUT_FIRST_PARAGRAPH = """
-        I am a passionate Android Developer with a strong focus on creating efficient, intuitive, and user-friendly mobile applications. 
+        I am a Android Developer with a strong focus on creating efficient, intuitive, and user-friendly mobile applications. 
         My expertise lies in the full Android development lifecycle, from concept and design to testing and deployment, 
         ensuring the delivery of high-quality, performant apps that provide an excellent user experience.
     """
@@ -27,11 +27,14 @@ object Constant {
 
     val MY_SKILL: Map<String, Float> = mapOf(
         "Kotlin" to 90f,
-        "Java" to 60f,
+        "Java" to 50f,
         "MySQL" to 90f,
-        "Spring Boot" to 80f,
         "Android" to 85f,
-        "Docker" to 60f
+        "Spring Boot" to 60f,
+        "Docker" to 60f,
+        "Git" to 80f,
+        "GitHub" to 80f,
+        "Firebase" to 60f,
     )
 
     val CONTACT_PLATFORM: Map<SocialUrl, PathD> = mapOf(

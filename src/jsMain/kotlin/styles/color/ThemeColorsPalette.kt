@@ -12,5 +12,6 @@ data class ThemeColorsPalette(
     val textSecondary: Color,
     val border: Color,
     val shadow: Color,
-    val headerBg: Color
+    val headerBg: Color,
+    val green: Color
 )

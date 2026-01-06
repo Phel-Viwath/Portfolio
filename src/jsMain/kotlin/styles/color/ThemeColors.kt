@@ -1,5 +1,6 @@
 package styles.color
 
+import util.useThemeColors
 import web.cssom.Color
 
 object ThemeColors {
@@ -13,7 +14,8 @@ object ThemeColors {
         textSecondary = Color("#64748b"),
         border = Color("#e2e8f0"),
         shadow = Color("#0000000d"),
-        headerBg = Color("#ffffff")
+        headerBg = Color("#ffffff"),
+        green = Color("#3DDC84")
     )
 
     val Dark = ThemeColorsPalette(
@@ -26,9 +28,11 @@ object ThemeColors {
         textSecondary = Color("#cbd5e1"),
         border = Color("#334155"),
         shadow = Color("#00000033"),
-        headerBg = Color("#1e293b")
+        headerBg = Color("#1e293b"),
+        green = Color("#3DDC84")
     )
 
     fun getCurrentColors(isDark: Boolean): ThemeColorsPalette =
         if (isDark) Dark else Light
+
 }

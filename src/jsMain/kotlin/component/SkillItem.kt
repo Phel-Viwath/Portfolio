@@ -89,7 +89,7 @@ fun ChildrenBuilder.skillItem(
                 css {
                     height = 100.pct
                     width = "$percentage%".width()
-                    backgroundColor = colors.primary
+                    backgroundColor = colors.green
                     transition = "width 1s ease-out".transition()
                 }
             }

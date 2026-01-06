@@ -36,7 +36,12 @@ fun ChildrenBuilder.header(
             justifyContent = JustifyContent.spaceBetween
             alignItems = AlignItems.center
             padding = Padding(20.px, 10.px)
-            backgroundColor = colors.headerBg
+            // ✅ Glass morphism effect
+            backgroundColor = if (theme == Theme.LIGHT) {
+                "rgba(255, 255, 255, 0.7)".unsafeCast<BackgroundColor>()
+            } else {
+                "rgba(30, 41, 59, 0.7)".unsafeCast<BackgroundColor>()
+            }
             borderRadius = 20.px
             margin = Margin(20.px, Auto.auto)
             width = 80.pct
@@ -44,6 +49,10 @@ fun ChildrenBuilder.header(
             position = Position.sticky
             top = 20.px
             zIndex = "1000".unsafeCast<ZIndex>()
+
+            media(MediaQuery("(max-width: 768px)")){
+                display = None.none
+            }
         }
 
         // Logo
@@ -63,6 +72,10 @@ fun ChildrenBuilder.header(
                 display = Display.flex
                 alignItems = AlignItems.center
                 gap = 30.px
+
+                media(MediaQuery("(max-width: 768px)")) {
+                    gap = 15.px
+                }
             }
 
             // Navigation links
@@ -70,6 +83,11 @@ fun ChildrenBuilder.header(
                 css {
                     display = Display.flex
                     gap = 30.px
+
+                    // Hide on mobile
+                    media(MediaQuery("(max-width: 768px)")) {
+                        display = None.none
+                    }
                 }
 
                 navSection.forEach { section ->

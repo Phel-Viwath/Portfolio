@@ -7,7 +7,6 @@ import react.ChildrenBuilder
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.h2
 import react.dom.html.ReactHTML.section
-import styles.animation.fadeInAnimation
 import styles.animation.slideInLeftAnimation
 import styles.animation.useInViewport
 import util.useThemeColors
@@ -18,7 +17,8 @@ import web.cssom.px
 import web.cssom.s
 
 fun ChildrenBuilder.educationSection(
-    education: List<Education>
+    education: List<Education>,
+    onItemClick: (String) -> Unit,
 ) {
 
     val colors = useThemeColors()
@@ -29,6 +29,7 @@ fun ChildrenBuilder.educationSection(
         id = "education"
         css {
             padding = Padding(100.px, 0.px)
+
         }
 
         h2 {
@@ -55,6 +56,7 @@ fun ChildrenBuilder.educationSection(
                     colors = colors,
                     index = index,
                     isVisible = isEduVisible,
+                    action = { id -> onItemClick(id) }
                 )
             }
         }

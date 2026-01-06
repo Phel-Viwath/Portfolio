@@ -64,6 +64,25 @@ fun injectGlobalStyles() {
         body.dark-theme * {
             border-color: #334155;
         }
+        
+        /*    Global Animations Section */
+        @keyframes bounceGlow {
+             0%, 100% {
+                transform: translateX(-50%) translateY(0);
+                opacity: 0.9;
+            }
+            50% {
+                transform: translateX(-50%) translateY(8px);
+                 opacity: 1;
+            }
+        }
+
+        /* smooth fade-in utility */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
     """.trimIndent()
 
     document.head?.appendChild(styleElement)

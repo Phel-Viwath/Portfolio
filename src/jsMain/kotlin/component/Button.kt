@@ -2,36 +2,45 @@ package component
 
 import emotion.react.css
 import react.ChildrenBuilder
-import react.dom.html.ReactHTML.button
+import react.dom.html.ReactHTML.a
+import util.fontWeight
 import util.transition
+import util.translateY
 import web.cssom.*
+import web.window.WindowTarget
 
 fun ChildrenBuilder.linkButton(
+    ref: String,
     text: String,
     textColor: Color,
     background: Color,
-    shadowColor: Color,
-    action: () -> Unit
+    hoverBackground: Color
 ){
-    button {
-        onClick = { action() }
+    a {
+        href = ref
+        target = WindowTarget._blank
         css {
+            padding = Padding(10.px, 20.px)
+            backgroundColor = background
+            color = textColor
+            border = None.none
+            borderRadius = 8.px
+            fontSize = 14.px
+            fontWeight = "500".fontWeight()
+            cursor = Cursor.pointer
+            textDecoration = None.none
             display = Display.flex
             alignItems = AlignItems.center
             gap = 8.px
-            padding = Padding(10.px, 20.px)
-            borderRadius = 6.px
-            border = None.none
-            backgroundColor = background
-            color = textColor
-            cursor = Cursor.pointer
-            fontSize = 14.px
-            fontWeight = integer(500)
             transition = "all 0.3s ease".transition()
-
             hover {
-                transform = scale(1.05)
-                boxShadow = BoxShadow(0.px, 4.px, 12.px, shadowColor)
+                backgroundColor = hoverBackground
+                transform = translateY(-2)
+            }
+
+            media(MediaQuery("(max-width: 768px)")) {
+                padding = Padding(8.px, 12.px)
+                fontSize = 10.px
             }
         }
         +text

@@ -7,7 +7,6 @@ import routes.appRouter
 import util.ToastContainer
 
 fun app() = FC<Props> {
-
     //
     ToastContainer{}
 

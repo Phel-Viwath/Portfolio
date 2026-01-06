@@ -12,11 +12,10 @@ import styles.animation.fadeInAnimation
 import styles.animation.useInViewport
 import util.useThemeColors
 import web.cssom.*
-import kotlin.js.unsafeCast
 
 fun ChildrenBuilder.workSection(
     myWorks: List<MyWork>,
-    onClickEvent: (Int) -> Unit
+    onItemClick: (Int) -> Unit
 ){
     val colors = useThemeColors()
     val (workRef, isWorkVisible) = useInViewport()
@@ -43,13 +42,14 @@ fun ChildrenBuilder.workSection(
         div {
             css {
                 display = Display.grid
-                gridTemplateColumns = "repeat(auto-fill, minmax(350px, 1fr))".unsafeCast<GridTemplateTracks>()
+                gridTemplateColumns = "repeat(auto-fill, minmax(300px, 1fr))".unsafeCast<GridTemplateTracks>()
                 gap = 30.px
             }
 
             // Portfolio items
             myWorks.forEachIndexed { i: Int, work: MyWork ->
                 workItem(
+                    onClicked = { onItemClick(i) },
                     isVisible = isWorkVisible,
                     work = work,
                     colors = colors,
@@ -57,8 +57,7 @@ fun ChildrenBuilder.workSection(
                     isHovered = i == hoveredIndex,
                     onHoverChange = { index, hovered ->
                         hoveredIndex = if (hovered) index else null
-                    },
-                    onClickEvent = { onClickEvent(i)}
+                    }
                 )
             }
         }

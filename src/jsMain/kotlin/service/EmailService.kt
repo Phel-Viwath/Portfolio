@@ -15,7 +15,6 @@ object EmailService {
      * Call this in Main.kt before rendering the app
      */
     fun init() {
-        console.log("${PUBLIC_KEY}, ${SERVICE_ID}, $TEMPLATE_ID")
         val emailJs = window.asDynamic().emailjs
         if (emailJs != null) {
             emailJs.init(PUBLIC_KEY)

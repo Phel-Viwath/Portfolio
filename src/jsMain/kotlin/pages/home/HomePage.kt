@@ -21,6 +21,7 @@ import web.cssom.*
 
 class HomePage{
 
+    private val profileName = "Phel Viwath"
     private val myWork = MyWorksRepository()
     private val education = EducationRepository()
 
@@ -28,28 +29,35 @@ class HomePage{
         val navigate = useNavigate()
         // State for tracking active-section
         val (activeSection, setActiveSection) = useState("home")
-        val profileName = "Phel Viwath"
+        val (isMobileView, setIsMobileView) = useState(window.innerWidth <= 768)
+
+        val eventTypeScroll = "scroll"
+        val eventTypeResize = "resize"
 
         // Effect to handle scroll and update active-section
         useEffect {
             val handleScroll: (Event) -> Unit = {
                 val sections = Constant.navSection
-
                 // Find the section currently in view
                 val currentSection = sections.find { sectionId ->
                     val element = document.getElementById(sectionId) ?: return@find false
                     val rect = element.getBoundingClientRect()
                     rect.top <= 120 && rect.bottom >= 120
                 } ?: "home"
-
                 setActiveSection(currentSection)
             }
 
-            window.addEventListener("scroll", handleScroll)
+            val handleResize: (Event) -> Unit = {
+                setIsMobileView(window.innerWidth <= 768)
+            }
+
+            window.addEventListener(eventTypeScroll, handleScroll)
+            window.addEventListener(eventTypeResize, handleResize)
 
             // Clean_up event listener
             buildCleanupCallback {
-                window.removeEventListener("scroll", handleScroll)
+                window.removeEventListener(eventTypeScroll, handleScroll)
+                window.removeEventListener(eventTypeResize, handleResize)
             }
         }
 
@@ -64,6 +72,10 @@ class HomePage{
                 padding = Padding(0.px, 20.px)
                 minHeight = "100vh".unsafeCast<MinHeight>()
                 transition = "all 0.3s ease".unsafeCast<Transition>()
+
+                media(MediaQuery("(max-width: 768px)")){
+                    padding = Padding(0.px, 10.px)
+                }
             }
 
             // Header
@@ -75,21 +87,38 @@ class HomePage{
             // Main content
             ReactHTML.main {
                 // Hero section
-                heroSection(profileName)
+//                if (!isMobileView)
+//                    heroSection(profileName)
+//                else
+//                    heroSectionMobile(profileName)
+                ReactHTML.div {
+                    css {
+                        display = if (isMobileView) None.none else Display.block
+                    }
+                    heroSection(profileName)
+                }
+
+                ReactHTML.div {
+                    css {
+                        display = if (!isMobileView) None.none else Display.block
+                    }
+                    heroSectionMobile(profileName)
+                }
 
                 // About section
                 aboutSection()
 
                 // education section
-                educationSection(education = education.getEducation())
+                educationSection(education = education.getEducation()){
+                    navigate("/certificate/$it")
+                }
 
                 // Skills section
                 skillSection(skills = MY_SKILL)
 
                 // Works section
-                workSection(myWorks = myWork.getMyWorks()) { workId ->
-                    // route to WorkDetail
-                    navigate("/work/$workId")
+                workSection(myWorks = myWork.getMyWorks()){ id ->
+                    navigate("/work/$id")
                 }
 
                 // Contact section

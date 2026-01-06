@@ -10,6 +10,7 @@ fun createRoot(container: Element) = reactCreateRoot(container.unsafeCast<WebEle
 fun Percentage.toOpacity() = this.unsafeCast<Opacity>()
 fun String.className() = this.unsafeCast<ClassName>()
 fun String.transition() = this.unsafeCast<Transition>()
+
 fun String.fontWeight() = this.unsafeCast<FontWeight>()
 fun String.width() = this.unsafeCast<Width>()
 fun String.rgba() = this.unsafeCast<Color>()
@@ -18,4 +19,8 @@ fun String.willChange() = this.unsafeCast<WillChange>()
 
 fun translateY(px: Int): Transform{
     return "translateY(${px}px)".unsafeCast<Transform>()
+}
+
+fun translateX(px: Int): Transform{
+    return "translateX(${px})".unsafeCast<Transform>()
 }
